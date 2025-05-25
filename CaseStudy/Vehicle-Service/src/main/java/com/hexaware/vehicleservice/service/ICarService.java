@@ -1,5 +1,6 @@
 package com.hexaware.vehicleservice.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.hexaware.vehicleservice.entity.Car;
@@ -19,5 +20,8 @@ public interface ICarService {
 	public List<Car> getAvailableCars();
 	public void markCarAsUnavailable(Long carId);
 	public void markCarAsAvailable(Long carId);
+	public List<Car> searchVehicles(String location, int passengerCapacity, LocalDate startDate, LocalDate endDate);
+	boolean isCarAvailable(Long carId, LocalDate startDate, LocalDate endDate);
+
 
 }
