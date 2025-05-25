@@ -2,20 +2,21 @@ package com.hexaware.userservice.service;
 
 import java.util.List;
 
-import org.aspectj.weaver.loadtime.Agent;
+import com.hexaware.userservice.entity.RentalAgent;
+
 
 public interface IRentalAgentService {
 	
-	public Agent registerAgent(Agent agent);
+	public RentalAgent registerRentalAgent(RentalAgent rentalAgent);
 	
-	public Agent getAgentById(Long agentId);
+	public RentalAgent getRentalAgentById(Long rentalAgentId);
 	
-	public List<Agent> getAllAgents();
+	public List<RentalAgent> getAllRentalAgents();
 	
-	public Agent updateAgent(Agent updatedAgent);
+	public RentalAgent updateRentalAgent(RentalAgent updatedRentalAgent);
 	
-	public void deleteAgent(Long agentId);
+	public void deleteRentalAgentById(Long rentalAgentId);
 	
-	public Agent login(String email, String password);
+	public RentalAgent login(String email, String password);
 
 }
