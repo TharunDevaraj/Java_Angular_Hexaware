@@ -2,21 +2,22 @@ package com.hexaware.userservice.service;
 
 import java.util.List;
 
+import com.hexaware.userservice.dto.RentalAgentDTO;
 import com.hexaware.userservice.entity.RentalAgent;
 
 
 public interface IRentalAgentService {
 	
-	public RentalAgent registerRentalAgent(RentalAgent rentalAgent);
+	public RentalAgent registerRentalAgent(RentalAgentDTO rentalAgentDTO);
 	
-	public RentalAgent getRentalAgentById(Long rentalAgentId);
+	public RentalAgentDTO getRentalAgentById(Long rentalAgentId);
 	
 	public List<RentalAgent> getAllRentalAgents();
 	
-	public RentalAgent updateRentalAgent(RentalAgent updatedRentalAgent);
+	public RentalAgent updateRentalAgent(RentalAgentDTO updatedRentalAgentDTO);
 	
 	public void deleteRentalAgentById(Long rentalAgentId);
 	
-	public RentalAgent login(String email, String password);
+	public RentalAgentDTO login(String email, String password);
 
 }

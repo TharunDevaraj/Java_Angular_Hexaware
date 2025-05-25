@@ -2,20 +2,21 @@ package com.hexaware.userservice.service;
 
 import java.util.List;
 
+import com.hexaware.userservice.dto.AdminDTO;
 import com.hexaware.userservice.entity.Admin;
 
 public interface IAdminService {
 
-	public Admin registerAdmin(Admin admin);
+	public Admin registerAdmin(AdminDTO adminDTO);
 	
-	public Admin getAdminById(Long adminId);
+	public AdminDTO getAdminById(Long adminId);
 	
 	public List<Admin> getAllAdmins();
 	
-	public Admin updateAdmin(Admin updatedAdmin);
+	public Admin updateAdmin(AdminDTO updatedAdmin);
 	
 	public void deleteAdminById(Long adminId);
 	
-	public Admin login(String email, String password);
+	public AdminDTO login(String email, String password);
 	
 }
