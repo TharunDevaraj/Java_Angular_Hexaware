@@ -4,11 +4,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.hexaware.vehicleservice.dto.CarDTO;
 import com.hexaware.vehicleservice.entity.Car;
 import com.hexaware.vehicleservice.repository.CarRepository;
 
+@Service
 public class CarServiceImp implements ICarService{
 
 	

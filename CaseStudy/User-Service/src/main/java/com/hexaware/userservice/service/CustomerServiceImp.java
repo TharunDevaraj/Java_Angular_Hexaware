@@ -3,11 +3,13 @@ package com.hexaware.userservice.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.hexaware.userservice.dto.CustomerDTO;
 import com.hexaware.userservice.entity.Customer;
 import com.hexaware.userservice.repository.CustomerRepository;
 
+@Service
 public class CustomerServiceImp implements ICustomerService{
 
 	@Autowired

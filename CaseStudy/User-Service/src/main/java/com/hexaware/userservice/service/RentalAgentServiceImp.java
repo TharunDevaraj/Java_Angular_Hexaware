@@ -3,11 +3,13 @@ package com.hexaware.userservice.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.hexaware.userservice.dto.RentalAgentDTO;
 import com.hexaware.userservice.entity.RentalAgent;
 import com.hexaware.userservice.repository.RentalAgentRepository;
 
+@Service
 public class RentalAgentServiceImp implements IRentalAgentService{
 
 	
