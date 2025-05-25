@@ -22,7 +22,6 @@ public class ReservationServiceImp implements IReservationService{
         
         reservation.setStartDate(reservationDTO.getStartDate());
         reservation.setEndDate(reservationDTO.getEndDate());
-        reservation.setReservationStatus(reservationDTO.getReservationStatus());
         reservation.setCustomerId(reservationDTO.getCustomerId());
         reservation.setCarId(reservationDTO.getCarId());
         reservation.setReservationStatus("Reserved"); 

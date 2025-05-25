@@ -26,7 +26,7 @@ public class RentalAgentServiceImp implements IRentalAgentService{
 		rentalAgent.setPhone(rentalAgentDTO.getPhone());
 		rentalAgent.setAddress(rentalAgentDTO.getAddress());
 		
-		return rentalAgent;
+		return rentalAgentRepository.save(rentalAgent);
 		
 	}
 
