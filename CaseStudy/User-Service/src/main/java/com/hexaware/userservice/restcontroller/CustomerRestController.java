@@ -1,5 +1,7 @@
 package com.hexaware.userservice.restcontroller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.userservice.dto.CustomerDTO;
+import com.hexaware.userservice.entity.Admin;
 import com.hexaware.userservice.entity.Customer;
 import com.hexaware.userservice.service.ICustomerService;
 
@@ -37,6 +40,12 @@ public class CustomerRestController {
 	 @GetMapping("/get/{customerId}")
 	 public CustomerDTO getCustomerById(@PathVariable Long customerId) {
 	        return customerService.getCustomerById(customerId);
+	 }
+	 
+	 @GetMapping("/get")
+	 public List<Customer> getAllCustomers()
+	 {
+		 return customerService.getAllCustomers();
 	 }
 
 	 @PutMapping("/update")

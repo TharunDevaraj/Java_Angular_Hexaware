@@ -1,5 +1,7 @@
 package com.hexaware.userservice.restcontroller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.userservice.dto.RentalAgentDTO;
+import com.hexaware.userservice.entity.Admin;
 import com.hexaware.userservice.entity.RentalAgent;
 import com.hexaware.userservice.service.IRentalAgentService;
 
@@ -37,6 +40,12 @@ public class RentalAgentRestController {
 	 @GetMapping("/get/{rentalAgentId}")
 	 public RentalAgentDTO getRentalAgentById(@PathVariable Long rentalAgentId) {
 	        return rentalAgentService.getRentalAgentById(rentalAgentId);
+	 }
+	 
+	 @GetMapping("/get")
+	 public List<RentalAgent> getAllRentalAgents()
+	 {
+		 return rentalAgentService.getAllRentalAgents();
 	 }
 
 	 @PutMapping("/update")
