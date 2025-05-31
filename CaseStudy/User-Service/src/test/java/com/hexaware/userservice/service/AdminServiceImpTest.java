@@ -2,6 +2,8 @@ package com.hexaware.userservice.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -41,14 +43,16 @@ class AdminServiceImpTest {
 	void testGetAdminById() {
 		
 		Long adminId=(long) 1;
-		AdminDTO teAdminDTO = adminService.getAdminById(adminId);
+		AdminDTO adminDTO = adminService.getAdminById(adminId);
 		
-		assertEquals("tagore@gmail.com", teAdminDTO.getEmail());
+		assertEquals("tagore@gmail.com", adminDTO.getEmail());
 		
 	}
 
 	@Test
 	void testGetAllAdmins() {
+		
+		List<Admin> allAdmins = adminService.getAllAdmins();
 		
 	}
 

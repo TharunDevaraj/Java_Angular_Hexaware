@@ -68,6 +68,10 @@ public class AdminServiceImp implements IAdminService{
 	@Override
 	public void deleteAdminById(Long adminId) {
 		
+		Admin existingAdmin = adminRepository.findById(adminId).orElse(null);
+	    if (existingAdmin == null) {
+	        //throw
+	    }
 		adminRepository.deleteById(adminId);
 		
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ public class CarRestController {
     ICarService carService;
 
     @PostMapping("/add")
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<Car> addCar(@RequestBody CarDTO carDTO) {
         Car savedCar = carService.addCar(carDTO);
         return new ResponseEntity<>(savedCar, HttpStatus.CREATED);
@@ -44,6 +46,7 @@ public class CarRestController {
     }
 
     @GetMapping("/get")
+    @PreAuthorize("hasRole('admin','user')")
     public ResponseEntity<List<Car>> getAllCars() {
         return new ResponseEntity<>(carService.getAllCars(), HttpStatus.OK);
     }
