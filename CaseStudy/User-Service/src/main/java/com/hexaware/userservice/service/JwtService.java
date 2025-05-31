@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.hexaware.userservice.entity.UserInfo;
 import com.hexaware.userservice.repository.UserInfoRepository;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -61,5 +63,43 @@ public class JwtService {
 		return createToken(claims, username);
 
 	}
+	
+	// BELOW METHODS HELP TO READ TOKEN FROM CLIENT AND GET Claims , username, exp time etc from token
+	
+	
+			public Claims extractAllClaims(String token) {
+
+				return Jwts.parserBuilder().setSigningKey(getSignKey()).build().parseClaimsJws(token).getBody();
+
+			}
+
+			public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+
+				final Claims claims = extractAllClaims(token);
+				
+
+				return claimsResolver.apply(claims);
+
+			}
+
+			 public String extractUsername(String token) {
+			        return extractClaim(token, Claims::getSubject);
+			    }
+
+			    public Date extractExpiration(String token) {
+			        return extractClaim(token, Claims::getExpiration);
+			    }
+
+			
+			    private Boolean isTokenExpired(String token) {
+			        return extractExpiration(token).before(new Date());
+			    }
+
+			    public Boolean validateToken(String token) {
+			        //final String username = extractUsername(token);
+			        return !isTokenExpired(token);
+			    } 
+			
+
 
 }
