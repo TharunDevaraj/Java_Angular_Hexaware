@@ -76,7 +76,7 @@ public class UserInfoRestController {
 
 	}
 	
-	 	@GetMapping("/")
+	 	@GetMapping("/get")
 	    @PreAuthorize("hasRole('admin')")
 	    public ResponseEntity<List<UserInfoDTO>> getAllUsers() {
 	        return new ResponseEntity<List<UserInfoDTO>>(userService.getAllUsers(), HttpStatus.FOUND);
