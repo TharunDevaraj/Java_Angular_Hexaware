@@ -36,28 +36,28 @@ public class CarRestController {
         return new ResponseEntity<>(savedCar, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{carId}")
     @PreAuthorize("hasRole('admin')")
-    public ResponseEntity<Car> updateCar(@RequestBody CarDTO carDTO) throws CarNotFoundException {
-        Car updatedCar = carService.updateCar(carDTO);
+    public ResponseEntity<Car> updateCar(@PathVariable Long carId, @RequestBody CarDTO carDTO) throws CarNotFoundException {
+        Car updatedCar = carService.updateCar(carId,carDTO);
         return new ResponseEntity<>(updatedCar, HttpStatus.OK);
     }
 
     @GetMapping("/get/{carId}")
-    @PreAuthorize("hasRole('admin','user')")
+    @PreAuthorize("hasAnyRole('admin','user')")
     public ResponseEntity<CarDTO> getCarById(@PathVariable Long carId) throws CarNotFoundException {
         CarDTO carDTO = carService.getCarById(carId);
         return new ResponseEntity<>(carDTO, HttpStatus.OK);
     }
 
     @GetMapping("/get")
-    @PreAuthorize("hasRole('admin','user')")
+    @PreAuthorize("hasAnyRole('admin','user')")
     public ResponseEntity<List<Car>> getAllCars() {
         return new ResponseEntity<>(carService.getAllCars(), HttpStatus.OK);
     }
 
     @GetMapping("/available")
-    @PreAuthorize("hasRole('admin','user')")
+    @PreAuthorize("hasAnyRole('admin','user')")
     public ResponseEntity<List<Car>> getAvailableCars() {
         return new ResponseEntity<>(carService.getAvailableCars(), HttpStatus.OK);
     }
@@ -78,21 +78,21 @@ public class CarRestController {
     }
     
     @GetMapping("/availablecarsbyfilter")
-    @PreAuthorize("hasRole('admin','user')")
+    @PreAuthorize("hasAnyRole('admin','user')")
     public List<Car> getAvailableCarsByFilter(@RequestParam String location,@RequestParam int passengerCapacity,@RequestParam LocalDate startDate,@RequestParam LocalDate endDate)
     {
     	return carService.findAvailableCarsByFilter(location, passengerCapacity, startDate, endDate);
     }
     
     @PutMapping("updateAvailability/{carId}/{availability}")
-    @PreAuthorize("hasRole('admin','agent')")
+    @PreAuthorize("hasAnyRole('admin','agent')")
     public Car updateCarAvailability(@PathVariable Long carId,@PathVariable String availability) throws CarNotFoundException
     {
     	return carService.updateCarAvailability(carId, availability);
     }
     
-    @PutMapping("updateAvailability/{carId}/{status}")
-    @PreAuthorize("hasRole('admin','agent')")
+    @PutMapping("updateStatus/{carId}/{status}")
+    @PreAuthorize("hasAnyRole('admin','agent')")
     public Car updateVehicleStatus(@PathVariable Long carId,@PathVariable String status) throws CarNotFoundException
     {
     	return carService.updateVehicleStatus(carId, status);

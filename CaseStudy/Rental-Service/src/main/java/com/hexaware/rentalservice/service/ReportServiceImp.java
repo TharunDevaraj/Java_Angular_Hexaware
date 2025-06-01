@@ -1,10 +1,12 @@
 package com.hexaware.rentalservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.hexaware.rentalservice.repository.PaymentRepository;
 import com.hexaware.rentalservice.repository.ReservationRepository;
 
+@Service
 public class ReportServiceImp implements IReportService{
 
 	@Autowired

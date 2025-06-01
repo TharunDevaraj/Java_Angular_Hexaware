@@ -15,7 +15,7 @@ public interface ICarService {
 	
 	public List<Car> getAllCars();
 	
-	public Car updateCar(CarDTO updatedCarDTO) throws CarNotFoundException;
+	public Car updateCar(Long carId, CarDTO updatedCarDTO) throws CarNotFoundException;
 	
 	public void deleteCarById(Long carId) throws CarNotFoundException;
 

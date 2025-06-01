@@ -108,7 +108,7 @@ public class ReservationServiceImp implements IReservationService{
 	        Reservation reservation = reservationRepository.findById(reservationId)
 	                .orElseThrow(() -> new RuntimeException("Reservation not found"));
 
-	        reservation.setReservationStatus("IN_PROGRESS");
+	        reservation.setReservationStatus("Reserved");
 	        reservation.setCheckInTime(LocalDateTime.now());
 
 	        return reservationRepository.save(reservation);
@@ -119,7 +119,7 @@ public class ReservationServiceImp implements IReservationService{
 	        Reservation reservation = reservationRepository.findById(reservationId)
 	                .orElseThrow(() -> new RuntimeException("Reservation not found"));
 
-	        reservation.setReservationStatus("COMPLETED");
+	        reservation.setReservationStatus("Completed");
 	        reservation.setCheckOutTime(LocalDateTime.now());
 
 	        return reservationRepository.save(reservation);

@@ -15,6 +15,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long>{
 	public List<Reservation> findByCustomerId(Long customerId);
     public List<Reservation> findByCarId(Long carId);
     
-    @Query("SELECT r.carId FROM Reservation r WHERE r.startDate < :endDate AND r.endDate > :startDate AND r.reservationStatus = 'IN_PROGRESS'")
+    @Query("SELECT r.carId FROM Reservation r WHERE r.startDate < :endDate AND r.endDate > :startDate AND r.reservationStatus = 'Reserved'")
     public List<Long> findBookedCarIds(LocalDate startDate, LocalDate endDate);
 }

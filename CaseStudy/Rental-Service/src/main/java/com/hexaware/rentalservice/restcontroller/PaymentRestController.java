@@ -32,7 +32,7 @@ public class PaymentRestController {
     }
 
     @GetMapping("/get/{paymentId}")
-    @PreAuthorize("hasRole('user')")
+    @PreAuthorize("hasAnyRole('user','admin')")
     public ResponseEntity<PaymentDTO> getPaymentById(@PathVariable Long paymentId) {
         PaymentDTO dto = paymentService.getPaymentById(paymentId);
         if (dto != null) {
@@ -42,20 +42,21 @@ public class PaymentRestController {
     }
 
     @GetMapping("/get")
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<List<Payment>> getAllPayments() {
         List<Payment> payments = paymentService.getAllPayments();
         return new ResponseEntity<>(payments, HttpStatus.OK);
     }
 
     @GetMapping("/reservation/{reservationId}")
-    @PreAuthorize("hasRole('user')")
+    @PreAuthorize("hasAnyRole('user','admin')")
     public ResponseEntity<List<Payment>> getPaymentsByReservationId(@PathVariable Long reservationId) {
         List<Payment> payments = paymentService.getPaymentsByReservationId(reservationId);
         return new ResponseEntity<>(payments, HttpStatus.OK);
     }
 
     @GetMapping("/customer/{customerId}")
-    @PreAuthorize("hasRole('user')")
+    @PreAuthorize("hasAnyRole('user','admin')")
     public ResponseEntity<List<Payment>> getPaymentsByCustomerId(@PathVariable Long customerId) {
         List<Payment> payments = paymentService.getPaymentsByCustomerId(customerId);
         return new ResponseEntity<>(payments, HttpStatus.OK);

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,7 +45,7 @@ public class ReservationRestController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/cancel/{reservationId}")
+    @DeleteMapping("/cancel/{reservationId}")
     @PreAuthorize("hasRole('user')")
     public ResponseEntity<String> cancelReservation(@PathVariable Long reservationId) {
         reservationService.cancelReservationById(reservationId);
@@ -69,14 +70,14 @@ public class ReservationRestController {
     }
 
     @GetMapping("/getbycar/{carId}")
-    @PreAuthorize("hasRole('admin','agent')")
+    @PreAuthorize("hasAnyRole('admin','agent')")
     public ResponseEntity<List<Reservation>> getReservationsByCarId(@PathVariable Long carId) {
         List<Reservation> reservations = reservationService.getReservationsByCarId(carId);
         return new ResponseEntity<>(reservations, HttpStatus.OK);
     }
 
     @GetMapping("/get")
-    @PreAuthorize("hasRole('admin','agent')")
+    @PreAuthorize("hasAnyRole('admin','agent')")
     public ResponseEntity<List<Reservation>> getAllReservations() {
         return new ResponseEntity<>(reservationService.getAllReservations(), HttpStatus.OK);
     }
@@ -88,14 +89,14 @@ public class ReservationRestController {
     }
     
     @PutMapping("/checkin/{id}")
-    @PreAuthorize("hasRole('admin','agent')")
+    @PreAuthorize("hasAnyRole('admin','agent')")
     public Reservation checkIn(@PathVariable Long id)
     {
     	return reservationService.checkIn(id);
     }
     
     @PutMapping("/checkout/{id}")
-    @PreAuthorize("hasRole('admin','agent')")
+    @PreAuthorize("hasAnyRole('admin','agent')")
     public Reservation checkOut(@PathVariable Long id)
     {
     	return reservationService.checkOut(id);

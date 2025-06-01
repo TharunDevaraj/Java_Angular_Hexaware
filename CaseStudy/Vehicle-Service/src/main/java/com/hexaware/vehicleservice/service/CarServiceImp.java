@@ -56,9 +56,9 @@ public class CarServiceImp implements ICarService{
 	}
 
 	@Override
-	public Car updateCar(CarDTO updatedCarDTO) throws CarNotFoundException {
+	public Car updateCar(Long carId,CarDTO updatedCarDTO) throws CarNotFoundException {
 	
-		Car existingCar = carRepository.findById(updatedCarDTO.getCarId()).orElse(null);
+		Car existingCar = carRepository.findById(carId).orElse(null);
         if (existingCar==null){
         	throw new CarNotFoundException();
         }

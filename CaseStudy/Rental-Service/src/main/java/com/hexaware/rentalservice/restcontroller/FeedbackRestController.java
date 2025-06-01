@@ -26,7 +26,7 @@ public class FeedbackRestController {
 	FeedbackServiceImp feedbackService;
 	
 	@PostMapping("/submit")
-	@PreAuthorize("hasRole('user','customer')")
+	@PreAuthorize("hasAnyRole('user','customer')")
 	public Feedback submitFeedback(@RequestBody FeedbackDTO feedbackDTO) {
 	    return feedbackService.submitFeedback(feedbackDTO);
 	}
