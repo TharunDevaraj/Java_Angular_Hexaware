@@ -1099,3 +1099,711 @@ List of constraint violations:[
 2025-06-01T18:02:36.352+05:30  INFO 5132 --- [Vehicle-Service] [RMI TCP Connection(3)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-06-01T18:02:36.354+05:30  INFO 5132 --- [Vehicle-Service] [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-06-01T18:02:36.360+05:30  INFO 5132 --- [Vehicle-Service] [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:19:57.513+05:30  INFO 8224 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 8224 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:19:57.514+05:30 DEBUG 8224 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:19:57.515+05:30  INFO 8224 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:19:58.788+05:30  INFO 8224 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:19:58.882+05:30  INFO 8224 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interface.
+2025-06-01T20:19:59.839+05:30  INFO 8224 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:19:59.975+05:30  INFO 8224 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:20:00.024+05:30  INFO 8224 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:20:00.529+05:30  INFO 8224 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:20:00.575+05:30  INFO 8224 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:20:01.143+05:30  INFO 8224 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a8b9458
+2025-06-01T20:20:01.150+05:30  INFO 8224 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:20:01.260+05:30  WARN 8224 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:20:01.350+05:30  INFO 8224 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:20:02.597+05:30  INFO 8224 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:20:02.693+05:30  INFO 8224 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:20:03.176+05:30  INFO 8224 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:20:04.030+05:30  WARN 8224 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:20:06.273+05:30  INFO 8224 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 9.207 seconds (process running for 11.044)
+2025-06-01T20:20:07.281+05:30  INFO 8224 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Adding a new car: com.hexaware.vehicleservice.dto.CarDTO@68378acc
+2025-06-01T20:20:07.432+05:30 DEBUG 8224 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car saved successfully: Car [carId=202, carName=Toyota Corolla, year=2020, make=Toyota, carStatus=available, location=New York, passengerCapacity=5, pricePerDay=49.99]
+2025-06-01T20:20:07.463+05:30  INFO 8224 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:20:07.468+05:30  INFO 8224 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:20:07.485+05:30  INFO 8224 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:21:34.730+05:30  INFO 14676 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 14676 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:21:34.736+05:30 DEBUG 14676 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:21:34.737+05:30  INFO 14676 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:21:36.085+05:30  INFO 14676 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:21:36.161+05:30  INFO 14676 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interface.
+2025-06-01T20:21:37.104+05:30  INFO 14676 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:21:37.268+05:30  INFO 14676 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:21:37.322+05:30  INFO 14676 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:21:37.733+05:30  INFO 14676 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:21:37.787+05:30  INFO 14676 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:21:38.296+05:30  INFO 14676 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@795faad
+2025-06-01T20:21:38.303+05:30  INFO 14676 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:21:38.390+05:30  WARN 14676 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:21:38.431+05:30  INFO 14676 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:21:39.567+05:30  INFO 14676 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:21:39.629+05:30  INFO 14676 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:21:40.252+05:30  INFO 14676 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:21:41.228+05:30  WARN 14676 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:21:44.135+05:30  INFO 14676 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 9.901 seconds (process running for 11.179)
+2025-06-01T20:21:44.959+05:30  INFO 14676 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Fetching car with id=202 
+2025-06-01T20:21:45.091+05:30 DEBUG 14676 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car found: Car [carId=202, carName=Toyota Corolla, year=2020, make=Toyota, carStatus=available, location=New York, passengerCapacity=5, pricePerDay=49.99]
+2025-06-01T20:21:45.104+05:30  INFO 14676 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Fetching car with id=10 
+2025-06-01T20:21:45.115+05:30  WARN 14676 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car with id=10 not found
+2025-06-01T20:21:45.162+05:30  INFO 14676 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:21:45.169+05:30  INFO 14676 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:21:45.186+05:30  INFO 14676 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:22:30.667+05:30  INFO 8152 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 8152 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:22:30.669+05:30 DEBUG 8152 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:22:30.670+05:30  INFO 8152 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:22:32.183+05:30  INFO 8152 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:22:32.276+05:30  INFO 8152 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interface.
+2025-06-01T20:22:33.051+05:30  INFO 8152 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:22:33.155+05:30  INFO 8152 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:22:33.195+05:30  INFO 8152 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:22:33.595+05:30  INFO 8152 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:22:33.642+05:30  INFO 8152 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:22:34.236+05:30  INFO 8152 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36511772
+2025-06-01T20:22:34.242+05:30  INFO 8152 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:22:34.324+05:30  WARN 8152 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:22:34.374+05:30  INFO 8152 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:22:35.389+05:30  INFO 8152 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:22:35.448+05:30  INFO 8152 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:22:35.902+05:30  INFO 8152 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:22:36.851+05:30  WARN 8152 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:22:39.970+05:30  INFO 8152 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 9.825 seconds (process running for 11.258)
+2025-06-01T20:22:40.698+05:30  INFO 8152 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:22:40.702+05:30  INFO 8152 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:22:40.719+05:30  INFO 8152 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:25:17.827+05:30  INFO 14808 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 14808 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:25:17.829+05:30 DEBUG 14808 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:25:17.830+05:30  INFO 14808 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:25:19.532+05:30  INFO 14808 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:25:19.674+05:30  INFO 14808 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 1 JPA repository interface.
+2025-06-01T20:25:20.619+05:30  INFO 14808 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:25:20.756+05:30  INFO 14808 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:25:20.822+05:30  INFO 14808 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:25:21.259+05:30  INFO 14808 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:25:21.308+05:30  INFO 14808 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:25:21.820+05:30  INFO 14808 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@795faad
+2025-06-01T20:25:21.829+05:30  INFO 14808 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:25:21.922+05:30  WARN 14808 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:25:21.970+05:30  INFO 14808 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:25:23.189+05:30  INFO 14808 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:25:23.254+05:30  INFO 14808 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:25:23.703+05:30  INFO 14808 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:25:24.688+05:30  WARN 14808 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:25:28.131+05:30  INFO 14808 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 11.102 seconds (process running for 12.828)
+2025-06-01T20:25:28.767+05:30  INFO 14808 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updating car: com.hexaware.vehicleservice.dto.CarDTO@35dc4303
+2025-06-01T20:25:28.860+05:30 DEBUG 14808 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car updated successfully: Car [carId=202, carName=null, year=0, make=null, carStatus=null, location=Hyderabad, passengerCapacity=0, pricePerDay=0.0]
+2025-06-01T20:25:28.974+05:30  INFO 14808 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:25:28.978+05:30  INFO 14808 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:25:28.993+05:30  INFO 14808 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:28:37.115+05:30  INFO 18520 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 18520 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:28:37.117+05:30 DEBUG 18520 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:28:37.119+05:30  INFO 18520 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:28:38.658+05:30  INFO 18520 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:28:38.736+05:30  INFO 18520 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-06-01T20:28:39.607+05:30  INFO 18520 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:28:39.720+05:30  INFO 18520 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:28:39.768+05:30  INFO 18520 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:28:40.211+05:30  INFO 18520 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:28:40.269+05:30  INFO 18520 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:28:40.986+05:30  INFO 18520 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72f3acc9
+2025-06-01T20:28:40.991+05:30  INFO 18520 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:28:41.086+05:30  WARN 18520 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:28:41.120+05:30  INFO 18520 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:28:42.367+05:30  INFO 18520 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:28:42.455+05:30  INFO 18520 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:28:43.070+05:30  INFO 18520 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:28:44.086+05:30  WARN 18520 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:28:46.886+05:30  INFO 18520 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 10.689 seconds (process running for 12.67)
+2025-06-01T20:28:47.750+05:30  INFO 18520 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Removing car with id=202 
+2025-06-01T20:28:47.853+05:30 DEBUG 18520 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car with id=202 successfully removed
+2025-06-01T20:28:47.920+05:30  INFO 18520 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Fetching car with id=202 
+2025-06-01T20:28:47.932+05:30  WARN 18520 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car with id=202 not found
+2025-06-01T20:28:48.218+05:30  INFO 18520 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:28:48.224+05:30  INFO 18520 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:28:48.251+05:30  INFO 18520 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:29:31.518+05:30  INFO 17636 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 17636 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:29:31.520+05:30 DEBUG 17636 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:29:31.521+05:30  INFO 17636 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:29:32.990+05:30  INFO 17636 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:29:33.066+05:30  INFO 17636 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-06-01T20:29:33.839+05:30  INFO 17636 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:29:33.935+05:30  INFO 17636 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:29:33.990+05:30  INFO 17636 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:29:34.343+05:30  INFO 17636 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:29:34.393+05:30  INFO 17636 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:29:34.914+05:30  INFO 17636 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36511772
+2025-06-01T20:29:34.921+05:30  INFO 17636 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:29:35.007+05:30  WARN 17636 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:29:35.039+05:30  INFO 17636 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:29:36.093+05:30  INFO 17636 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:29:36.166+05:30  INFO 17636 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:29:36.575+05:30  INFO 17636 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:29:37.724+05:30  WARN 17636 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:29:40.692+05:30  INFO 17636 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 9.69 seconds (process running for 11.1)
+2025-06-01T20:29:41.270+05:30  INFO 17636 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Removing car with id=202 
+2025-06-01T20:29:41.352+05:30  WARN 17636 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Attempted to remove non-existing car with id=202 
+2025-06-01T20:29:41.493+05:30  INFO 17636 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:29:41.499+05:30  INFO 17636 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:29:41.513+05:30  INFO 17636 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:30:53.125+05:30  INFO 5140 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 5140 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:30:53.127+05:30 DEBUG 5140 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:30:53.129+05:30  INFO 5140 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:30:54.734+05:30  INFO 5140 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:30:54.903+05:30  INFO 5140 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 1 JPA repository interface.
+2025-06-01T20:30:55.916+05:30  INFO 5140 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:30:56.039+05:30  INFO 5140 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:30:56.089+05:30  INFO 5140 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:30:56.502+05:30  INFO 5140 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:30:56.561+05:30  INFO 5140 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:30:57.166+05:30  INFO 5140 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@795faad
+2025-06-01T20:30:57.173+05:30  INFO 5140 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:30:57.261+05:30  WARN 5140 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:30:57.288+05:30  INFO 5140 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:30:58.571+05:30  INFO 5140 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:30:58.637+05:30  INFO 5140 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:30:59.083+05:30  INFO 5140 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:31:00.172+05:30  WARN 5140 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:31:03.388+05:30  INFO 5140 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 11.0 seconds (process running for 12.597)
+2025-06-01T20:31:04.255+05:30  INFO 5140 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Adding a new car: com.hexaware.vehicleservice.dto.CarDTO@a4f14c9
+2025-06-01T20:31:04.365+05:30 DEBUG 5140 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car saved successfully: Car [carId=252, carName=Toyota Corolla, year=2020, make=Toyota, carStatus=available, location=New York, passengerCapacity=5, pricePerDay=49.99]
+2025-06-01T20:31:04.392+05:30  INFO 5140 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:31:04.396+05:30  INFO 5140 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:31:04.410+05:30  INFO 5140 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:31:14.578+05:30  INFO 23144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 23144 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:31:14.583+05:30 DEBUG 23144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:31:14.585+05:30  INFO 23144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:31:16.035+05:30  INFO 23144 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:31:16.144+05:30  INFO 23144 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 1 JPA repository interface.
+2025-06-01T20:31:17.022+05:30  INFO 23144 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:31:17.135+05:30  INFO 23144 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:31:17.221+05:30  INFO 23144 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:31:17.720+05:30  INFO 23144 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:31:17.816+05:30  INFO 23144 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:31:18.513+05:30  INFO 23144 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d404a3c
+2025-06-01T20:31:18.520+05:30  INFO 23144 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:31:18.620+05:30  WARN 23144 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:31:18.671+05:30  INFO 23144 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:31:19.865+05:30  INFO 23144 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:31:19.939+05:30  INFO 23144 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:31:20.449+05:30  INFO 23144 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:31:22.458+05:30  WARN 23144 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:31:27.358+05:30  INFO 23144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 13.547 seconds (process running for 16.461)
+2025-06-01T20:31:28.325+05:30  INFO 23144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Removing car with id=202 
+2025-06-01T20:31:28.493+05:30  WARN 23144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Attempted to remove non-existing car with id=202 
+2025-06-01T20:31:28.698+05:30  INFO 23144 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:31:28.703+05:30  INFO 23144 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:31:28.741+05:30  INFO 23144 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:32:25.368+05:30  INFO 15176 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 15176 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:32:25.370+05:30 DEBUG 15176 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:32:25.371+05:30  INFO 15176 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:32:27.101+05:30  INFO 15176 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:32:27.195+05:30  INFO 15176 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2025-06-01T20:32:28.367+05:30  INFO 15176 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:32:28.565+05:30  INFO 15176 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:32:28.641+05:30  INFO 15176 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:32:29.185+05:30  INFO 15176 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:32:29.245+05:30  INFO 15176 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:32:29.914+05:30  INFO 15176 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7c9ea1d0
+2025-06-01T20:32:29.920+05:30  INFO 15176 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:32:30.006+05:30  WARN 15176 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:32:30.038+05:30  INFO 15176 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:32:31.269+05:30  INFO 15176 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:32:31.330+05:30  INFO 15176 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:32:31.845+05:30  INFO 15176 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:32:32.916+05:30  WARN 15176 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:32:35.872+05:30  INFO 15176 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 11.249 seconds (process running for 13.891)
+2025-06-01T20:32:36.579+05:30  INFO 15176 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Removing car with id=252 
+2025-06-01T20:32:36.690+05:30 DEBUG 15176 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car with id=252 successfully removed
+2025-06-01T20:32:36.769+05:30  INFO 15176 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Fetching car with id=252 
+2025-06-01T20:32:36.780+05:30  WARN 15176 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car with id=252 not found
+2025-06-01T20:32:36.900+05:30  INFO 15176 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:32:36.906+05:30  INFO 15176 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:32:36.923+05:30  INFO 15176 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:33:50.423+05:30  INFO 2900 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 2900 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:33:50.427+05:30 DEBUG 2900 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:33:50.429+05:30  INFO 2900 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:33:52.324+05:30  INFO 2900 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:33:52.500+05:30  INFO 2900 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 1 JPA repository interface.
+2025-06-01T20:33:53.812+05:30  INFO 2900 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:33:53.931+05:30  INFO 2900 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:33:53.978+05:30  INFO 2900 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:33:54.428+05:30  INFO 2900 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:33:54.478+05:30  INFO 2900 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:33:54.977+05:30  INFO 2900 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36511772
+2025-06-01T20:33:54.983+05:30  INFO 2900 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:33:55.064+05:30  WARN 2900 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:33:55.108+05:30  INFO 2900 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:33:56.160+05:30  INFO 2900 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:33:56.218+05:30  INFO 2900 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:33:56.658+05:30  INFO 2900 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:33:57.644+05:30  WARN 2900 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:34:01.183+05:30  INFO 2900 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 11.613 seconds (process running for 13.552)
+2025-06-01T20:34:02.142+05:30  INFO 2900 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Fetching all available cars
+2025-06-01T20:34:02.294+05:30 DEBUG 2900 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Found 4 available cars
+2025-06-01T20:34:02.343+05:30  INFO 2900 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:34:02.348+05:30  INFO 2900 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:34:02.360+05:30  INFO 2900 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:34:47.699+05:30  INFO 9016 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 9016 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:34:47.704+05:30 DEBUG 9016 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:34:47.707+05:30  INFO 9016 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:34:49.636+05:30  INFO 9016 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:34:49.753+05:30  INFO 9016 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 1 JPA repository interface.
+2025-06-01T20:34:50.673+05:30  INFO 9016 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:34:50.863+05:30  INFO 9016 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:34:50.969+05:30  INFO 9016 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:34:51.582+05:30  INFO 9016 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:34:51.626+05:30  INFO 9016 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:34:52.348+05:30  INFO 9016 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36511772
+2025-06-01T20:34:52.354+05:30  INFO 9016 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:34:52.482+05:30  WARN 9016 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:34:52.536+05:30  INFO 9016 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:34:54.187+05:30  INFO 9016 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:34:54.250+05:30  INFO 9016 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:34:54.764+05:30  INFO 9016 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:34:55.908+05:30  WARN 9016 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:34:59.243+05:30  INFO 9016 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 12.248 seconds (process running for 14.014)
+2025-06-01T20:35:00.169+05:30  INFO 9016 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:35:00.172+05:30  INFO 9016 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:35:00.195+05:30  INFO 9016 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:35:27.917+05:30  INFO 15088 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 15088 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:35:27.919+05:30 DEBUG 15088 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:35:27.921+05:30  INFO 15088 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:35:29.750+05:30  INFO 15088 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:35:29.828+05:30  INFO 15088 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-06-01T20:35:30.766+05:30  INFO 15088 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:35:30.882+05:30  INFO 15088 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:35:30.944+05:30  INFO 15088 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:35:31.443+05:30  INFO 15088 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:35:31.491+05:30  INFO 15088 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:35:32.016+05:30  INFO 15088 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@795faad
+2025-06-01T20:35:32.022+05:30  INFO 15088 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:35:32.140+05:30  WARN 15088 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:35:32.192+05:30  INFO 15088 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:35:33.385+05:30  INFO 15088 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:35:33.449+05:30  INFO 15088 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:35:33.926+05:30  INFO 15088 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:35:35.056+05:30  WARN 15088 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:35:38.250+05:30  INFO 15088 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 11.097 seconds (process running for 13.179)
+2025-06-01T20:35:39.193+05:30  INFO 15088 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:35:39.205+05:30  INFO 15088 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:35:39.230+05:30  INFO 15088 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:37:41.946+05:30  INFO 25144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 25144 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T20:37:41.951+05:30 DEBUG 25144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:37:41.953+05:30  INFO 25144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:37:43.366+05:30  INFO 25144 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:37:43.496+05:30  INFO 25144 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 1 JPA repository interface.
+2025-06-01T20:37:44.456+05:30  INFO 25144 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:37:44.561+05:30  INFO 25144 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:37:44.606+05:30  INFO 25144 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:37:45.062+05:30  INFO 25144 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:37:45.107+05:30  INFO 25144 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:37:45.673+05:30  INFO 25144 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27a90ce5
+2025-06-01T20:37:45.681+05:30  INFO 25144 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:37:45.772+05:30  WARN 25144 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:37:45.814+05:30  INFO 25144 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:37:47.092+05:30  INFO 25144 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:37:47.169+05:30  INFO 25144 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:37:47.644+05:30  INFO 25144 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T20:37:48.839+05:30  WARN 25144 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:37:51.548+05:30  INFO 25144 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 10.252 seconds (process running for 11.73)
+2025-06-01T20:37:53.585+05:30  INFO 25144 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:37:53.594+05:30  INFO 25144 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:37:53.619+05:30  INFO 25144 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:17:00.208+05:30  INFO 24704 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 24704 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:17:00.210+05:30 DEBUG 24704 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:17:00.211+05:30  INFO 24704 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:17:01.466+05:30  INFO 24704 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:17:01.571+05:30  INFO 24704 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 1 JPA repository interface.
+2025-06-01T21:17:02.321+05:30  INFO 24704 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:17:02.407+05:30  INFO 24704 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:17:02.457+05:30  INFO 24704 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:17:02.832+05:30  INFO 24704 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:17:02.875+05:30  INFO 24704 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:17:03.294+05:30  INFO 24704 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@795faad
+2025-06-01T21:17:03.300+05:30  INFO 24704 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:17:03.382+05:30  WARN 24704 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:17:03.410+05:30  INFO 24704 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:17:04.566+05:30  INFO 24704 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:17:04.628+05:30  INFO 24704 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:17:05.026+05:30  INFO 24704 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:17:05.817+05:30  WARN 24704 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:17:08.145+05:30  INFO 24704 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 8.487 seconds (process running for 9.791)
+2025-06-01T21:17:09.086+05:30  INFO 24704 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Adding a new car: com.hexaware.vehicleservice.dto.CarDTO@27154b20
+2025-06-01T21:17:09.175+05:30 DEBUG 24704 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car saved successfully: Car [carId=302, carName=Toyota Corolla, year=2020, make=Toyota, carStatus=available, location=New York, passengerCapacity=5, pricePerDay=49.99]
+2025-06-01T21:17:09.197+05:30  INFO 24704 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:17:09.202+05:30  INFO 24704 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:17:09.224+05:30  INFO 24704 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:17:53.865+05:30  INFO 25384 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 25384 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:17:53.867+05:30 DEBUG 25384 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:17:53.868+05:30  INFO 25384 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:17:55.642+05:30  INFO 25384 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:17:55.715+05:30  INFO 25384 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interface.
+2025-06-01T21:17:56.946+05:30  INFO 25384 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:17:57.204+05:30  INFO 25384 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:17:57.267+05:30  INFO 25384 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:17:57.643+05:30  INFO 25384 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:17:57.696+05:30  INFO 25384 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:17:58.452+05:30  INFO 25384 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@795faad
+2025-06-01T21:17:58.464+05:30  INFO 25384 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:17:58.535+05:30  WARN 25384 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:17:58.555+05:30  INFO 25384 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:17:59.636+05:30  INFO 25384 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:17:59.689+05:30  INFO 25384 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:18:00.123+05:30  INFO 25384 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:18:01.468+05:30  WARN 25384 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:18:05.043+05:30  INFO 25384 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 11.959 seconds (process running for 14.036)
+2025-06-01T21:18:05.965+05:30  INFO 25384 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Removing car with id=302 
+2025-06-01T21:18:06.067+05:30 DEBUG 25384 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car with id=302 successfully removed
+2025-06-01T21:18:06.136+05:30  INFO 25384 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Fetching car with id=302 
+2025-06-01T21:18:06.142+05:30  WARN 25384 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car with id=302 not found
+2025-06-01T21:18:06.219+05:30  INFO 25384 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:18:06.232+05:30  INFO 25384 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:18:06.254+05:30  INFO 25384 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:18:23.158+05:30  INFO 18960 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 18960 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:18:23.160+05:30 DEBUG 18960 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:18:23.163+05:30  INFO 18960 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:18:25.291+05:30  INFO 18960 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:18:25.363+05:30  INFO 18960 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
+2025-06-01T21:18:26.241+05:30  INFO 18960 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:18:26.393+05:30  INFO 18960 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:18:26.445+05:30  INFO 18960 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:18:26.881+05:30  INFO 18960 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:18:26.942+05:30  INFO 18960 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:18:27.629+05:30  INFO 18960 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@795faad
+2025-06-01T21:18:27.642+05:30  INFO 18960 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:18:27.708+05:30  WARN 18960 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:18:27.749+05:30  INFO 18960 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:18:28.767+05:30  INFO 18960 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:18:28.816+05:30  INFO 18960 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:18:29.306+05:30  INFO 18960 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:18:30.224+05:30  WARN 18960 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:18:32.569+05:30  INFO 18960 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 9.965 seconds (process running for 12.019)
+2025-06-01T21:18:33.267+05:30  INFO 18960 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Adding a new car: com.hexaware.vehicleservice.dto.CarDTO@a4f14c9
+2025-06-01T21:18:33.452+05:30 DEBUG 18960 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Car saved successfully: Car [carId=352, carName=Toyota Corolla, year=2020, make=Toyota, carStatus=available, location=New York, passengerCapacity=5, pricePerDay=49.99]
+2025-06-01T21:18:33.509+05:30  INFO 18960 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:18:33.518+05:30  INFO 18960 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:18:33.549+05:30  INFO 18960 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:19:01.092+05:30  INFO 4740 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 4740 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:19:01.097+05:30 DEBUG 4740 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:19:01.101+05:30  INFO 4740 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:19:02.469+05:30  INFO 4740 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:19:02.563+05:30  INFO 4740 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interface.
+2025-06-01T21:19:03.378+05:30  INFO 4740 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:19:03.467+05:30  INFO 4740 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:19:03.508+05:30  INFO 4740 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:19:03.926+05:30  INFO 4740 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:19:03.981+05:30  INFO 4740 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:19:04.430+05:30  INFO 4740 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51d88c38
+2025-06-01T21:19:04.437+05:30  INFO 4740 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:19:04.506+05:30  WARN 4740 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:19:04.535+05:30  INFO 4740 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:19:05.401+05:30  INFO 4740 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:19:05.446+05:30  INFO 4740 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:19:05.818+05:30  INFO 4740 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:19:06.677+05:30  WARN 4740 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:19:08.835+05:30  INFO 4740 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 8.269 seconds (process running for 9.401)
+2025-06-01T21:19:09.925+05:30  INFO 4740 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:19:09.931+05:30  INFO 4740 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:19:09.952+05:30  INFO 4740 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:20:09.508+05:30  INFO 22204 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 22204 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:20:09.510+05:30 DEBUG 22204 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:20:09.510+05:30  INFO 22204 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:20:10.872+05:30  INFO 22204 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:20:10.938+05:30  INFO 22204 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2025-06-01T21:20:11.626+05:30  INFO 22204 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:20:11.698+05:30  INFO 22204 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:20:11.735+05:30  INFO 22204 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:20:12.058+05:30  INFO 22204 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:20:12.095+05:30  INFO 22204 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:20:12.770+05:30  INFO 22204 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@615ef20
+2025-06-01T21:20:12.785+05:30  INFO 22204 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:20:12.843+05:30  WARN 22204 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:20:12.863+05:30  INFO 22204 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:20:13.840+05:30  INFO 22204 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:20:13.886+05:30  INFO 22204 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:20:14.391+05:30  INFO 22204 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:20:15.214+05:30  WARN 22204 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:20:17.472+05:30  INFO 22204 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 8.645 seconds (process running for 10.002)
+2025-06-01T21:20:18.444+05:30  INFO 22204 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:20:18.448+05:30  INFO 22204 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:20:18.457+05:30  INFO 22204 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:21:40.861+05:30  INFO 3660 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 3660 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:21:40.863+05:30 DEBUG 3660 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:21:40.863+05:30  INFO 3660 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:21:42.603+05:30  INFO 3660 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:21:42.709+05:30  INFO 3660 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interface.
+2025-06-01T21:21:43.767+05:30  INFO 3660 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:21:43.870+05:30  INFO 3660 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:21:43.915+05:30  INFO 3660 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:21:44.397+05:30  INFO 3660 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:21:44.491+05:30  INFO 3660 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:21:45.034+05:30  INFO 3660 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51869ad6
+2025-06-01T21:21:45.037+05:30  INFO 3660 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:21:45.099+05:30  WARN 3660 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:21:45.120+05:30  INFO 3660 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:21:46.090+05:30  INFO 3660 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:21:46.150+05:30  INFO 3660 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:21:46.678+05:30  INFO 3660 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:21:47.451+05:30  WARN 3660 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:21:49.566+05:30  INFO 3660 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 9.286 seconds (process running for 10.837)
+2025-06-01T21:21:50.437+05:30  INFO 3660 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:21:50.442+05:30  INFO 3660 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:21:50.472+05:30  INFO 3660 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:22:41.192+05:30  INFO 22272 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 22272 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:22:41.194+05:30 DEBUG 22272 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:22:41.195+05:30  INFO 22272 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:22:42.621+05:30  INFO 22272 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:22:42.718+05:30  INFO 22272 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interface.
+2025-06-01T21:22:43.428+05:30  INFO 22272 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:22:43.517+05:30  INFO 22272 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:22:43.564+05:30  INFO 22272 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:22:43.904+05:30  INFO 22272 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:22:43.944+05:30  INFO 22272 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:22:44.457+05:30  INFO 22272 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78bd02c8
+2025-06-01T21:22:44.460+05:30  INFO 22272 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:22:44.550+05:30  WARN 22272 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:22:44.589+05:30  INFO 22272 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:22:45.732+05:30  INFO 22272 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:22:45.791+05:30  INFO 22272 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:22:46.226+05:30  INFO 22272 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:22:47.127+05:30  WARN 22272 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:22:49.772+05:30  INFO 22272 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 9.079 seconds (process running for 11.228)
+2025-06-01T21:22:50.533+05:30  INFO 22272 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:22:50.537+05:30  INFO 22272 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:22:50.552+05:30  INFO 22272 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:23:25.290+05:30  INFO 10812 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 10812 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:23:25.292+05:30 DEBUG 10812 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:23:25.294+05:30  INFO 10812 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:23:26.903+05:30  INFO 10812 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:23:26.995+05:30  INFO 10812 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2025-06-01T21:23:27.753+05:30  INFO 10812 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:23:27.884+05:30  INFO 10812 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:23:27.937+05:30  INFO 10812 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:23:28.362+05:30  INFO 10812 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:23:28.428+05:30  INFO 10812 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:23:29.087+05:30  INFO 10812 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51869ad6
+2025-06-01T21:23:29.090+05:30  INFO 10812 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:23:29.175+05:30  WARN 10812 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:23:29.207+05:30  INFO 10812 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:23:30.719+05:30  INFO 10812 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:23:30.779+05:30  INFO 10812 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:23:31.247+05:30  INFO 10812 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:23:32.145+05:30  WARN 10812 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:23:35.199+05:30  INFO 10812 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 10.398 seconds (process running for 11.989)
+2025-06-01T21:23:35.871+05:30  INFO 10812 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updating price of car with cardId 352
+2025-06-01T21:23:35.961+05:30 DEBUG 10812 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updated price of car with cardId 352
+2025-06-01T21:23:36.066+05:30  INFO 10812 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:23:36.069+05:30  INFO 10812 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:23:36.089+05:30  INFO 10812 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:24:01.288+05:30  INFO 7228 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 7228 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:24:01.290+05:30 DEBUG 7228 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:24:01.294+05:30  INFO 7228 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:24:02.511+05:30  INFO 7228 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:24:02.583+05:30  INFO 7228 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interface.
+2025-06-01T21:24:03.329+05:30  INFO 7228 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:24:03.565+05:30  INFO 7228 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:24:03.612+05:30  INFO 7228 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:24:03.943+05:30  INFO 7228 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:24:03.980+05:30  INFO 7228 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:24:04.601+05:30  INFO 7228 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@795faad
+2025-06-01T21:24:04.604+05:30  INFO 7228 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:24:04.684+05:30  WARN 7228 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:24:04.730+05:30  INFO 7228 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:24:05.625+05:30  INFO 7228 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:24:05.674+05:30  INFO 7228 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:24:05.996+05:30  INFO 7228 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:24:06.813+05:30  WARN 7228 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:24:09.230+05:30  INFO 7228 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 8.424 seconds (process running for 9.716)
+2025-06-01T21:24:10.160+05:30  INFO 7228 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updating price of car with cardId 352
+2025-06-01T21:24:10.229+05:30 DEBUG 7228 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updated price of car with cardId 352
+2025-06-01T21:24:10.255+05:30  INFO 7228 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updating price of car with cardId 400
+2025-06-01T21:24:10.260+05:30  WARN 7228 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Attempted to update non-existing car with id=400 
+2025-06-01T21:24:10.311+05:30  INFO 7228 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:24:10.316+05:30  INFO 7228 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:24:10.332+05:30  INFO 7228 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T21:25:44.098+05:30  INFO 21168 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Starting CarServiceImpTest using Java 21.0.6 with PID 21168 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Vehicle-Service)
+2025-06-01T21:25:44.100+05:30 DEBUG 21168 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T21:25:44.102+05:30  INFO 21168 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T21:25:45.532+05:30  INFO 21168 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T21:25:45.672+05:30  INFO 21168 --- [Vehicle-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 1 JPA repository interface.
+2025-06-01T21:25:46.543+05:30  INFO 21168 --- [Vehicle-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T21:25:46.687+05:30  INFO 21168 --- [Vehicle-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T21:25:46.730+05:30  INFO 21168 --- [Vehicle-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T21:25:47.124+05:30  INFO 21168 --- [Vehicle-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T21:25:47.169+05:30  INFO 21168 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T21:25:47.605+05:30  INFO 21168 --- [Vehicle-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57b33c29
+2025-06-01T21:25:47.610+05:30  INFO 21168 --- [Vehicle-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T21:25:47.706+05:30  WARN 21168 --- [Vehicle-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T21:25:47.731+05:30  INFO 21168 --- [Vehicle-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T21:25:48.838+05:30  INFO 21168 --- [Vehicle-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T21:25:48.893+05:30  INFO 21168 --- [Vehicle-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:25:49.320+05:30  INFO 21168 --- [Vehicle-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-01T21:25:50.723+05:30  WARN 21168 --- [Vehicle-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T21:25:53.350+05:30  INFO 21168 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImpTest          : Started CarServiceImpTest in 9.774 seconds (process running for 12.218)
+2025-06-01T21:25:53.983+05:30  INFO 21168 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updating status of car with cardId 352
+2025-06-01T21:25:54.058+05:30 DEBUG 21168 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updated status of car with cardId 352
+2025-06-01T21:25:54.104+05:30  INFO 21168 --- [Vehicle-Service] [main] c.h.v.service.CarServiceImp              : Updating status of car with cardId 400
+2025-06-01T21:25:54.133+05:30  INFO 21168 --- [Vehicle-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T21:25:54.140+05:30  INFO 21168 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T21:25:54.155+05:30  INFO 21168 --- [Vehicle-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
