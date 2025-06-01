@@ -39,8 +39,14 @@ public class FeedbackServiceImp implements IFeedbackService {
 		feedbackRepository.deleteById(feedbackId);
 	}
 
-	public Feedback getFeedbackById(Long id) {
-		return feedbackRepository.findById(id).orElse(null);
+	public Feedback getFeedbackById(Long id) throws FeedbackNotFoundException {
+		Feedback feedback= feedbackRepository.findById(id).orElse(null);
+		
+		if(feedback==null)
+		{
+			throw new FeedbackNotFoundException();
+		}
+		return feedback;
 	}
 
 	public Feedback setFeedbackStatus(Long id) throws FeedbackNotFoundException {

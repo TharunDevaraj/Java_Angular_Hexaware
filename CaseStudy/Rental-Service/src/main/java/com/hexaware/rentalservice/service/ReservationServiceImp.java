@@ -25,6 +25,12 @@ public class ReservationServiceImp implements IReservationService{
 		log.info("Creating reservation for customerId={}, carId={} from {} to {}", 
                 reservationDTO.getCustomerId(), reservationDTO.getCarId(), 
                 reservationDTO.getStartDate(), reservationDTO.getEndDate());
+		
+		if (reservationDTO.getEndDate().isBefore(reservationDTO.getStartDate())) {
+			log.warn("End date must be after start date");
+		    throw new IllegalArgumentException("End date must be after start date");
+		}
+
 		Reservation reservation = new Reservation();
         
         reservation.setStartDate(reservationDTO.getStartDate());
@@ -117,6 +123,7 @@ public class ReservationServiceImp implements IReservationService{
         dto.setEndDate(reservation.getEndDate());
         dto.setCustomerId(reservation.getCustomerId());
         dto.setCarId(reservation.getCarId());
+        dto.setReservationStatus(reservation.getReservationStatus());
         return dto;
     }
 

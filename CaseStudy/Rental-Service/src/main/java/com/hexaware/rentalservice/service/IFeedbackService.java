@@ -10,7 +10,7 @@ public interface IFeedbackService {
 	
 	public Feedback submitFeedback(FeedbackDTO feedbackDTO);
 	
-	public Feedback getFeedbackById(Long id);
+	public Feedback getFeedbackById(Long id) throws FeedbackNotFoundException;
 	
     public List<Feedback> getAllFeedback();
     

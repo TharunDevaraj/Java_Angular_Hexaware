@@ -23,10 +23,28 @@ public class ReservationDTO {
 	 @NotNull(message = "Car ID is required")
 	 private Long carId;
 	 
-	 public ReservationDTO()
+	 private String reservationStatus;
+	 
+	public ReservationDTO()
 	 {
 		 
 	 }
+	
+
+	public ReservationDTO(Long reservationId,
+			@NotNull(message = "Start date is required") @FutureOrPresent(message = "Start date must be today or in the future") LocalDate startDate,
+			@NotNull(message = "End date is required") @FutureOrPresent(message = "End date must be today or in the future") LocalDate endDate,
+			@NotNull(message = "Customer ID is required") Long customerId,
+			@NotNull(message = "Car ID is required") Long carId, String reservationStatus) {
+		super();
+		this.reservationId = reservationId;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.customerId = customerId;
+		this.carId = carId;
+		this.reservationStatus = reservationStatus;
+	}
+
 
 	public ReservationDTO(Long reservationId, LocalDate startDate, LocalDate endDate,
 			Long customerId, Long carId) {
@@ -61,6 +79,16 @@ public class ReservationDTO {
 	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
+
+	public String getReservationStatus() {
+		return reservationStatus;
+	}
+
+
+	public void setReservationStatus(String reservationStatus) {
+		this.reservationStatus = reservationStatus;
+	}
+
 
 	public Long getCustomerId() {
 		return customerId;
