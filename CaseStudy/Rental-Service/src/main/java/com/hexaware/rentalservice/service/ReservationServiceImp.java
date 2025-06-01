@@ -6,26 +6,25 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.hexaware.rentalservice.RentalServiceApplication;
+
 import com.hexaware.rentalservice.dto.ReservationDTO;
 import com.hexaware.rentalservice.entity.Reservation;
 import com.hexaware.rentalservice.repository.ReservationRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class ReservationServiceImp implements IReservationService{
 
-    private final RentalServiceApplication rentalServiceApplication;
-
-	
 	@Autowired
 	ReservationRepository reservationRepository;
 
-    ReservationServiceImp(RentalServiceApplication rentalServiceApplication) {
-        this.rentalServiceApplication = rentalServiceApplication;
-    }
 	@Override
 	public Reservation createReservation(ReservationDTO reservationDTO) {
-		
+		log.info("Creating reservation for customerId={}, carId={} from {} to {}", 
+                reservationDTO.getCustomerId(), reservationDTO.getCarId(), 
+                reservationDTO.getStartDate(), reservationDTO.getEndDate());
 		Reservation reservation = new Reservation();
         
         reservation.setStartDate(reservationDTO.getStartDate());
@@ -33,20 +32,28 @@ public class ReservationServiceImp implements IReservationService{
         reservation.setCustomerId(reservationDTO.getCustomerId());
         reservation.setCarId(reservationDTO.getCarId());
         reservation.setReservationStatus("Reserved"); 
-        return reservationRepository.save(reservation);
+        
+        Reservation savedReservation = reservationRepository.save(reservation);
+        log.debug("Reservation saved successfully: {}", savedReservation);
+        return savedReservation;
 	}
 
 	@Override
 	public List<Reservation> getAllReservations() {
-		
-		return reservationRepository.findAll();
+		log.info("Fetching all reservations");
+        List<Reservation> reservations = reservationRepository.findAll();
+        log.debug("Total reservations fetched: {}", reservations.size());
+        return reservations;
 	}
 
 	@Override
 	public ReservationDTO getReservationById(Long reservationId) {
 		
+		log.info("Fetching reservation with id={} ", reservationId);
+		
 		Reservation reservation = reservationRepository.findById(reservationId).orElse(null);
         if (reservation == null) {
+        	log.warn("Reservation with id={} not found", reservationId);
         	throw new RuntimeException("Reservation not found");
         }
         return mapToDTO(reservation);
@@ -54,21 +61,26 @@ public class ReservationServiceImp implements IReservationService{
 
 	@Override
 	public List<Reservation> getReservationsByCustomerId(Long customerId) {
-		
-		return reservationRepository.findByCustomerId(customerId);
-	}
+		log.info("Fetching reservations for customerId={}", customerId);
+        List<Reservation> reservations = reservationRepository.findByCustomerId(customerId);
+        log.debug("Found {} reservations for customerId={}", reservations.size(), customerId);
+        return reservations;
+     }
 
 	@Override
 	public List<Reservation> getReservationsByCarId(Long carId) {
-		
-		return reservationRepository.findByCarId(carId);
+		log.info("Fetching reservations for carId={}", carId);
+        List<Reservation> reservations = reservationRepository.findByCarId(carId);
+        log.debug("Found {} reservations for carId={}", reservations.size(), carId);
+        return reservations;
 	}
 
 	@Override
 	public Reservation updateReservation(ReservationDTO updatedReservationDTO) {
-		
+		log.info("Updating reservation with id={} ",updatedReservationDTO.getReservationId());
 		Reservation existingReservation = reservationRepository.findById(updatedReservationDTO.getReservationId()).orElse(null);
         if (existingReservation == null) {
+        	log.warn("Reservation with id={} not found", updatedReservationDTO.getReservationId());
         	throw new RuntimeException("Reservation not found");
         }
            
@@ -76,20 +88,23 @@ public class ReservationServiceImp implements IReservationService{
         existingReservation.setEndDate(updatedReservationDTO.getEndDate());
         existingReservation.setCustomerId(updatedReservationDTO.getCustomerId());
         existingReservation.setCarId(updatedReservationDTO.getCarId());
+        log.debug("Reservation updated successfully: {}", existingReservation);
         return reservationRepository.save(existingReservation);
         
 	}
 
 	@Override
 	public void cancelReservationById(Long id) {
-		
+		log.info("Cancelling reservation with id={} ", id);
 		Reservation reservation = reservationRepository.findById(id).orElse(null);
         if (reservation != null) {
             reservation.setReservationStatus("Cancelled");
             reservationRepository.save(reservation);
+            log.debug("Reservation with id={} successfully cancelled", id);
         }
         else
         {
+        	log.warn("Attempted to cancel non-existing reservation with id={} ", id);
         	throw new RuntimeException("Reservation not found");
         }
 		

@@ -12,7 +12,10 @@ import com.hexaware.vehicleservice.entity.Car;
 import com.hexaware.vehicleservice.exception.CarNotFoundException;
 import com.hexaware.vehicleservice.repository.CarRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class CarServiceImp implements ICarService{
 
 	
@@ -24,6 +27,7 @@ public class CarServiceImp implements ICarService{
 	
 	@Override
 	public Car addCar(CarDTO carDTO) {
+		log.info("Adding a new car: {}", carDTO);
 		
 		Car car=new Car();
 		car.setCarName(carDTO.getCarName());
@@ -33,18 +37,22 @@ public class CarServiceImp implements ICarService{
 		car.setLocation(carDTO.getLocation());
 		car.setPassengerCapacity(carDTO.getPassengerCapacity());
 		car.setPricePerDay(carDTO.getPricePerDay());
-		
-		return carRepository.save(car);
+		Car savedCar = carRepository.save(car);
+        log.debug("Car saved successfully: {}", savedCar);
+        return savedCar;
 	}
 
 	@Override
 	public CarDTO getCarById(Long carId) throws CarNotFoundException {
-		
+		log.info("Fetching car with id={} ", carId);
 		Car car=carRepository.findById(carId).orElse(null);
 		
 		if(car==null)
+		{
+			log.warn("Car with id={} not found", carId);
 			throw new CarNotFoundException();
-		
+		}
+		log.debug("Car found: {}", car);
 		 return mapToDTO(car);
 		
 	}
@@ -58,8 +66,10 @@ public class CarServiceImp implements ICarService{
 	@Override
 	public Car updateCar(Long carId,CarDTO updatedCarDTO) throws CarNotFoundException {
 	
+		log.info("Updating car: {}", updatedCarDTO);
 		Car existingCar = carRepository.findById(carId).orElse(null);
         if (existingCar==null){
+        	log.warn("Attempted to update non-existing car with id={} ", carId);
         	throw new CarNotFoundException();
         }
         
@@ -70,26 +80,31 @@ public class CarServiceImp implements ICarService{
         existingCar.setLocation(updatedCarDTO.getLocation());
         existingCar.setPassengerCapacity(updatedCarDTO.getPassengerCapacity());
         existingCar.setPricePerDay(updatedCarDTO.getPricePerDay());
-        
+        log.debug("Car updated successfully: {}", existingCar);
         return carRepository.save(existingCar);
   
 	}
 
 	@Override
 	public void deleteCarById(Long carId) throws CarNotFoundException {
-		
+		log.info("Removing car with id={} ", carId);
 		Car car=carRepository.findById(carId).orElse(null);
 		
 		if(car==null)
+		{
+			log.warn("Attempted to remove non-existing car with id={} ", carId);
 			throw new CarNotFoundException();
-		
+		}
+		log.debug("Car with id={} successfully removed", carId);
 		carRepository.deleteById(carId);
 	}
 
 	@Override
 	public List<Car> getAvailableCars() {
-		
-		return carRepository.findByCarStatus("Available");
+		log.info("Fetching all available cars");
+		List<Car> cars= carRepository.findByCarStatus("Available");
+		log.debug("Found {} available cars",cars.size());
+		return cars;
 	}
 	
 	@Override
@@ -116,11 +131,15 @@ public class CarServiceImp implements ICarService{
 	
 	@Override
 	public Car updateCarPricing(Long carId, double newPricePerDay) throws CarNotFoundException {
+		log.info("Updating price of car with cardId {}",carId);
 	    Car car = carRepository.findById(carId).orElse(null);
 	    
 	    if(car==null)
+	    {
+	    	log.warn("Attempted to update non-existing car with id={} ", carId);
 			throw new CarNotFoundException();
-	              
+	    }
+	    log.debug("Updated price of car with cardId {}",carId);          
 	    car.setPricePerDay(newPricePerDay);
 	    return carRepository.save(car);
 	}
@@ -140,11 +159,12 @@ public class CarServiceImp implements ICarService{
 
 	@Override
 	public Car updateVehicleStatus(Long carId, String newStatus) throws CarNotFoundException {
-		
+		log.info("Updating status of car with cardId {}",carId);
 		Car car = carRepository.findById(carId)
                 .orElseThrow(() -> new CarNotFoundException());
 
         car.setCarStatus(newStatus);
+        log.debug("Updated status of car with cardId {}",carId);
         return carRepository.save(car);
 	}
 
