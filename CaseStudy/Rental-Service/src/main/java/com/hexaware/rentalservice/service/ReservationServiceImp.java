@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.hexaware.rentalservice.RentalServiceApplication;
 import com.hexaware.rentalservice.dto.ReservationDTO;
 import com.hexaware.rentalservice.entity.Reservation;
 import com.hexaware.rentalservice.repository.ReservationRepository;
@@ -14,9 +14,15 @@ import com.hexaware.rentalservice.repository.ReservationRepository;
 @Service
 public class ReservationServiceImp implements IReservationService{
 
+    private final RentalServiceApplication rentalServiceApplication;
+
 	
 	@Autowired
 	ReservationRepository reservationRepository;
+
+    ReservationServiceImp(RentalServiceApplication rentalServiceApplication) {
+        this.rentalServiceApplication = rentalServiceApplication;
+    }
 	@Override
 	public Reservation createReservation(ReservationDTO reservationDTO) {
 		
@@ -41,7 +47,7 @@ public class ReservationServiceImp implements IReservationService{
 		
 		Reservation reservation = reservationRepository.findById(reservationId).orElse(null);
         if (reservation == null) {
-            return null;
+        	throw new RuntimeException("Reservation not found");
         }
         return mapToDTO(reservation);
 	}
@@ -63,12 +69,11 @@ public class ReservationServiceImp implements IReservationService{
 		
 		Reservation existingReservation = reservationRepository.findById(updatedReservationDTO.getReservationId()).orElse(null);
         if (existingReservation == null) {
-        	return null;
+        	throw new RuntimeException("Reservation not found");
         }
            
         existingReservation.setStartDate(updatedReservationDTO.getStartDate());
         existingReservation.setEndDate(updatedReservationDTO.getEndDate());
-        existingReservation.setReservationStatus(updatedReservationDTO.getReservationStatus());
         existingReservation.setCustomerId(updatedReservationDTO.getCustomerId());
         existingReservation.setCarId(updatedReservationDTO.getCarId());
         return reservationRepository.save(existingReservation);
@@ -83,6 +88,10 @@ public class ReservationServiceImp implements IReservationService{
             reservation.setReservationStatus("Cancelled");
             reservationRepository.save(reservation);
         }
+        else
+        {
+        	throw new RuntimeException("Reservation not found");
+        }
 		
 	}
 	
@@ -91,7 +100,6 @@ public class ReservationServiceImp implements IReservationService{
         dto.setReservationId(reservation.getReservationId());
         dto.setStartDate(reservation.getStartDate());
         dto.setEndDate(reservation.getEndDate());
-        dto.setReservationStatus(reservation.getReservationStatus());
         dto.setCustomerId(reservation.getCustomerId());
         dto.setCarId(reservation.getCarId());
         return dto;

@@ -23,9 +23,8 @@ public interface ICarService {
 	public Car updateCarPricing(Long carId, double newPricePerDay) throws CarNotFoundException;
 	public List<Car> getAvailableCars();
 	public List<Car> findAvailableCarsByFilter(String location, int passengerCapacity, LocalDate startDate, LocalDate endDate);
-	public Car updateCarAvailability(Long carId,String availability) throws CarNotFoundException;
 	public List<Car> searchVehicles(String location, int passengerCapacity);
-	boolean isCarAvailable(Long carId, LocalDate startDate, LocalDate endDate);
+	boolean isCarAvailable(Long carId);
 
 
 }

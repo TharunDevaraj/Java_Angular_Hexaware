@@ -17,6 +17,8 @@ import com.hexaware.rentalservice.dto.PaymentDTO;
 import com.hexaware.rentalservice.entity.Payment;
 import com.hexaware.rentalservice.service.IPaymentService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/payment")
 public class PaymentRestController {
@@ -26,7 +28,7 @@ public class PaymentRestController {
 
     @PostMapping("/make")
     @PreAuthorize("hasRole('user')")
-    public ResponseEntity<Payment> makePayment(@RequestBody PaymentDTO paymentDTO) {
+    public ResponseEntity<Payment> makePayment(@RequestBody @Valid PaymentDTO paymentDTO) {
         Payment payment = paymentService.makePayment(paymentDTO);
         return new ResponseEntity<>(payment, HttpStatus.CREATED);
     }

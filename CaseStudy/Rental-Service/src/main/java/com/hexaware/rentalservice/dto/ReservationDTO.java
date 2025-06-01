@@ -2,14 +2,25 @@ package com.hexaware.rentalservice.dto;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotNull;
+
 public class ReservationDTO {
 	
 	 private Long reservationId;
-	 private LocalDate startDate;
-	 private LocalDate endDate;
-	 private String reservationStatus;
 	 
-	 private Long customerId;  
+	 @NotNull(message = "Start date is required")
+	 @FutureOrPresent(message = "Start date must be today or in the future")
+	 private LocalDate startDate;
+	 
+	 @NotNull(message = "End date is required")
+	 @FutureOrPresent(message = "End date must be today or in the future")
+	 private LocalDate endDate;
+	 
+	 @NotNull(message = "Customer ID is required")
+	 private Long customerId; 
+	 
+	 @NotNull(message = "Car ID is required")
 	 private Long carId;
 	 
 	 public ReservationDTO()
@@ -17,13 +28,12 @@ public class ReservationDTO {
 		 
 	 }
 
-	public ReservationDTO(Long reservationId, LocalDate startDate, LocalDate endDate, String reservationStatus,
+	public ReservationDTO(Long reservationId, LocalDate startDate, LocalDate endDate,
 			Long customerId, Long carId) {
 		super();
 		this.reservationId = reservationId;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.reservationStatus = reservationStatus;
 		this.customerId = customerId;
 		this.carId = carId;
 	}
@@ -50,14 +60,6 @@ public class ReservationDTO {
 
 	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
-	}
-
-	public String getReservationStatus() {
-		return reservationStatus;
-	}
-
-	public void setReservationStatus(String reservationStatus) {
-		this.reservationStatus = reservationStatus;
 	}
 
 	public Long getCustomerId() {

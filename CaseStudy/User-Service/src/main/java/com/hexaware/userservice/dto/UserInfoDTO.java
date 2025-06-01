@@ -4,7 +4,6 @@ public class UserInfoDTO {
 	private Long userId;
     private String userName; 
     private String email;
-    private String password;
     private String roles;
 	public Long getUserId() {
 		return userId;
@@ -23,12 +22,6 @@ public class UserInfoDTO {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	public String getRoles() {
 		return roles;

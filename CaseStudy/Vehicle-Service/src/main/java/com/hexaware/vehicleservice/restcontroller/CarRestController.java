@@ -22,6 +22,8 @@ import com.hexaware.vehicleservice.entity.Car;
 import com.hexaware.vehicleservice.exception.CarNotFoundException;
 import com.hexaware.vehicleservice.service.ICarService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("api/car")
 public class CarRestController {
@@ -31,14 +33,14 @@ public class CarRestController {
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('admin')")
-    public ResponseEntity<Car> addCar(@RequestBody CarDTO carDTO) {
+    public ResponseEntity<Car> addCar(@RequestBody @Valid CarDTO carDTO) {
         Car savedCar = carService.addCar(carDTO);
         return new ResponseEntity<>(savedCar, HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{carId}")
     @PreAuthorize("hasRole('admin')")
-    public ResponseEntity<Car> updateCar(@PathVariable Long carId, @RequestBody CarDTO carDTO) throws CarNotFoundException {
+    public ResponseEntity<Car> updateCar(@PathVariable Long carId, @RequestBody @Valid CarDTO carDTO) throws CarNotFoundException {
         Car updatedCar = carService.updateCar(carId,carDTO);
         return new ResponseEntity<>(updatedCar, HttpStatus.OK);
     }
@@ -78,24 +80,17 @@ public class CarRestController {
     }
     
     @GetMapping("/availablecarsbyfilter")
-    @PreAuthorize("hasAnyRole('admin','user')")
-    public List<Car> getAvailableCarsByFilter(@RequestParam String location,@RequestParam int passengerCapacity,@RequestParam LocalDate startDate,@RequestParam LocalDate endDate)
+    @PreAuthorize("hasAnyRole('admin','user','agent')")
+    public ResponseEntity<List<Car>> getAvailableCarsByFilter(@RequestParam String location,@RequestParam int passengerCapacity,@RequestParam LocalDate startDate,@RequestParam LocalDate endDate)
     {
-    	return carService.findAvailableCarsByFilter(location, passengerCapacity, startDate, endDate);
+    	return new ResponseEntity<List<Car>>(carService.findAvailableCarsByFilter(location, passengerCapacity, startDate, endDate), HttpStatus.OK);
     }
-    
-    @PutMapping("updateAvailability/{carId}/{availability}")
-    @PreAuthorize("hasAnyRole('admin','agent')")
-    public Car updateCarAvailability(@PathVariable Long carId,@PathVariable String availability) throws CarNotFoundException
-    {
-    	return carService.updateCarAvailability(carId, availability);
-    }
-    
+  
     @PutMapping("updateStatus/{carId}/{status}")
     @PreAuthorize("hasAnyRole('admin','agent')")
-    public Car updateVehicleStatus(@PathVariable Long carId,@PathVariable String status) throws CarNotFoundException
+    public ResponseEntity<Car> updateVehicleStatus(@PathVariable Long carId,@PathVariable String status) throws CarNotFoundException
     {
-    	return carService.updateVehicleStatus(carId, status);
+    	return new ResponseEntity<Car>(carService.updateVehicleStatus(carId, status), HttpStatus.OK);
     }
     
 }

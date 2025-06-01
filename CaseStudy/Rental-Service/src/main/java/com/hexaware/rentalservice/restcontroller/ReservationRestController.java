@@ -21,6 +21,8 @@ import com.hexaware.rentalservice.dto.ReservationDTO;
 import com.hexaware.rentalservice.entity.Reservation;
 import com.hexaware.rentalservice.service.IReservationService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("api/reservation")
 public class ReservationRestController {
@@ -30,14 +32,14 @@ public class ReservationRestController {
 
     @PostMapping("/create")
     @PreAuthorize("hasRole('user')")
-    public ResponseEntity<Reservation> createReservation(@RequestBody ReservationDTO reservationDTO) {
+    public ResponseEntity<Reservation> createReservation(@RequestBody @Valid ReservationDTO reservationDTO) {
         Reservation reservation = reservationService.createReservation(reservationDTO);
         return new ResponseEntity<>(reservation, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
     @PreAuthorize("hasRole('user')")
-    public ResponseEntity<Reservation> updateReservation(@RequestBody ReservationDTO reservationDTO) {
+    public ResponseEntity<Reservation> updateReservation(@RequestBody @Valid ReservationDTO reservationDTO) {
         Reservation updated = reservationService.updateReservation(reservationDTO);
         if (updated != null) {
             return new ResponseEntity<>(updated, HttpStatus.OK);
@@ -83,22 +85,22 @@ public class ReservationRestController {
     }
     
     @GetMapping("/getbookedcars")
-    public List<Long> getBookedCars(@RequestParam LocalDate startDate, @RequestParam LocalDate endDate)
+    public ResponseEntity<List<Long>> getBookedCars(@RequestParam LocalDate startDate, @RequestParam LocalDate endDate)
     {
-    	return reservationService.findBookedCars(startDate, endDate);
+    	return new ResponseEntity<List<Long>>(reservationService.findBookedCars(startDate, endDate), HttpStatus.OK);
     }
     
     @PutMapping("/checkin/{id}")
     @PreAuthorize("hasAnyRole('admin','agent')")
-    public Reservation checkIn(@PathVariable Long id)
+    public ResponseEntity< Reservation> checkIn(@PathVariable Long id)
     {
-    	return reservationService.checkIn(id);
+    	return new ResponseEntity<Reservation>( reservationService.checkIn(id), HttpStatus.OK);
     }
     
     @PutMapping("/checkout/{id}")
     @PreAuthorize("hasAnyRole('admin','agent')")
-    public Reservation checkOut(@PathVariable Long id)
+    public ResponseEntity< Reservation> checkOut(@PathVariable Long id)
     {
-    	return reservationService.checkOut(id);
+    	return new ResponseEntity<Reservation>( reservationService.checkOut(id), HttpStatus.OK);
     }
 }

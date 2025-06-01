@@ -92,39 +92,23 @@ public class CarServiceImp implements ICarService{
 		return carRepository.findByCarStatus("Available");
 	}
 	
+	@Override
 	public List<Car> findAvailableCarsByFilter(String location, int passengerCapacity, LocalDate startDate, LocalDate endDate) {
 	    List<Long> bookedCarIds = restTemplate.getForObject("http://localhost:8282/api/reservation/getbookedcars?startDate="+startDate+"&endDate="+endDate, List.class);
 	    return carRepository.findAvailableCars(location, passengerCapacity, bookedCarIds);
 	}
 
-
-	@Override
-	public Car updateCarAvailability(Long carId,String availability) throws CarNotFoundException {
-		
-		Car car = carRepository.findById(carId).orElse(null);
-        if (car != null) {
-            car.setCarStatus(availability);
-            return carRepository.save(car);
-        }
-        else {
-			throw new CarNotFoundException();
-		}
-		
-	}
-
-
 	@Override
 	public List<Car> searchVehicles(String location, int passengerCapacity) {
 		
-		return carRepository.findByLocationAndPassengerCapacityGreaterThanEqualAndCarStatus(
-                location, passengerCapacity, "Available");
+		return carRepository.findByLocationAndPassengerCapacityGreaterThanEqualAndCarStatus(location, passengerCapacity, "available");
 	}
 
 	@Override
-	public boolean isCarAvailable(Long carId, LocalDate startDate, LocalDate endDate) {
+	public boolean isCarAvailable(Long carId) {
 		
 		Car car = carRepository.findById(carId).orElse(null);
-        if (car != null && "Available".equalsIgnoreCase(car.getCarStatus())) {
+        if (car != null && "available".equalsIgnoreCase(car.getCarStatus())) {
             return true;
         }
         return false;

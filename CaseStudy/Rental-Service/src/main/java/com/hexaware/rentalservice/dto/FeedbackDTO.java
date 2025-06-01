@@ -1,10 +1,25 @@
 package com.hexaware.rentalservice.dto;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class FeedbackDTO {
 
+	@NotNull(message = "Reservation ID is required")
 	 private Long reservationId;
+	 
+	 @NotNull(message = "Customer ID is required")
 	 private Long customerId;
+	 
+	 @NotBlank(message = "Comment cannot be blank")
+	 @Size(max = 500, message = "Comment must not exceed 500 characters")
 	 private String comment;
+	 
+	 @Min(value = 1, message = "Rating must be at least 1")
+	 @Max(value = 5, message = "Rating must be at most 5")
 	 private int rating;
 	public Long getReservationId() {
 		return reservationId;

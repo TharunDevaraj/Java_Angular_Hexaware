@@ -433,3 +433,11 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-06-01T08:09:33Z. Curren
 2025-06-01T14:00:32.629+05:30  INFO 13624 --- [Rental-Service] [http-nio-8282-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-06-01T14:00:32.629+05:30  INFO 13624 --- [Rental-Service] [http-nio-8282-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-06-01T14:00:32.632+05:30  INFO 13624 --- [Rental-Service] [http-nio-8282-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-01T14:55:06.288+05:30  WARN 13624 --- [Rental-Service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m37s107ms487µs500ns).
+2025-06-01T15:58:31.799+05:30  WARN 13624 --- [Rental-Service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m32s179ms774µs400ns).
+2025-06-01T16:04:32.246+05:30  INFO 13624 --- [Rental-Service] [RMI TCP Connection(39)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-01T16:04:32.427+05:30  INFO 13624 --- [Rental-Service] [RMI TCP Connection(39)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-01T16:04:32.523+05:30  INFO 13624 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-01T16:04:32.555+05:30  INFO 13624 --- [Rental-Service] [RMI TCP Connection(39)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T16:04:32.598+05:30  INFO 13624 --- [Rental-Service] [RMI TCP Connection(39)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T16:04:32.608+05:30  INFO 13624 --- [Rental-Service] [RMI TCP Connection(39)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

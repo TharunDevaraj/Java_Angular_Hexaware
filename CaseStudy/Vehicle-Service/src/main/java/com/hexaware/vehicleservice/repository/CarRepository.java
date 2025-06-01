@@ -12,7 +12,7 @@ public interface CarRepository extends JpaRepository<Car, Long>{
 	 public List<Car> findByCarStatus(String status);
 	 public List<Car> findByLocationAndPassengerCapacityGreaterThanEqualAndCarStatus( String location, int passengerCapacity, String status);
 	 
-	 @Query("SELECT c FROM Car c WHERE c.location = ?1 AND c.passengerCapacity = ?2 AND c.id NOT IN ?3 AND c.carStatus = 'AVAILABLE'")
+	 @Query("SELECT c FROM Car c WHERE c.location = ?1 AND c.passengerCapacity >= ?2 AND c.id NOT IN ?3 AND c.carStatus = 'available'")
 	 public List<Car> findAvailableCars(String location, int passengerCapacity, List<Long> excludedIds);
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.hexaware.rentalservice.dto.ReservationDTO;
 import com.hexaware.rentalservice.entity.Reservation;
+import com.hexaware.rentalservice.exception.GlobalExceptionHandler;
 
 public interface IReservationService {
 	

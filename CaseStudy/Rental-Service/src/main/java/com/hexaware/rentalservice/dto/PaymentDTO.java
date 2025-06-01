@@ -2,13 +2,26 @@ package com.hexaware.rentalservice.dto;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
+
 public class PaymentDTO {
 	
 	private Long paymentId;
+	
+	@NotBlank(message = "Payment type is required")
 	private String paymentType;
+	
+	@NotNull(message = "Payment date is required")
+    @PastOrPresent(message = "Payment date cannot be in the future")
 	private LocalDate paymentDate;
+	
+	@Positive(message = "Amount must be greater than zero")
 	private double amount;
 	
+	@NotNull(message = "Reservation ID is required")
 	private Long reservationId;
 	
 	public PaymentDTO()

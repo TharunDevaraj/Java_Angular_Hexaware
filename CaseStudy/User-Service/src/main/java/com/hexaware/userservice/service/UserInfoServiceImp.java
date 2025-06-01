@@ -1,5 +1,6 @@
 package com.hexaware.userservice.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,15 +23,7 @@ public class UserInfoServiceImp implements IUserInfoService{
 	PasswordEncoder passwordEncoder;
 	
 	@Override
-	public String registerUser(UserInfoDTO userInfoDTO) {
-		
-		UserInfo userInfo=new UserInfo();
-		
-		userInfo.setUserId(userInfoDTO.getUserId());
-		userInfo.setUserName(userInfoDTO.getUserName());
-		userInfo.setEmail(userInfoDTO.getEmail());
-		userInfo.setPassword(userInfoDTO.getPassword());
-		userInfo.setRoles(userInfoDTO.getRoles());
+	public String registerUser(UserInfo userInfo) {
 		
 		if (userInfoRepository.findByUserName(userInfo.getUserName()) != null) {
 		    return "Username already exists!";
@@ -38,25 +31,38 @@ public class UserInfoServiceImp implements IUserInfoService{
 		
 		userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
 		userInfoRepository.save(userInfo);
-		return "User added !";
+		return "User added!";
 	}
 
 	@Override
-	public List<UserInfo> getAllUsers() {
+	public List<UserInfoDTO> getAllUsers() {
 		
-		return userInfoRepository.findAll();
+		List<UserInfoDTO> usersDetails=new ArrayList<>();
+		
+		List<UserInfo> users = userInfoRepository.findAll();
+		
+		for(UserInfo userInfo : users)
+		{
+			usersDetails.add(EntityToDTO(userInfo));
+		}
+		return usersDetails;
 	}
 
 	@Override
-	public UserInfo getUserById(Long id) {
+	public UserInfoDTO getUserById(Long id) throws UserNotFoundException {
 		
-		return userInfoRepository.findById(id).orElse(null);
+		UserInfo user = userInfoRepository.findById(id).orElse(null);
+		if(user==null)
+		{
+			throw new UserNotFoundException();
+		}
+		return EntityToDTO(user);
 	}
 
 	@Override
-	public UserInfo updateUser(Long id, UserInfo updatedUser) throws UserNotFoundException {
+	public UserInfoDTO updateUser(Long id, UserInfo updatedUser) throws UserNotFoundException {
 		
-		UserInfo existingUserInfo=getUserById(id);
+		UserInfo existingUserInfo=userInfoRepository.findById(id).orElse(null);
 		
 		if(existingUserInfo==null)
 		{
@@ -70,14 +76,14 @@ public class UserInfoServiceImp implements IUserInfoService{
             existingUserInfo.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
         }
 
-        return userInfoRepository.save(existingUserInfo);
+        return EntityToDTO(existingUserInfo);
 		
 		
 	}
 
 	 @Override
 	    public void deactivateUser(Long id) throws UserNotFoundException {
-	        UserInfo user = getUserById(id);
+	        UserInfo user = userInfoRepository.findById(id).orElse(null);
 	        if(user==null)
 	        {
 	        	throw new UserNotFoundException();
@@ -85,5 +91,15 @@ public class UserInfoServiceImp implements IUserInfoService{
 	        user.setRoles("INACTIVE"); 
 	        userInfoRepository.save(user);
 	    }
+	 
+	 private UserInfoDTO EntityToDTO(UserInfo userInfo)
+	 {
+		 UserInfoDTO userInfoDTO=new UserInfoDTO();
+		 userInfoDTO.setUserId(userInfo.getUserId());
+		 userInfoDTO.setUserName(userInfo.getUserName());
+		 userInfoDTO.setEmail(userInfo.getEmail());
+		 userInfoDTO.setRoles(userInfo.getRoles());
+		 return userInfoDTO;
+	 }
 
 }

@@ -3,6 +3,7 @@ package com.hexaware.userservice.restcontroller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,6 +26,8 @@ import com.hexaware.userservice.exception.UserNotFoundException;
 import com.hexaware.userservice.service.JwtService;
 import com.hexaware.userservice.service.UserInfoServiceImp;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/users")
 public class UserInfoRestController {
@@ -39,9 +42,9 @@ public class UserInfoRestController {
 	UserInfoServiceImp userService;
 	
 	@PostMapping("/register")
-	public String addUser(@RequestBody UserInfoDTO userInfoDTO)
+	public ResponseEntity<String> addUser(@RequestBody @Valid UserInfo userInfo)
 	{
-		return userService.registerUser(userInfoDTO);
+		return new ResponseEntity<String>(userService.registerUser(userInfo), HttpStatus.CREATED);
 	}
 	
 	@PostMapping("/login")
@@ -69,35 +72,32 @@ public class UserInfoRestController {
 			throw new UsernameNotFoundException("UserName or Password in Invalid / Invalid Request");
 
 		}
-		
-
-
-		return token;
+			return token;
 
 	}
 	
 	 	@GetMapping("/")
 	    @PreAuthorize("hasRole('admin')")
-	    public List<UserInfo> getAllUsers() {
-	        return userService.getAllUsers();
+	    public ResponseEntity<List<UserInfoDTO>> getAllUsers() {
+	        return new ResponseEntity<List<UserInfoDTO>>(userService.getAllUsers(), HttpStatus.FOUND);
 	    }
 
 	    @GetMapping("get/{id}")
 	    @PreAuthorize("hasRole('admin')")
-	    public UserInfo getUserById(@PathVariable Long id) {
-	        return userService.getUserById(id);
+	    public ResponseEntity<UserInfoDTO> getUserById(@PathVariable Long id) throws UserNotFoundException {
+	        return  new ResponseEntity<UserInfoDTO>(userService.getUserById(id), HttpStatus.FOUND);
 	    }
 
 	    @PutMapping("update/{id}")
 	    @PreAuthorize("hasRole('admin')")
-	    public UserInfo updateUser(@PathVariable Long id, @RequestBody UserInfo user) throws UserNotFoundException {
-	        return userService.updateUser(id, user);
+	    public ResponseEntity<UserInfoDTO> updateUser(@PathVariable Long id, @RequestBody @Valid UserInfo user) throws UserNotFoundException {
+	        return new ResponseEntity<UserInfoDTO>(userService.updateUser(id, user), HttpStatus.OK);
 	    }
 
 	    @DeleteMapping("deactivate/{id}")
 	    @PreAuthorize("hasRole('admin')")
 	    public ResponseEntity<String> deactivateUser(@PathVariable Long id) throws UserNotFoundException {
 	        userService.deactivateUser(id);
-	        return ResponseEntity.ok("User deactivated successfully");
+	        return new ResponseEntity<String>("User deactivated successfully",HttpStatus.OK);
 	    }
 }

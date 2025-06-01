@@ -18,6 +18,8 @@ import com.hexaware.rentalservice.entity.Feedback;
 import com.hexaware.rentalservice.exception.FeedbackNotFoundException;
 import com.hexaware.rentalservice.service.FeedbackServiceImp;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("api/feedback/")
 public class FeedbackRestController {
@@ -27,7 +29,7 @@ public class FeedbackRestController {
 	
 	@PostMapping("/submit")
 	@PreAuthorize("hasAnyRole('user','customer')")
-	public Feedback submitFeedback(@RequestBody FeedbackDTO feedbackDTO) {
+	public Feedback submitFeedback(@RequestBody @Valid FeedbackDTO feedbackDTO) {
 	    return feedbackService.submitFeedback(feedbackDTO);
 	}
 	

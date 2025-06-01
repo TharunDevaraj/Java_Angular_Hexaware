@@ -8,13 +8,13 @@ import com.hexaware.userservice.exception.UserNotFoundException;
 
 public interface IUserInfoService {
 	
-	public String registerUser(UserInfoDTO userInfoDTO);
+	public String registerUser(UserInfo userInfo);
 	
-	public List<UserInfo> getAllUsers();
+	public List<UserInfoDTO> getAllUsers();
 	
-	public UserInfo getUserById(Long id);
+	public UserInfoDTO getUserById(Long id) throws UserNotFoundException;
 	
-	public UserInfo updateUser(Long id, UserInfo updatedUser) throws UserNotFoundException;
+	public UserInfoDTO updateUser(Long id, UserInfo updatedUser) throws UserNotFoundException;
 	
 	public void deactivateUser(Long id) throws UserNotFoundException;
 	
