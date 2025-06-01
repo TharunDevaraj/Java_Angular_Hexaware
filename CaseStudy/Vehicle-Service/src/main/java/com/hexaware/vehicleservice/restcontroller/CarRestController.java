@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.vehicleservice.dto.CarDTO;
 import com.hexaware.vehicleservice.entity.Car;
+import com.hexaware.vehicleservice.exception.CarNotFoundException;
 import com.hexaware.vehicleservice.service.ICarService;
 
 @RestController
@@ -34,13 +35,15 @@ public class CarRestController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Car> updateCar(@RequestBody CarDTO carDTO) {
+    @PreAuthorize("hasRole('admin')")
+    public ResponseEntity<Car> updateCar(@RequestBody CarDTO carDTO) throws CarNotFoundException {
         Car updatedCar = carService.updateCar(carDTO);
         return new ResponseEntity<>(updatedCar, HttpStatus.OK);
     }
 
     @GetMapping("/get/{carId}")
-    public ResponseEntity<CarDTO> getCarById(@PathVariable Long carId) {
+    @PreAuthorize("hasRole('admin','user')")
+    public ResponseEntity<CarDTO> getCarById(@PathVariable Long carId) throws CarNotFoundException {
         CarDTO carDTO = carService.getCarById(carId);
         return new ResponseEntity<>(carDTO, HttpStatus.OK);
     }
@@ -52,13 +55,24 @@ public class CarRestController {
     }
 
     @GetMapping("/available")
+    @PreAuthorize("hasRole('admin','user')")
     public ResponseEntity<List<Car>> getAvailableCars() {
         return new ResponseEntity<>(carService.getAvailableCars(), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{carId}")
-    public ResponseEntity<String> deleteCar(@PathVariable Long carId) {
+    @PreAuthorize("hasRole('admin')")
+    public ResponseEntity<String> deleteCar(@PathVariable Long carId) throws CarNotFoundException {
         carService.deleteCarById(carId);
         return new ResponseEntity<>("Car deleted successfully!", HttpStatus.OK);
     }
+    
+    @PutMapping("/updateprice/{id}/{price}")
+    @PreAuthorize("hasRole('admin')")
+    public ResponseEntity<Car> updateCarPrice(@PathVariable Long id, @PathVariable double price) throws CarNotFoundException
+    {
+    	Car updatedCar = carService.updateCarPricing(id,price);
+        return new ResponseEntity<>(updatedCar, HttpStatus.OK);
+    }
+    
 }

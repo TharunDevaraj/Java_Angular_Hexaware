@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.hexaware.vehicleservice.dto.CarDTO;
 import com.hexaware.vehicleservice.entity.Car;
+import com.hexaware.vehicleservice.exception.CarNotFoundException;
 import com.hexaware.vehicleservice.repository.CarRepository;
 
 @Service
@@ -32,12 +33,12 @@ public class CarServiceImp implements ICarService{
 	}
 
 	@Override
-	public CarDTO getCarById(Long carId) {
+	public CarDTO getCarById(Long carId) throws CarNotFoundException {
 		
 		Car car=carRepository.findById(carId).orElse(null);
 		
 		if(car==null)
-			return null;
+			throw new CarNotFoundException();
 		
 		 return mapToDTO(car);
 		
@@ -50,11 +51,11 @@ public class CarServiceImp implements ICarService{
 	}
 
 	@Override
-	public Car updateCar(CarDTO updatedCarDTO) {
+	public Car updateCar(CarDTO updatedCarDTO) throws CarNotFoundException {
 	
 		Car existingCar = carRepository.findById(updatedCarDTO.getCarId()).orElse(null);
         if (existingCar==null){
-        	return null;
+        	throw new CarNotFoundException();
         }
         
         existingCar.setCarName(updatedCarDTO.getCarName());
@@ -70,7 +71,12 @@ public class CarServiceImp implements ICarService{
 	}
 
 	@Override
-	public void deleteCarById(Long carId) {
+	public void deleteCarById(Long carId) throws CarNotFoundException {
+		
+		Car car=carRepository.findById(carId).orElse(null);
+		
+		if(car==null)
+			throw new CarNotFoundException();
 		
 		carRepository.deleteById(carId);
 	}
@@ -117,6 +123,17 @@ public class CarServiceImp implements ICarService{
             return true;
         }
         return false;
+	}
+	
+	@Override
+	public Car updateCarPricing(Long carId, double newPricePerDay) throws CarNotFoundException {
+	    Car car = carRepository.findById(carId).orElse(null);
+	    
+	    if(car==null)
+			throw new CarNotFoundException();
+	              
+	    car.setPricePerDay(newPricePerDay);
+	    return carRepository.save(car);
 	}
 	
 	private CarDTO mapToDTO(Car car) {
