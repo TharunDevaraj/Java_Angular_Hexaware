@@ -1,5 +1,7 @@
 package com.hexaware.rentalservice.service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,6 +96,34 @@ public class ReservationServiceImp implements IReservationService{
         dto.setCarId(reservation.getCarId());
         return dto;
     }
+
+	@Override
+	public List<Long> findBookedCars(LocalDate startDate, LocalDate endDate) {
+		
+		return reservationRepository.findBookedCarIds(startDate, endDate);
+	}
+	
+	 @Override
+	    public Reservation checkIn(Long reservationId) {
+	        Reservation reservation = reservationRepository.findById(reservationId)
+	                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+
+	        reservation.setReservationStatus("IN_PROGRESS");
+	        reservation.setCheckInTime(LocalDateTime.now());
+
+	        return reservationRepository.save(reservation);
+	    }
+
+	    @Override
+	    public Reservation checkOut(Long reservationId) {
+	        Reservation reservation = reservationRepository.findById(reservationId)
+	                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+
+	        reservation.setReservationStatus("COMPLETED");
+	        reservation.setCheckOutTime(LocalDateTime.now());
+
+	        return reservationRepository.save(reservation);
+	    }
 	
 
 }

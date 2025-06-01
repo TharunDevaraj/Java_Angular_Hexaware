@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.hexaware.vehicleservice.dto.CarDTO;
 import com.hexaware.vehicleservice.entity.Car;
@@ -17,6 +18,10 @@ public class CarServiceImp implements ICarService{
 	
 	@Autowired
 	CarRepository carRepository;
+	
+	@Autowired
+	RestTemplate restTemplate;
+	
 	@Override
 	public Car addCar(CarDTO carDTO) {
 		
@@ -86,27 +91,27 @@ public class CarServiceImp implements ICarService{
 		
 		return carRepository.findByCarStatus("Available");
 	}
+	
+	public List<Car> findAvailableCarsByFilter(String location, int passengerCapacity, LocalDate startDate, LocalDate endDate) {
+	    List<Long> bookedCarIds = restTemplate.getForObject("http://localhost:8282/api/reservation/getbookedcars?startDate="+startDate+"&endDate="+endDate, List.class);
+	    return carRepository.findAvailableCars(location, passengerCapacity, bookedCarIds);
+	}
+
 
 	@Override
-	public void markCarAsUnavailable(Long carId) {
+	public Car updateCarAvailability(Long carId,String availability) throws CarNotFoundException {
 		
 		Car car = carRepository.findById(carId).orElse(null);
         if (car != null) {
-            car.setCarStatus("Unavailable");
-            carRepository.save(car);
+            car.setCarStatus(availability);
+            return carRepository.save(car);
         }
+        else {
+			throw new CarNotFoundException();
+		}
 		
 	}
 
-	@Override
-	public void markCarAsAvailable(Long carId) {
-		
-		Car car = carRepository.findById(carId).orElse(null);
-        if (car != null) {
-            car.setCarStatus("Available");
-            carRepository.save(car);
-        }
-	}
 
 	@Override
 	public List<Car> searchVehicles(String location, int passengerCapacity) {
@@ -148,5 +153,15 @@ public class CarServiceImp implements ICarService{
         dto.setPricePerDay(car.getPricePerDay());
         return dto;
     }
+
+	@Override
+	public Car updateVehicleStatus(Long carId, String newStatus) throws CarNotFoundException {
+		
+		Car car = carRepository.findById(carId)
+                .orElseThrow(() -> new CarNotFoundException());
+
+        car.setCarStatus(newStatus);
+        return carRepository.save(car);
+	}
 
 }

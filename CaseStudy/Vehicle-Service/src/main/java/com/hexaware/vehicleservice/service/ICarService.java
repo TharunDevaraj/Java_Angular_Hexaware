@@ -19,10 +19,11 @@ public interface ICarService {
 	
 	public void deleteCarById(Long carId) throws CarNotFoundException;
 
+	public Car updateVehicleStatus(Long carId, String newStatus) throws CarNotFoundException;
 	public Car updateCarPricing(Long carId, double newPricePerDay) throws CarNotFoundException;
 	public List<Car> getAvailableCars();
-	public void markCarAsUnavailable(Long carId);
-	public void markCarAsAvailable(Long carId);
+	public List<Car> findAvailableCarsByFilter(String location, int passengerCapacity, LocalDate startDate, LocalDate endDate);
+	public Car updateCarAvailability(Long carId,String availability) throws CarNotFoundException;
 	public List<Car> searchVehicles(String location, int passengerCapacity);
 	boolean isCarAvailable(Long carId, LocalDate startDate, LocalDate endDate);
 

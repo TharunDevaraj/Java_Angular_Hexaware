@@ -1,6 +1,7 @@
 package com.hexaware.rentalservice.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,8 +16,26 @@ public class Reservation {
 	 private LocalDate startDate;
 	 private LocalDate endDate;
 	 private String reservationStatus;
+	 private LocalDateTime checkInTime;
+	 private LocalDateTime checkOutTime;
 	 
-	 private Long customerId;  
+	 public LocalDateTime getCheckInTime() {
+		return checkInTime;
+	}
+
+	public void setCheckInTime(LocalDateTime checkInTime) {
+		this.checkInTime = checkInTime;
+	}
+
+	public LocalDateTime getCheckOutTime() {
+		return checkOutTime;
+	}
+
+	public void setCheckOutTime(LocalDateTime checkOutTime) {
+		this.checkOutTime = checkOutTime;
+	}
+
+	private Long customerId;  
 	 private Long carId;
 	 
 	 public Reservation()

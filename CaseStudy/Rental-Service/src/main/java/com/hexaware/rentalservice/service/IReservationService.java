@@ -1,5 +1,6 @@
 package com.hexaware.rentalservice.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.hexaware.rentalservice.dto.ReservationDTO;
@@ -20,5 +21,10 @@ public interface IReservationService {
 	public Reservation updateReservation(ReservationDTO updatedReservationDTO);
 	
 	public void cancelReservationById(Long id);
+	
+	public List<Long> findBookedCars(LocalDate startDate,LocalDate endDate);
+	
+	public Reservation checkIn(Long reservationId);
 
+    public Reservation checkOut(Long reservationId);
 }

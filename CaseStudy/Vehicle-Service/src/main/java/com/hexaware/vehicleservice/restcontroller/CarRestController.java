@@ -1,5 +1,6 @@
 package com.hexaware.vehicleservice.restcontroller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.vehicleservice.dto.CarDTO;
@@ -73,6 +75,27 @@ public class CarRestController {
     {
     	Car updatedCar = carService.updateCarPricing(id,price);
         return new ResponseEntity<>(updatedCar, HttpStatus.OK);
+    }
+    
+    @GetMapping("/availablecarsbyfilter")
+    @PreAuthorize("hasRole('admin','user')")
+    public List<Car> getAvailableCarsByFilter(@RequestParam String location,@RequestParam int passengerCapacity,@RequestParam LocalDate startDate,@RequestParam LocalDate endDate)
+    {
+    	return carService.findAvailableCarsByFilter(location, passengerCapacity, startDate, endDate);
+    }
+    
+    @PutMapping("updateAvailability/{carId}/{availability}")
+    @PreAuthorize("hasRole('admin','agent')")
+    public Car updateCarAvailability(@PathVariable Long carId,@PathVariable String availability) throws CarNotFoundException
+    {
+    	return carService.updateCarAvailability(carId, availability);
+    }
+    
+    @PutMapping("updateAvailability/{carId}/{status}")
+    @PreAuthorize("hasRole('admin','agent')")
+    public Car updateVehicleStatus(@PathVariable Long carId,@PathVariable String status) throws CarNotFoundException
+    {
+    	return carService.updateVehicleStatus(carId, status);
     }
     
 }
