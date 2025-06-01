@@ -524,3 +524,306 @@ com.hexaware.userservice.exception.UserNotFoundException: null
 2025-06-01T18:02:34.053+05:30  INFO 9260 --- [User-Service] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-06-01T18:02:34.098+05:30  INFO 9260 --- [User-Service] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-06-01T18:02:34.130+05:30  INFO 9260 --- [User-Service] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T19:44:05.254+05:30  INFO 25532 --- [User-Service] [main] c.h.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 21.0.6 with PID 25532 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T19:44:05.256+05:30 DEBUG 25532 --- [User-Service] [main] c.h.userservice.UserServiceApplication   : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T19:44:05.257+05:30  INFO 25532 --- [User-Service] [main] c.h.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T19:44:06.203+05:30  INFO 25532 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T19:44:06.259+05:30  INFO 25532 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2025-06-01T19:44:06.740+05:30  INFO 25532 --- [User-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-01T19:44:06.758+05:30  INFO 25532 --- [User-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-01T19:44:06.758+05:30  INFO 25532 --- [User-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-01T19:44:06.810+05:30  INFO 25532 --- [User-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-01T19:44:06.811+05:30  INFO 25532 --- [User-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1476 ms
+2025-06-01T19:44:06.953+05:30  INFO 25532 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T19:44:07.004+05:30  INFO 25532 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T19:44:07.060+05:30  INFO 25532 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T19:44:07.347+05:30  INFO 25532 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T19:44:07.386+05:30  INFO 25532 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T19:44:07.945+05:30  INFO 25532 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18692e80
+2025-06-01T19:44:07.948+05:30  INFO 25532 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T19:44:08.068+05:30  WARN 25532 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T19:44:08.147+05:30  INFO 25532 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T19:44:09.352+05:30  INFO 25532 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T19:44:09.541+05:30  INFO 25532 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T19:44:10.416+05:30 DEBUG 25532 --- [User-Service] [main] c.h.userservice.filter.JwtAuthFilter     : Filter 'jwtAuthFilter' configured for use
+2025-06-01T19:44:10.556+05:30  INFO 25532 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T19:44:10.556+05:30  WARN 25532 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T19:44:10.734+05:30  WARN 25532 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T19:44:13.172+05:30  INFO 25532 --- [User-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-01T19:44:13.194+05:30  INFO 25532 --- [User-Service] [main] c.h.userservice.UserServiceApplication   : Started UserServiceApplication in 8.402 seconds (process running for 8.951)
+2025-06-01T19:45:18.749+05:30  INFO 25532 --- [User-Service] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-01T19:45:18.750+05:30  INFO 25532 --- [User-Service] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-01T19:45:18.754+05:30  INFO 25532 --- [User-Service] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-06-01T19:45:19.438+05:30  WARN 25532 --- [User-Service] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> com.hexaware.userservice.restcontroller.UserInfoRestController.addUser(com.hexaware.userservice.entity.UserInfo): [Field error in object 'userInfo' on field 'email': rejected value [test]; codes [Email.userInfo.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userInfo.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@2564a7ab,.*]; default message [Email should be valid]] ]
+2025-06-01T19:45:36.134+05:30  WARN 25532 --- [User-Service] [http-nio-8080-exec-3] c.h.u.service.UserInfoServiceImp         : Username already exists
+2025-06-01T19:45:58.481+05:30  WARN 25532 --- [User-Service] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> com.hexaware.userservice.restcontroller.UserInfoRestController.addUser(com.hexaware.userservice.entity.UserInfo): [Field error in object 'userInfo' on field 'roles': rejected value [stranger]; codes [Pattern.userInfo.roles,Pattern.roles,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userInfo.roles,roles]; arguments []; default message [roles],[Ljakarta.validation.constraints.Pattern$Flag;@73f1a399,^(user|admin|agent)$]; default message [Role must be either user, admin, or agent]] ]
+2025-06-01T19:46:09.969+05:30  INFO 25532 --- [User-Service] [http-nio-8080-exec-5] c.h.u.service.UserInfoServiceImp         : Registering new user with username=Test3, email=test@gmail.com and role=agent
+2025-06-01T19:46:10.367+05:30 DEBUG 25532 --- [User-Service] [http-nio-8080-exec-5] c.h.u.service.UserInfoServiceImp         : User registered successfully: com.hexaware.userservice.entity.UserInfo@26188f9e
+2025-06-01T19:58:52.306+05:30  INFO 22984 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Starting UserInfoServiceImpTest using Java 21.0.6 with PID 22984 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T19:58:52.308+05:30 DEBUG 22984 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T19:58:52.308+05:30  INFO 22984 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T19:58:53.816+05:30  INFO 22984 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T19:58:53.891+05:30  INFO 22984 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.
+2025-06-01T19:58:55.023+05:30  INFO 22984 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T19:58:55.142+05:30  INFO 22984 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T19:58:55.187+05:30  INFO 22984 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T19:58:55.550+05:30  INFO 22984 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T19:58:55.588+05:30  INFO 22984 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T19:58:56.054+05:30  INFO 22984 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@295f2d1b
+2025-06-01T19:58:56.056+05:30  INFO 22984 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T19:58:56.123+05:30  WARN 22984 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T19:58:56.146+05:30  INFO 22984 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T19:58:57.196+05:30  INFO 22984 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T19:58:57.276+05:30  INFO 22984 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T19:58:57.759+05:30  INFO 22984 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T19:58:57.762+05:30  WARN 22984 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T19:58:57.979+05:30  WARN 22984 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T19:59:00.529+05:30  INFO 22984 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Started UserInfoServiceImpTest in 8.78 seconds (process running for 10.288)
+2025-06-01T19:59:02.513+05:30  INFO 22984 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Registering new user with username=john, email=john@example.com and role=user
+2025-06-01T19:59:02.794+05:30 DEBUG 22984 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User registered successfully: UserInfo [userId=202, userName=john, email=john@example.com, password=$2a$10$79W56U3UV12VSsRGMP2oquacicoPmOvjc5cbfDcvK.QLpr0N9JB3., roles=user]
+2025-06-01T19:59:02.808+05:30  WARN 22984 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Username already exists
+2025-06-01T19:59:02.853+05:30  INFO 22984 --- [User-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T19:59:02.862+05:30  INFO 22984 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T19:59:02.886+05:30  INFO 22984 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:00:09.236+05:30  INFO 22764 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Starting UserInfoServiceImpTest using Java 21.0.6 with PID 22764 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T20:00:09.237+05:30 DEBUG 22764 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:00:09.238+05:30  INFO 22764 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:00:12.194+05:30  INFO 22764 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:00:12.289+05:30  INFO 22764 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interface.
+2025-06-01T20:00:13.149+05:30  INFO 22764 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:00:13.265+05:30  INFO 22764 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:00:13.322+05:30  INFO 22764 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:00:13.848+05:30  INFO 22764 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:00:13.898+05:30  INFO 22764 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:00:14.397+05:30  INFO 22764 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@664f49f
+2025-06-01T20:00:14.402+05:30  INFO 22764 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:00:14.499+05:30  WARN 22764 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:00:14.564+05:30  INFO 22764 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:00:15.644+05:30  INFO 22764 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:00:15.701+05:30  INFO 22764 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:00:16.203+05:30  INFO 22764 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T20:00:16.205+05:30  WARN 22764 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T20:00:16.407+05:30  WARN 22764 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:00:18.811+05:30  INFO 22764 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Started UserInfoServiceImpTest in 10.45 seconds (process running for 12.498)
+2025-06-01T20:00:19.953+05:30  INFO 22764 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Fetching all users
+2025-06-01T20:00:20.104+05:30 DEBUG 22764 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Total users fetched: 7
+2025-06-01T20:00:20.214+05:30  INFO 22764 --- [User-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:00:20.219+05:30  INFO 22764 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:00:20.235+05:30  INFO 22764 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:01:14.408+05:30  INFO 22900 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Starting UserInfoServiceImpTest using Java 21.0.6 with PID 22900 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T20:01:14.410+05:30 DEBUG 22900 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:01:14.411+05:30  INFO 22900 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:01:16.161+05:30  INFO 22900 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:01:16.240+05:30  INFO 22900 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 1 JPA repository interface.
+2025-06-01T20:01:17.149+05:30  INFO 22900 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:01:17.314+05:30  INFO 22900 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:01:17.390+05:30  INFO 22900 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:01:17.821+05:30  INFO 22900 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:01:17.866+05:30  INFO 22900 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:01:18.466+05:30  INFO 22900 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44e08a7a
+2025-06-01T20:01:18.472+05:30  INFO 22900 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:01:18.570+05:30  WARN 22900 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:01:18.612+05:30  INFO 22900 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:01:19.717+05:30  INFO 22900 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:01:19.779+05:30  INFO 22900 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:01:20.273+05:30  INFO 22900 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T20:01:20.277+05:30  WARN 22900 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T20:01:20.673+05:30  WARN 22900 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:01:23.370+05:30  INFO 22900 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Started UserInfoServiceImpTest in 9.519 seconds (process running for 10.815)
+2025-06-01T20:01:24.283+05:30  INFO 22900 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Fetching user with id=1 
+2025-06-01T20:01:24.527+05:30 DEBUG 22900 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User found: UserInfo [userId=1, userName=dummy1, email=drop, password=$2a$10$vyveitzXRwGro3ArZadWnOJu1kXuNVRPf0/NzxcjqiNP6A315aZlC, roles=user]
+2025-06-01T20:01:24.643+05:30  INFO 22900 --- [User-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:01:24.650+05:30  INFO 22900 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:01:24.683+05:30  INFO 22900 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:01:49.193+05:30  INFO 13028 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Starting UserInfoServiceImpTest using Java 21.0.6 with PID 13028 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T20:01:49.194+05:30 DEBUG 13028 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:01:49.195+05:30  INFO 13028 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:01:50.618+05:30  INFO 13028 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:01:50.693+05:30  INFO 13028 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-06-01T20:01:51.368+05:30  INFO 13028 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:01:51.495+05:30  INFO 13028 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:01:51.543+05:30  INFO 13028 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:01:51.939+05:30  INFO 13028 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:01:51.992+05:30  INFO 13028 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:01:52.517+05:30  INFO 13028 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5dd23809
+2025-06-01T20:01:52.524+05:30  INFO 13028 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:01:52.609+05:30  WARN 13028 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:01:52.637+05:30  INFO 13028 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:01:53.666+05:30  INFO 13028 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:01:53.724+05:30  INFO 13028 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:01:54.185+05:30  INFO 13028 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T20:01:54.186+05:30  WARN 13028 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T20:01:54.403+05:30  WARN 13028 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:01:56.771+05:30  INFO 13028 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Started UserInfoServiceImpTest in 8.134 seconds (process running for 9.461)
+2025-06-01T20:01:57.325+05:30  INFO 13028 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Fetching user with id=202 
+2025-06-01T20:01:57.418+05:30 DEBUG 13028 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User found: UserInfo [userId=202, userName=john, email=john@example.com, password=$2a$10$79W56U3UV12VSsRGMP2oquacicoPmOvjc5cbfDcvK.QLpr0N9JB3., roles=user]
+2025-06-01T20:01:57.474+05:30  INFO 13028 --- [User-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:01:57.478+05:30  INFO 13028 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:01:57.492+05:30  INFO 13028 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:03:27.202+05:30  INFO 16396 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Starting UserInfoServiceImpTest using Java 21.0.6 with PID 16396 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T20:03:27.204+05:30 DEBUG 16396 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:03:27.205+05:30  INFO 16396 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:03:29.913+05:30  INFO 16396 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:03:30.048+05:30  INFO 16396 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interface.
+2025-06-01T20:03:31.627+05:30  INFO 16396 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:03:31.831+05:30  INFO 16396 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:03:31.910+05:30  INFO 16396 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:03:32.471+05:30  INFO 16396 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:03:32.559+05:30  INFO 16396 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:03:33.573+05:30  INFO 16396 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f525e13
+2025-06-01T20:03:33.577+05:30  INFO 16396 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:03:33.676+05:30  WARN 16396 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:03:33.759+05:30  INFO 16396 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:03:35.056+05:30  INFO 16396 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:03:35.130+05:30  INFO 16396 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:03:36.420+05:30  INFO 16396 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T20:03:36.452+05:30  WARN 16396 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T20:03:36.762+05:30  WARN 16396 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:03:40.289+05:30  INFO 16396 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Started UserInfoServiceImpTest in 13.632 seconds (process running for 15.249)
+2025-06-01T20:03:41.033+05:30  INFO 16396 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Updating user with id=10
+2025-06-01T20:03:41.118+05:30  WARN 16396 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User with id=10 not found for update
+2025-06-01T20:03:41.139+05:30  INFO 16396 --- [User-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:03:41.143+05:30  INFO 16396 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:03:41.166+05:30  INFO 16396 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:04:47.287+05:30  INFO 22476 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Starting UserInfoServiceImpTest using Java 21.0.6 with PID 22476 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T20:04:47.289+05:30 DEBUG 22476 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:04:47.291+05:30  INFO 22476 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:04:49.149+05:30  INFO 22476 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:04:49.219+05:30  INFO 22476 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interface.
+2025-06-01T20:04:50.110+05:30  INFO 22476 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:04:50.269+05:30  INFO 22476 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:04:50.387+05:30  INFO 22476 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:04:50.868+05:30  INFO 22476 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:04:50.914+05:30  INFO 22476 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:04:51.566+05:30  INFO 22476 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44e08a7a
+2025-06-01T20:04:51.571+05:30  INFO 22476 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:04:51.659+05:30  WARN 22476 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:04:51.685+05:30  INFO 22476 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:04:52.737+05:30  INFO 22476 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:04:52.811+05:30  INFO 22476 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:04:53.554+05:30  INFO 22476 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T20:04:53.556+05:30  WARN 22476 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T20:04:53.865+05:30  WARN 22476 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:04:57.090+05:30  INFO 22476 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Started UserInfoServiceImpTest in 10.25 seconds (process running for 11.926)
+2025-06-01T20:04:57.793+05:30  INFO 22476 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Updating user with id=202
+2025-06-01T20:04:58.069+05:30 DEBUG 22476 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User with id=202 updated successfully: UserInfo [userId=202, userName=john_updated, email=new@example.com, password=$2a$10$ovaer4zX3R69wymK4PBGGe/AHiGwfw9gCkKZEeNLlQDUEv4lrZWD6, roles=admin]
+2025-06-01T20:04:58.077+05:30  INFO 22476 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Updating user with id=10
+2025-06-01T20:04:58.082+05:30  WARN 22476 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User with id=10 not found for update
+2025-06-01T20:04:58.117+05:30  INFO 22476 --- [User-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:04:58.124+05:30  INFO 22476 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:04:58.140+05:30  INFO 22476 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:06:44.007+05:30  INFO 23896 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Starting UserInfoServiceImpTest using Java 21.0.6 with PID 23896 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T20:06:44.009+05:30 DEBUG 23896 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:06:44.011+05:30  INFO 23896 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:06:45.454+05:30  INFO 23896 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:06:45.567+05:30  INFO 23896 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
+2025-06-01T20:06:46.515+05:30  INFO 23896 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:06:46.645+05:30  INFO 23896 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:06:46.706+05:30  INFO 23896 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:06:47.151+05:30  INFO 23896 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:06:47.206+05:30  INFO 23896 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:06:47.706+05:30  INFO 23896 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5dd23809
+2025-06-01T20:06:47.712+05:30  INFO 23896 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:06:47.811+05:30  WARN 23896 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:06:47.939+05:30  INFO 23896 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:06:48.980+05:30  INFO 23896 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:06:49.042+05:30  INFO 23896 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:06:49.535+05:30  INFO 23896 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T20:06:49.536+05:30  WARN 23896 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T20:06:49.741+05:30  WARN 23896 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:06:52.376+05:30  INFO 23896 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Started UserInfoServiceImpTest in 8.936 seconds (process running for 10.378)
+2025-06-01T20:06:53.088+05:30  INFO 23896 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Deactivating user with id=202
+2025-06-01T20:06:53.190+05:30 DEBUG 23896 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User with id=202 deactivated successfully
+2025-06-01T20:06:53.330+05:30  INFO 23896 --- [User-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:06:53.338+05:30  INFO 23896 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:06:53.375+05:30  INFO 23896 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-01T20:08:42.128+05:30  INFO 16380 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Starting UserInfoServiceImpTest using Java 21.0.6 with PID 16380 (started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\User-Service)
+2025-06-01T20:08:42.130+05:30 DEBUG 16380 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-01T20:08:42.132+05:30  INFO 16380 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T20:08:43.831+05:30  INFO 16380 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T20:08:43.940+05:30  INFO 16380 --- [User-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 1 JPA repository interface.
+2025-06-01T20:08:44.816+05:30  INFO 16380 --- [User-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T20:08:44.927+05:30  INFO 16380 --- [User-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T20:08:44.963+05:30  INFO 16380 --- [User-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T20:08:45.314+05:30  INFO 16380 --- [User-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T20:08:45.372+05:30  INFO 16380 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T20:08:46.458+05:30  INFO 16380 --- [User-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44e08a7a
+2025-06-01T20:08:46.462+05:30  INFO 16380 --- [User-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T20:08:46.542+05:30  WARN 16380 --- [User-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T20:08:46.579+05:30  INFO 16380 --- [User-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T20:08:47.630+05:30  INFO 16380 --- [User-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T20:08:47.698+05:30  INFO 16380 --- [User-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:08:48.146+05:30  INFO 16380 --- [User-Service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T20:08:48.148+05:30  WARN 16380 --- [User-Service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T20:08:48.379+05:30  WARN 16380 --- [User-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T20:08:51.349+05:30  INFO 16380 --- [User-Service] [main] c.h.u.service.UserInfoServiceImpTest     : Started UserInfoServiceImpTest in 9.677 seconds (process running for 11.413)
+2025-06-01T20:08:51.956+05:30  INFO 16380 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Deactivating user with id=202
+2025-06-01T20:08:52.031+05:30 DEBUG 16380 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User with id=202 deactivated successfully
+2025-06-01T20:08:52.164+05:30  INFO 16380 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : Fetching user with id=202 
+2025-06-01T20:08:52.173+05:30 DEBUG 16380 --- [User-Service] [main] c.h.u.service.UserInfoServiceImp         : User found: UserInfo [userId=202, userName=john, email=john@example.com, password=$2a$10$79W56U3UV12VSsRGMP2oquacicoPmOvjc5cbfDcvK.QLpr0N9JB3., roles=INACTIVE]
+2025-06-01T20:08:52.215+05:30  INFO 16380 --- [User-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T20:08:52.218+05:30  INFO 16380 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-01T20:08:52.236+05:30  INFO 16380 --- [User-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -29,7 +29,7 @@ public class UserInfo {
     
     @NotBlank(message = "Role is required")
     @Pattern(
-        regexp = "^(user|admin|agent)$",
+        regexp = "^(user|admin|agent|INACTIVE)$",
         message = "Role must be either user, admin, or agent"
     )
     private String roles;
@@ -87,5 +87,12 @@ public class UserInfo {
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
+
+	@Override
+	public String toString() {
+		return "UserInfo [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password=" + password
+				+ ", roles=" + roles + "]";
+	}
+	
         
 }
