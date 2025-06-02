@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 
 import com.hexaware.rentalservice.entity.Reservation;
 
+/**
+ * Repository for performing database operations related to Reservation entities.
+ */
+
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long>{
 

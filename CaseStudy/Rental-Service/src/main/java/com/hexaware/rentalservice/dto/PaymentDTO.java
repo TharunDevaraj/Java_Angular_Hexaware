@@ -7,6 +7,11 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Positive;
 
+/**
+ * DTO for capturing vehicle reservation request details such as payment information.
+ */
+
+
 public class PaymentDTO {
 	
 	private Long paymentId;
@@ -14,8 +19,6 @@ public class PaymentDTO {
 	@NotBlank(message = "Payment type is required")
 	private String paymentType;
 	
-	@NotNull(message = "Payment date is required")
-    @PastOrPresent(message = "Payment date cannot be in the future")
 	private LocalDate paymentDate;
 	
 	@Positive(message = "Amount must be greater than zero")

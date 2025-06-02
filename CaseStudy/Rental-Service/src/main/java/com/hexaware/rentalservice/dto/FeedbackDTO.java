@@ -6,6 +6,11 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+/**
+ * DTO for capturing vehicle reservation request details such as feedback information.
+ */
+
+
 public class FeedbackDTO {
 
 	@NotNull(message = "Reservation ID is required")

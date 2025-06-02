@@ -23,6 +23,13 @@ import com.hexaware.rentalservice.service.IReservationService;
 
 import jakarta.validation.Valid;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * REST controller for managing User operations such as make reservation,
+ * update reservation, cancel reservation.
+ */
+
 @RestController
 @RequestMapping("api/reservation")
 public class ReservationRestController {
@@ -31,14 +38,13 @@ public class ReservationRestController {
     IReservationService reservationService;
 
     @PostMapping("/create")
-    @PreAuthorize("hasRole('user')")
     public ResponseEntity<Reservation> createReservation(@RequestBody @Valid ReservationDTO reservationDTO) {
         Reservation reservation = reservationService.createReservation(reservationDTO);
         return new ResponseEntity<>(reservation, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    @PreAuthorize("hasRole('user')")
+    @PreAuthorize("hasRole('user','customer')")
     public ResponseEntity<Reservation> updateReservation(@RequestBody @Valid ReservationDTO reservationDTO) {
         Reservation updated = reservationService.updateReservation(reservationDTO);
         if (updated != null) {
@@ -48,14 +54,14 @@ public class ReservationRestController {
     }
 
     @DeleteMapping("/cancel/{reservationId}")
-    @PreAuthorize("hasRole('user')")
+    @PreAuthorize("hasRole('user','customer')")
     public ResponseEntity<String> cancelReservation(@PathVariable Long reservationId) {
         reservationService.cancelReservationById(reservationId);
         return new ResponseEntity<>("Reservation cancelled successfully", HttpStatus.OK);
     }
 
     @GetMapping("/get/{reservationId}")
-    @PreAuthorize("hasRole('user')")
+    @PreAuthorize("hasRole('user','customer')")
     public ResponseEntity<ReservationDTO> getReservationById(@PathVariable Long reservationId) {
         ReservationDTO dto = reservationService.getReservationById(reservationId);
         if (dto != null) {
@@ -65,7 +71,7 @@ public class ReservationRestController {
     }
 
     @GetMapping("/getbycustomer/{customerId}")
-    @PreAuthorize("hasRole('user')")
+    @PreAuthorize("hasRole('user','customer')")
     public ResponseEntity<List<Reservation>> getReservationsByCustomerId(@PathVariable Long customerId) {
         List<Reservation> reservations = reservationService.getReservationsByCustomerId(customerId);
         return new ResponseEntity<>(reservations, HttpStatus.OK);

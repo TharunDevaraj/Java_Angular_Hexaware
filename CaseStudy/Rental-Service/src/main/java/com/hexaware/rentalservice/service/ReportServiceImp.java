@@ -8,6 +8,13 @@ import com.hexaware.rentalservice.repository.ReservationRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * Handles all business logic related to reports such as 
+ * generating total revenue and total reservations.
+ */
+
 @Service
 @Slf4j
 public class ReportServiceImp implements IReportService{

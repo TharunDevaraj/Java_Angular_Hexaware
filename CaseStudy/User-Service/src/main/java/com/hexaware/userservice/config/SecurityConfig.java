@@ -19,6 +19,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.hexaware.userservice.filter.JwtAuthFilter;
 
+/**
+ * Date: 02-06-2025
+ *  Author: Tharun D
+ *  
+ * Configuration class for defining Spring Security rules, authentication providers,
+ * and HTTP security filters.
+ */
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -32,23 +40,31 @@ public class SecurityConfig {
 	    return new UserInfoUserDetailsService();
 	}
 	
-	 @Bean
-	 public  SecurityFilterChain   getSecurityFilterChain(HttpSecurity http) throws Exception {
-	    	
-	 
-				return http.csrf().disable()
-	    			.authorizeHttpRequests().requestMatchers("/users/register","/users/login")
-	    			.permitAll()
-	    			.anyRequest()
-	    			.authenticated().and()   //.formLogin().and().build();
-	    			.sessionManagement()
-	    			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-	    			.and()
-	    			.authenticationProvider(authenticationProvider())
-	    			.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-	    			.build();
-	    	
-	    }
+	@Bean
+	public SecurityFilterChain getSecurityFilterChain(HttpSecurity http) throws Exception {
+
+	    return http
+	        .csrf(csrf -> csrf.disable())
+	        .authorizeHttpRequests(auth -> auth
+	            .requestMatchers(
+	            		"/swagger-ui/**",
+	            	    "/swagger-ui.html",
+	            	    "/v3/api-docs/**",
+	            	    "/swagger-resources/**",
+	            	    "/webjars/**",
+	            	    "/api/users/register",
+	            	    "/api/users/login"
+	            ).permitAll()
+	            .anyRequest().authenticated()
+	        )
+	        .sessionManagement(sess -> sess
+	            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+	        )
+	        .authenticationProvider(authenticationProvider())
+	        .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+	        .build();
+	}
+
 	
 	@Bean    
     public PasswordEncoder passwordEncoder() {          

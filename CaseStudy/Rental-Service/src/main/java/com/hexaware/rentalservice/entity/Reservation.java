@@ -7,6 +7,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+/**
+ * Entity representing reservation information in the system.
+ * Includes fields like startDate, endDate, and reservationStatus.
+ */
+
 @Entity
 public class Reservation {
 	

@@ -1,5 +1,6 @@
 package com.hexaware.userservice.restcontroller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +17,33 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.hexaware.userservice.dto.AuthRequest;
+import com.hexaware.userservice.dto.CarDTO;
+import com.hexaware.userservice.dto.PaymentDTO;
+import com.hexaware.userservice.dto.ReservationDTO;
 import com.hexaware.userservice.dto.UserInfoDTO;
 import com.hexaware.userservice.entity.UserInfo;
 import com.hexaware.userservice.exception.UserNotFoundException;
+import com.hexaware.userservice.service.CarServiceClient;
 import com.hexaware.userservice.service.JwtService;
 import com.hexaware.userservice.service.UserInfoServiceImp;
 
 import jakarta.validation.Valid;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * REST controller for managing User operations such as USER registration,
+ * login, and user deactivation.
+ */
+
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserInfoRestController {
 
 	@Autowired
@@ -40,6 +54,12 @@ public class UserInfoRestController {
 	
 	@Autowired
 	UserInfoServiceImp userService;
+	
+	@Autowired
+	CarServiceClient carServiceClient;
+	
+	@Autowired
+    private RestTemplate restTemplate;
 	
 	@PostMapping("/register")
 	public ResponseEntity<String> addUser(@RequestBody @Valid UserInfo userInfo)
@@ -100,4 +120,68 @@ public class UserInfoRestController {
 	        userService.deactivateUser(id);
 	        return new ResponseEntity<String>("User deactivated successfully",HttpStatus.OK);
 	    }
+	   
+        // Public level operations
+	    
+	    private final String CAR_SERVICE_BASE_URL = "http://localhost:8181/api/cars";
+
+	    @GetMapping("/getcarbyid/{carId}")
+	    public CarDTO getCarById(@PathVariable Long carId) {
+	        return restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/get/" + carId, CarDTO.class);
+	    }
+
+	    @GetMapping("/getallcars")
+	    public List<CarDTO> getAllCars() {
+	        CarDTO dtos[]= restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/get", CarDTO[] .class);
+	        List<CarDTO> cars = Arrays.asList(dtos);
+	        return cars;
+	        
+	    }
+
+	    @GetMapping("/getavailable")
+	    public List<CarDTO> getAvailableCars() {
+	    	CarDTO dtos[]=restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/available", CarDTO[].class);
+	        List<CarDTO> cars = Arrays.asList(dtos);
+	        return cars;
+	    }
+	    
+	    //CUSTOMER level operations
+	    
+	    private final String RESERVATION_SERVICE_BASE_URL = "http://localhost:8282/api/reservation";
+	    
+	    @PostMapping("/makereservation")
+	    public ResponseEntity<ReservationDTO> makeReservation(@RequestBody ReservationDTO reservationDTO)
+	    {
+	    	ReservationDTO reservation = restTemplate.postForObject(RESERVATION_SERVICE_BASE_URL+"/create ", reservationDTO,ReservationDTO.class);
+	    	return new ResponseEntity<ReservationDTO>(reservation, HttpStatus.CREATED);
+	    }
+	    
+	    private final String PAYMENT_SERVICE_BASE_URL = "http://localhost:8282/api/payment";
+	    
+	    @PostMapping("/makepayment")
+	    public ResponseEntity<PaymentDTO> makePayment(@RequestBody PaymentDTO paymentDTO)
+	    {
+	    	PaymentDTO payment = restTemplate.postForObject(PAYMENT_SERVICE_BASE_URL+"/make ", paymentDTO,PaymentDTO.class);
+	    	return new ResponseEntity<PaymentDTO>(payment, HttpStatus.CREATED);
+	    }
+	    
+	    
+	    //ADMIN level operations
+	    @PostMapping("/admin/add-car")
+	    public ResponseEntity<CarDTO> addCar(@RequestBody CarDTO carDTO, @RequestHeader("Authorization") String authHeader) {
+	        String jwtToken = authHeader.replace("Bearer ", "");
+	        return carServiceClient.addCar(carDTO, jwtToken);
+	    }
+	    
+	    @PutMapping("/admin/update-car/{carId}")
+	    public ResponseEntity<CarDTO> updateCar(
+	            @PathVariable Long carId,
+	            @RequestBody @Valid CarDTO carDTO,
+	            @RequestHeader("Authorization") String authHeader) {
+
+	        String jwtToken = authHeader.replace("Bearer ", "");
+	        return carServiceClient.updateCar(carId, carDTO, jwtToken);
+	    }
+	    
+	    
 }

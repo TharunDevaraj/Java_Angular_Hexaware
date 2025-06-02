@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import com.hexaware.rentalservice.entity.Payment;
 
+/**
+ * Repository for performing database operations related to Payment entities.
+ */
+
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Long>{
 

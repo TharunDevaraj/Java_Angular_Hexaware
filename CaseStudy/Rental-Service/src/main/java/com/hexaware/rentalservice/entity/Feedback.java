@@ -4,6 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+/**
+ * Entity representing feedback information in the system.
+ * Includes fields like rating, comment, and status.
+ */
+
 @Entity
 public class Feedback {
 	 @Id

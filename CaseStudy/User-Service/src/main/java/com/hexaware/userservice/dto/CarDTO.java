@@ -1,8 +1,5 @@
-package com.hexaware.vehicleservice.entity;
+package com.hexaware.userservice.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -11,30 +8,51 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 /**
- * Entity representing car information in the system.
- * Includes fields like carModel, year, and pricePerDay.
+ *  Date: 02-06-2025
+ *  Author: Tharun D
+ * DTO for capturing car details such as carId,
+ * carStatus and pricing information.
  */
 
-@Entity
-public class Car {
+
+public class CarDTO {
 	
-	@Id
-    @GeneratedValue
-	private Long carId;
+private Long carId;
+	
+	@NotBlank(message = "Car name is required")
+    @Size(min = 2, max = 100, message = "Car name must be between 2 and 100 characters")
     private String carName;
+	
+	@Min(value = 1990, message = "Year must be greater than 1990")
+    @Max(value = 2025, message = "Year must be lesser than 2025")
     private int year;
+	
+	@NotBlank(message = "Make is required")
     private String make;
+	
+	@NotBlank(message = "Car status is required")
+    @Pattern(
+        regexp = "^(available|rented|maintenance)$",
+        message = "Car status must be one of: available, rented, maintenance"
+    )
     private String carStatus;
+	
+	@NotBlank(message = "Location is required")
     private String location;
+	
+	@Min(value = 1, message = "Passenger capacity must be at least 1")
+	@Max(value = 15, message = "Passenger capacity cannot exceed 15")
     private int passengerCapacity;
+	
+	 @DecimalMin(value = "0.0", inclusive = false, message = "Price per day must be greater than 0")
     private double pricePerDay;
     
-    public Car()
+    public CarDTO()
     {
     	
     }
 
-	public Car(Long carId, String carName, int year, String make, String carStatus, String location, int passengerCapacity,
+	public CarDTO(Long carId, String carName, int year, String make, String carStatus, String location, int passengerCapacity,
 			double pricePerDay) {
 		super();
 		this.carId = carId;
@@ -111,11 +129,4 @@ public class Car {
 		this.pricePerDay = pricePerDay;
 	}
 
-	@Override
-	public String toString() {
-		return "Car [carId=" + carId + ", carName=" + carName + ", year=" + year + ", make=" + make + ", carStatus="
-				+ carStatus + ", location=" + location + ", passengerCapacity=" + passengerCapacity + ", pricePerDay="
-				+ pricePerDay + "]";
-	}
-    
 }

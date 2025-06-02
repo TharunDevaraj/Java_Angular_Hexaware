@@ -7,6 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.hexaware.vehicleservice.entity.Car;
 
+/**
+ * Repository for performing database operations related to Car entities.
+ */
+
 public interface CarRepository extends JpaRepository<Car, Long>{
 
 	 public List<Car> findByCarStatus(String status);

@@ -19,6 +19,13 @@ import com.hexaware.rentalservice.service.IPaymentService;
 
 import jakarta.validation.Valid;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * REST controller for managing payment operations such as makepayment,
+ * getpayment by paymentId or by reservationId.
+ */
+
 @RestController
 @RequestMapping("/api/payment")
 public class PaymentRestController {
@@ -27,14 +34,13 @@ public class PaymentRestController {
     IPaymentService paymentService;
 
     @PostMapping("/make")
-    @PreAuthorize("hasRole('user')")
     public ResponseEntity<Payment> makePayment(@RequestBody @Valid PaymentDTO paymentDTO) {
         Payment payment = paymentService.makePayment(paymentDTO);
         return new ResponseEntity<>(payment, HttpStatus.CREATED);
     }
 
     @GetMapping("/get/{paymentId}")
-    @PreAuthorize("hasAnyRole('user','admin')")
+    @PreAuthorize("hasAnyRole('user','admin','customer')")
     public ResponseEntity<PaymentDTO> getPaymentById(@PathVariable Long paymentId) {
         PaymentDTO dto = paymentService.getPaymentById(paymentId);
         if (dto != null) {
@@ -51,14 +57,14 @@ public class PaymentRestController {
     }
 
     @GetMapping("/reservation/{reservationId}")
-    @PreAuthorize("hasAnyRole('user','admin')")
+    @PreAuthorize("hasAnyRole('user','admin','customer')")
     public ResponseEntity<List<Payment>> getPaymentsByReservationId(@PathVariable Long reservationId) {
         List<Payment> payments = paymentService.getPaymentsByReservationId(reservationId);
         return new ResponseEntity<>(payments, HttpStatus.OK);
     }
 
     @GetMapping("/customer/{customerId}")
-    @PreAuthorize("hasAnyRole('user','admin')")
+    @PreAuthorize("hasAnyRole('user','admin','customer')")
     public ResponseEntity<List<Payment>> getPaymentsByCustomerId(@PathVariable Long customerId) {
         List<Payment> payments = paymentService.getPaymentsByCustomerId(customerId);
         return new ResponseEntity<>(payments, HttpStatus.OK);

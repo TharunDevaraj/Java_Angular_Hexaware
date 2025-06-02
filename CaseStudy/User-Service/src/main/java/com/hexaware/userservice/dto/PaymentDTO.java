@@ -1,34 +1,40 @@
-package com.hexaware.rentalservice.entity;
+package com.hexaware.userservice.dto;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
 
 /**
- * Entity representing payment information in the system.
- * Includes fields like paymentType, amount, and paymentDate.
+ * DTO for capturing vehicle reservation request details such as payment information.
  */
 
-@Entity
-public class Payment {
+
+public class PaymentDTO {
 	
-	@Id
-	@GeneratedValue
 	private Long paymentId;
+	
+	@NotBlank(message = "Payment type is required")
 	private String paymentType;
+	
+	@NotNull(message = "Payment date is required")
+    @PastOrPresent(message = "Payment date cannot be in the future")
 	private LocalDate paymentDate;
+	
+	@Positive(message = "Amount must be greater than zero")
 	private double amount;
 	
+	@NotNull(message = "Reservation ID is required")
 	private Long reservationId;
 	
-	public Payment()
+	public PaymentDTO()
 	{
 		
 	}
 
-	public Payment(Long paymentId, String paymentType, LocalDate paymentDate, double amount, Long reservationId) {
+	public PaymentDTO(Long paymentId, String paymentType, LocalDate paymentDate, double amount, Long reservationId) {
 		super();
 		this.paymentId = paymentId;
 		this.paymentType = paymentType;
@@ -76,12 +82,5 @@ public class Payment {
 	public void setReservationId(Long reservationId) {
 		this.reservationId = reservationId;
 	}
-
-	@Override
-	public String toString() {
-		return "Payment [paymentId=" + paymentId + ", paymentType=" + paymentType + ", paymentDate=" + paymentDate
-				+ ", amount=" + amount + ", reservationId=" + reservationId + "]";
-	}
-	
 
 }

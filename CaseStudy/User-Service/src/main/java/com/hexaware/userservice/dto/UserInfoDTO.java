@@ -1,5 +1,11 @@
 package com.hexaware.userservice.dto;
 
+/**
+ * DTO for capturing user request details such as userId,
+ * email and their roles.
+ */
+
+
 public class UserInfoDTO {
 	private Long userId;
     private String userName; 

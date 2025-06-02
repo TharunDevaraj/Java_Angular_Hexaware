@@ -24,8 +24,15 @@ import com.hexaware.vehicleservice.service.ICarService;
 
 import jakarta.validation.Valid;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * REST controller for managing Car operations such as add cars,
+ * update car, check availability, and updateCarStatus.
+ */
+
 @RestController
-@RequestMapping("api/car")
+@RequestMapping("api/cars")
 public class CarRestController {
 
 	@Autowired
@@ -46,20 +53,17 @@ public class CarRestController {
     }
 
     @GetMapping("/get/{carId}")
-    @PreAuthorize("hasAnyRole('admin','user')")
     public ResponseEntity<CarDTO> getCarById(@PathVariable Long carId) throws CarNotFoundException {
         CarDTO carDTO = carService.getCarById(carId);
         return new ResponseEntity<>(carDTO, HttpStatus.OK);
     }
 
     @GetMapping("/get")
-    @PreAuthorize("hasAnyRole('admin','user')")
     public ResponseEntity<List<Car>> getAllCars() {
         return new ResponseEntity<>(carService.getAllCars(), HttpStatus.OK);
     }
 
     @GetMapping("/available")
-    @PreAuthorize("hasAnyRole('admin','user')")
     public ResponseEntity<List<Car>> getAvailableCars() {
         return new ResponseEntity<>(carService.getAvailableCars(), HttpStatus.OK);
     }
@@ -80,7 +84,7 @@ public class CarRestController {
     }
     
     @GetMapping("/availablecarsbyfilter")
-    @PreAuthorize("hasAnyRole('admin','user','agent')")
+    @PreAuthorize("hasAnyRole('admin','customer','agent')")
     public ResponseEntity<List<Car>> getAvailableCarsByFilter(@RequestParam String location,@RequestParam int passengerCapacity,@RequestParam LocalDate startDate,@RequestParam LocalDate endDate)
     {
     	return new ResponseEntity<List<Car>>(carService.findAvailableCarsByFilter(location, passengerCapacity, startDate, endDate), HttpStatus.OK);

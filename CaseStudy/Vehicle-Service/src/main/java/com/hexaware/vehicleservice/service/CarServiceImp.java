@@ -14,6 +14,13 @@ import com.hexaware.vehicleservice.repository.CarRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * Handles all business logic related to cars such as adding cars,
+ * updating car details, and removing cars.
+ */
+
 @Service
 @Slf4j
 public class CarServiceImp implements ICarService{

@@ -1,5 +1,6 @@
 package com.hexaware.rentalservice.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,13 @@ import com.hexaware.rentalservice.repository.ReservationRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * Handles all business logic related to payments such as 
+ * makePayments, getting Payment details, etc.
+ */
+
 @Service
 @Slf4j
 public class PaymentServiceImp implements IPaymentService{
@@ -27,13 +35,19 @@ public class PaymentServiceImp implements IPaymentService{
 	@Override
 	public Payment makePayment(PaymentDTO paymentDTO) {
 		log.info("Creating payment for reservationId={}, amount={} on {}", 
-                paymentDTO.getReservationId(), paymentDTO.getAmount(), paymentDTO.getPaymentDate());
+                paymentDTO.getReservationId(), paymentDTO.getAmount(), LocalDate.now());
 		Payment payment = new Payment();
+		
+		if(reservationRepository.findById(paymentDTO.getReservationId())==null)
+		{
+			log.warn("No reservation with reservation id:"+paymentDTO.getReservationId());
+			throw new RuntimeException("Reservation Id not found ");
+		}
         
         payment.setPaymentType(paymentDTO.getPaymentType());
         payment.setAmount(paymentDTO.getAmount());
         payment.setReservationId(paymentDTO.getReservationId());
-        payment.setPaymentDate(paymentDTO.getPaymentDate());
+        payment.setPaymentDate(LocalDate.now());
         Payment savedPayment = paymentRepository.save(payment);
         log.debug("Payment saved successfully: {}", savedPayment);
         return savedPayment;

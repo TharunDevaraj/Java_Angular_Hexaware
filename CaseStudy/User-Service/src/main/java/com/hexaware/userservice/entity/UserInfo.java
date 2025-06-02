@@ -9,6 +9,13 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+/**
+ *  Date: 02-06-2025
+ *  Author: Tharun D
+ * Entity representing user information in the system.
+ * Includes fields like username, email, and roles.
+ */
+
 @Entity
 public class UserInfo {
     @Id
@@ -29,7 +36,7 @@ public class UserInfo {
     
     @NotBlank(message = "Role is required")
     @Pattern(
-        regexp = "^(user|admin|agent|INACTIVE)$",
+        regexp = "^(customer|admin|agent|INACTIVE)$",
         message = "Role must be either user, admin, or agent"
     )
     private String roles;

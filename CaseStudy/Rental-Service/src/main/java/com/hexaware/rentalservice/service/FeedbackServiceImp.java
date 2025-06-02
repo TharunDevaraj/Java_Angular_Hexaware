@@ -10,6 +10,13 @@ import com.hexaware.rentalservice.entity.Feedback;
 import com.hexaware.rentalservice.exception.FeedbackNotFoundException;
 import com.hexaware.rentalservice.repository.FeedbackRepository;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * Handles all business logic related to feedback such as 
+ * submitting feedback , resolving feedback etc.
+ */
+
 @Service
 public class FeedbackServiceImp implements IFeedbackService {
 

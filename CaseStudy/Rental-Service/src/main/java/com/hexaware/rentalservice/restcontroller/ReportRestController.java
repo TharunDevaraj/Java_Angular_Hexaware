@@ -8,6 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.rentalservice.service.IReportService;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * REST controller for managing Admin operations such as
+ * generating total revenue, count total reservations.
+ */
+
 @RestController
 @RequestMapping("/api/report")
 public class ReportRestController {

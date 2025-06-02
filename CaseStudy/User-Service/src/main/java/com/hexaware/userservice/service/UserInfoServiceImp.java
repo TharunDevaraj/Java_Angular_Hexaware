@@ -15,6 +15,13 @@ import com.hexaware.userservice.repository.UserInfoRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * Handles all business logic related to user registration such as registering,
+ * updating, deactivating, etc.
+ */
+
 @Service
 @Slf4j
 public class UserInfoServiceImp implements IUserInfoService{

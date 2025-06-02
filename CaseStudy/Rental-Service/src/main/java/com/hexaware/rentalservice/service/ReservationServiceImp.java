@@ -13,6 +13,13 @@ import com.hexaware.rentalservice.repository.ReservationRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * Handles all business logic related to reservations such as creation,
+ * cancellation, updation.
+ */
+
 @Service
 @Slf4j
 public class ReservationServiceImp implements IReservationService{
@@ -37,7 +44,7 @@ public class ReservationServiceImp implements IReservationService{
         reservation.setEndDate(reservationDTO.getEndDate());
         reservation.setCustomerId(reservationDTO.getCustomerId());
         reservation.setCarId(reservationDTO.getCarId());
-        reservation.setReservationStatus("Reserved"); 
+        reservation.setReservationStatus("Pending"); 
         
         Reservation savedReservation = reservationRepository.save(reservation);
         log.debug("Reservation saved successfully: {}", savedReservation);

@@ -7,6 +7,12 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+/**
+ * DTO for capturing car details such as carId,
+ * carStatus and pricing information.
+ */
+
+
 public class CarDTO {
 	
 private Long carId;

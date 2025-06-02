@@ -14,6 +14,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.hexaware.vehicleservice.filter.JwtAuthFilter;
 
+
+/**
+ * Configuration class for defining Spring Security rules, authentication providers,
+ * and HTTP security filters.
+ */
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -32,7 +38,7 @@ public class SecurityConfig {
         return http
             .csrf().disable()
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/car/get/available").permitAll()
+                .requestMatchers("/api/cars/get/available","api/cars/get/{carId}","/api/cars/get","/api/cars/available").permitAll()
                 .anyRequest().authenticated()
                 )
     			.sessionManagement()

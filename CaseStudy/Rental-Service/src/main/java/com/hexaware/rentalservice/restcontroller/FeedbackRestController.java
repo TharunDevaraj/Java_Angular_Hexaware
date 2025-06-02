@@ -20,6 +20,13 @@ import com.hexaware.rentalservice.service.FeedbackServiceImp;
 
 import jakarta.validation.Valid;
 
+/**
+ * Date: 02-06-2025
+ * Author: Tharun D
+ * REST controller for managing user operations such as submitting feedback,
+ * resolving feedback.
+ */
+
 @RestController
 @RequestMapping("api/feedback/")
 public class FeedbackRestController {
