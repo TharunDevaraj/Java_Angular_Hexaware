@@ -18,4 +18,10 @@ public class GlobalExceptionHandler{
 	{
 		return new ResponseEntity<String>("Feedback ID not found, enter a valid Feedback ID", HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler({PaymentNotFoundException.class})
+	public ResponseEntity<String> paymentExceptionHandler()
+	{
+		return new ResponseEntity<String>("Payment ID not found, enter a valid Payment ID", HttpStatus.NOT_FOUND);
+	}
 }

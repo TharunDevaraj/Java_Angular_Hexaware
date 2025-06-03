@@ -1,4 +1,4 @@
-package com.hexaware.rentalservice.dto;
+package com.hexaware.userservice.dto;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

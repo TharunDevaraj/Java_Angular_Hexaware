@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.userservice.dto.UserInfoDTO;
 import com.hexaware.userservice.entity.UserInfo;
+import com.hexaware.userservice.exception.UserNameAlreadyExistsException;
 import com.hexaware.userservice.exception.UserNotFoundException;
 import com.hexaware.userservice.repository.UserInfoRepository;
 
@@ -33,18 +36,18 @@ public class UserInfoServiceImp implements IUserInfoService{
 	PasswordEncoder passwordEncoder;
 	
 	@Override
-	public String registerUser(UserInfo userInfo) {
+	public UserInfoDTO registerUser(UserInfo userInfo) throws UserNameAlreadyExistsException {
 		
 		if (userInfoRepository.findByUserName(userInfo.getUserName()) != null) {
 			log.warn("Username already exists");
-		    return "Username already exists!";
+		    throw new UserNameAlreadyExistsException();
 		}
 		log.info("Registering new user with username={}, email={} and role={}",userInfo.getUserName(), userInfo.getEmail(), userInfo.getRoles());
 		userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
 		
 		 UserInfo savedUser = userInfoRepository.save(userInfo);
 	     log.debug("User registered successfully: {}", savedUser);
-	     return "User Registered!";
+	     return EntityToDTO(userInfo);
 	}
 
 	@Override
@@ -93,13 +96,12 @@ public class UserInfoServiceImp implements IUserInfoService{
             existingUserInfo.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
         }
         log.debug("User with id={} updated successfully: {}", id, existingUserInfo);
-        return EntityToDTO(existingUserInfo);
-		
+        return EntityToDTO(userInfoRepository.save(existingUserInfo));
 		
 	}
 
 	 @Override
-	    public void deactivateUser(Long id) throws UserNotFoundException {
+	    public String deactivateUser(Long id) throws UserNotFoundException {
 		 log.info("Deactivating user with id={}", id);
 	        UserInfo user = userInfoRepository.findById(id).orElse(null);
 	        if(user==null)
@@ -110,6 +112,7 @@ public class UserInfoServiceImp implements IUserInfoService{
 	        user.setRoles("INACTIVE"); 
 	        log.debug("User with id={} deactivated successfully", id);
 	        userInfoRepository.save(user);
+	        return "User deactivated!";
 	    }
 	 
 	 private UserInfoDTO EntityToDTO(UserInfo userInfo)

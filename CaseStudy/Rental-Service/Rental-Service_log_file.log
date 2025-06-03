@@ -1,23 +1,22 @@
-2025-06-02T09:51:45.430+05:30  INFO 24124 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 24124 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T09:51:45.442+05:30 DEBUG 24124 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T09:51:45.443+05:30  INFO 24124 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T09:51:46.556+05:30  INFO 24124 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T09:51:46.625+05:30  INFO 24124 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
-2025-06-02T09:51:47.182+05:30  INFO 24124 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T09:51:47.200+05:30  INFO 24124 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T09:51:47.201+05:30  INFO 24124 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T09:51:47.256+05:30  INFO 24124 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T09:51:47.258+05:30  INFO 24124 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1716 ms
-2025-06-02T09:51:47.340+05:30 DEBUG 24124 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T09:51:47.497+05:30  INFO 24124 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T09:51:47.571+05:30  INFO 24124 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T09:51:47.612+05:30  INFO 24124 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T09:51:48.067+05:30  INFO 24124 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T09:51:48.109+05:30  INFO 24124 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T09:51:48.516+05:30  INFO 24124 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@93fb44
-2025-06-02T09:51:48.518+05:30  INFO 24124 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T09:51:48.604+05:30  WARN 24124 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T09:51:48.634+05:30  INFO 24124 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-06-03T00:50:09.438+05:30  INFO 23684 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 23684 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
+2025-06-03T00:50:09.443+05:30 DEBUG 23684 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-03T00:50:09.443+05:30  INFO 23684 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T00:50:10.227+05:30  INFO 23684 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-03T00:50:10.285+05:30  INFO 23684 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2025-06-03T00:50:10.651+05:30  INFO 23684 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
+2025-06-03T00:50:10.665+05:30  INFO 23684 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-03T00:50:10.666+05:30  INFO 23684 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-03T00:50:10.713+05:30  INFO 23684 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-03T00:50:10.713+05:30  INFO 23684 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1217 ms
+2025-06-03T00:50:10.856+05:30  INFO 23684 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-03T00:50:10.902+05:30  INFO 23684 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-03T00:50:10.929+05:30  INFO 23684 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-03T00:50:11.153+05:30  INFO 23684 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-03T00:50:11.185+05:30  INFO 23684 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-03T00:50:11.475+05:30  INFO 23684 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70f98f7a
+2025-06-03T00:50:11.477+05:30  INFO 23684 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-03T00:50:11.528+05:30  WARN 23684 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-03T00:50:11.543+05:30  INFO 23684 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -25,39 +24,40 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-02T09:51:50.479+05:30  INFO 24124 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T09:51:50.617+05:30  INFO 24124 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T09:51:51.502+05:30  INFO 24124 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T09:51:53.365+05:30  WARN 24124 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T09:51:54.495+05:30  WARN 24124 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T09:51:55.059+05:30  INFO 24124 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T09:51:55.070+05:30  INFO 24124 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 10.196 seconds (process running for 10.865)
-2025-06-02T10:26:02.099+05:30  INFO 24124 --- [Rental-Service] [RMI TCP Connection(38)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T10:26:02.523+05:30  INFO 24124 --- [Rental-Service] [RMI TCP Connection(38)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T10:26:02.590+05:30  INFO 24124 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T10:26:02.701+05:30  INFO 24124 --- [Rental-Service] [RMI TCP Connection(38)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T10:26:02.817+05:30  INFO 24124 --- [Rental-Service] [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T10:26:02.849+05:30  INFO 24124 --- [Rental-Service] [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T10:26:05.171+05:30  INFO 17472 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 17472 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T10:26:05.174+05:30 DEBUG 17472 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T10:26:05.174+05:30  INFO 17472 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T10:26:06.063+05:30  INFO 17472 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T10:26:06.121+05:30  INFO 17472 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
-2025-06-02T10:26:06.708+05:30  INFO 17472 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T10:26:06.722+05:30  INFO 17472 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T10:26:06.723+05:30  INFO 17472 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T10:26:06.775+05:30  INFO 17472 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T10:26:06.776+05:30  INFO 17472 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1546 ms
-2025-06-02T10:26:06.843+05:30 DEBUG 17472 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T10:26:06.976+05:30  INFO 17472 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T10:26:07.039+05:30  INFO 17472 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T10:26:07.070+05:30  INFO 17472 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T10:26:07.293+05:30  INFO 17472 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T10:26:07.324+05:30  INFO 17472 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T10:26:07.653+05:30  INFO 17472 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9f48198
-2025-06-02T10:26:07.656+05:30  INFO 17472 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T10:26:07.710+05:30  WARN 17472 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T10:26:07.728+05:30  INFO 17472 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-06-03T00:50:12.429+05:30  INFO 23684 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-03T00:50:12.721+05:30  INFO 23684 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03T00:50:13.110+05:30  INFO 23684 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-03T00:50:13.729+05:30  WARN 23684 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-03T00:50:14.604+05:30  INFO 23684 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
+2025-06-03T00:50:14.611+05:30  INFO 23684 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 5.528 seconds (process running for 6.002)
+2025-06-03T00:50:18.389+05:30  INFO 23684 --- [Rental-Service] [http-nio-8282-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-03T00:50:18.389+05:30  INFO 23684 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-03T00:50:18.393+05:30  INFO 23684 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-06-03T00:51:14.312+05:30  INFO 23684 --- [Rental-Service] [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-03T00:51:14.315+05:30  INFO 23684 --- [Rental-Service] [RMI TCP Connection(3)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-03T00:51:14.318+05:30  INFO 23684 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-03T00:51:14.325+05:30  INFO 23684 --- [Rental-Service] [RMI TCP Connection(3)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03T00:51:14.327+05:30  INFO 23684 --- [Rental-Service] [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-03T00:51:14.334+05:30  INFO 23684 --- [Rental-Service] [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-03T07:57:43.294+05:30  INFO 16280 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 16280 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
+2025-06-03T07:57:43.298+05:30 DEBUG 16280 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-03T07:57:43.298+05:30  INFO 16280 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T07:57:44.109+05:30  INFO 16280 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-03T07:57:44.180+05:30  INFO 16280 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2025-06-03T07:57:44.548+05:30  INFO 16280 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
+2025-06-03T07:57:44.561+05:30  INFO 16280 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-03T07:57:44.561+05:30  INFO 16280 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-03T07:57:44.606+05:30  INFO 16280 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-03T07:57:44.606+05:30  INFO 16280 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1158 ms
+2025-06-03T07:57:44.794+05:30  INFO 16280 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-03T07:57:44.836+05:30  INFO 16280 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-03T07:57:44.862+05:30  INFO 16280 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-03T07:57:45.123+05:30  INFO 16280 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-03T07:57:45.150+05:30  INFO 16280 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-03T07:57:45.508+05:30  INFO 16280 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a7469ca
+2025-06-03T07:57:45.510+05:30  INFO 16280 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-03T07:57:45.567+05:30  WARN 16280 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-03T07:57:45.592+05:30  INFO 16280 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -65,39 +65,75 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-02T10:26:08.542+05:30  INFO 17472 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T10:26:08.602+05:30  INFO 17472 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T10:26:08.909+05:30  INFO 17472 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T10:26:09.659+05:30  WARN 17472 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T10:26:10.476+05:30  WARN 17472 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T10:26:10.962+05:30  INFO 17472 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T10:26:10.972+05:30  INFO 17472 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 6.215 seconds (process running for 6.759)
-2025-06-02T10:38:52.283+05:30  INFO 17472 --- [Rental-Service] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T10:38:52.515+05:30  INFO 17472 --- [Rental-Service] [RMI TCP Connection(17)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T10:38:52.556+05:30  INFO 17472 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T10:38:52.614+05:30  INFO 17472 --- [Rental-Service] [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T10:38:52.670+05:30  INFO 17472 --- [Rental-Service] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T10:38:52.763+05:30  INFO 17472 --- [Rental-Service] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T10:38:55.040+05:30  INFO 20548 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 20548 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T10:38:55.042+05:30 DEBUG 20548 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T10:38:55.044+05:30  INFO 20548 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T10:38:55.955+05:30  INFO 20548 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T10:38:56.013+05:30  INFO 20548 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
-2025-06-02T10:38:56.510+05:30  INFO 20548 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T10:38:56.523+05:30  INFO 20548 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T10:38:56.524+05:30  INFO 20548 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T10:38:56.580+05:30  INFO 20548 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T10:38:56.582+05:30  INFO 20548 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1453 ms
-2025-06-02T10:38:56.648+05:30 DEBUG 20548 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T10:38:56.771+05:30  INFO 20548 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T10:38:56.829+05:30  INFO 20548 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T10:38:56.861+05:30  INFO 20548 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T10:38:57.136+05:30  INFO 20548 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T10:38:57.165+05:30  INFO 20548 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T10:38:57.501+05:30  INFO 20548 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5724c7da
-2025-06-02T10:38:57.505+05:30  INFO 20548 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T10:38:57.574+05:30  WARN 20548 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T10:38:57.601+05:30  INFO 20548 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-06-03T07:57:46.353+05:30  INFO 16280 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-03T07:57:46.409+05:30  INFO 16280 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03T07:57:46.663+05:30  INFO 16280 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-03T07:57:47.204+05:30  WARN 16280 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-03T07:57:48.077+05:30  INFO 16280 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
+2025-06-03T07:57:48.085+05:30  INFO 16280 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 5.177 seconds (process running for 5.889)
+2025-06-03T08:01:42.577+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-03T08:01:42.579+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-03T08:01:42.583+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-06-03T08:01:43.009+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.ReservationServiceImp      : Creating reservation for customerId=252, carId=452 from 2025-06-05 to 2025-06-07
+2025-06-03T08:01:43.196+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.ReservationServiceImp      : Reservation saved successfully: Reservation [reservationId=202, reservationStatus=Pending, customerId=252, carId=452]
+2025-06-03T08:02:58.617+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-2] c.h.r.service.ReservationServiceImp      : Updating reservation with id=202 
+2025-06-03T08:02:58.720+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-2] c.h.r.service.ReservationServiceImp      : Reservation updated successfully: Reservation [reservationId=202, reservationStatus=Pending, customerId=252, carId=452]
+2025-06-03T08:03:49.903+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-5] c.h.r.service.ReservationServiceImp      : Cancelling reservation with id=202 
+2025-06-03T08:03:49.926+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-5] c.h.r.service.ReservationServiceImp      : Reservation with id=202 successfully cancelled
+2025-06-03T08:04:25.689+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-6] c.h.r.service.ReservationServiceImp      : Fetching reservation with id=202 
+2025-06-03T08:04:42.379+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-7] c.h.r.service.ReservationServiceImp      : Fetching reservations for customerId=252
+2025-06-03T08:04:42.472+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-7] c.h.r.service.ReservationServiceImp      : Found 1 reservations for customerId=252
+2025-06-03T08:07:08.576+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-8] c.h.r.service.PaymentServiceImp          : Creating payment for reservationId=202, amount=1700.0 on 2025-06-03
+2025-06-03T08:07:08.613+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-8] c.h.r.service.PaymentServiceImp          : Payment saved successfully: Payment [paymentId=152, paymentType=Credit Card, paymentDate=2025-06-03, amount=1700.0, reservationId=202]
+2025-06-03T08:07:54.037+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-9] c.h.r.service.PaymentServiceImp          : Fetching payment with paymentId=152
+2025-06-03T08:08:59.032+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.PaymentServiceImp          : Fetching payments for customerId=252
+2025-06-03T08:08:59.037+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.PaymentServiceImp          : Fetching payments for reservationId=202
+2025-06-03T08:08:59.041+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.PaymentServiceImp          : Found 1 payments for reservationId=202
+2025-06-03T08:08:59.042+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.PaymentServiceImp          : Found 1 payments for customerId=252
+2025-06-03T08:38:46.926+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-4] c.h.r.service.ReservationServiceImp      : Fetching reservation with id=152 
+2025-06-03T08:39:08.192+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-8] c.h.r.service.ReservationServiceImp      : Fetching reservations for carId=452
+2025-06-03T08:39:08.199+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-8] c.h.r.service.ReservationServiceImp      : Found 2 reservations for carId=452
+2025-06-03T08:39:24.231+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-9] c.h.r.service.ReservationServiceImp      : Fetching all reservations
+2025-06-03T08:39:24.247+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-9] c.h.r.service.ReservationServiceImp      : Total reservations fetched: 7
+2025-06-03T08:43:15.865+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-2] c.h.r.service.ReportServiceImp           : Generating total revenue
+2025-06-03T08:43:15.885+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-2] c.h.r.service.ReportServiceImp           : Total Revenue: 9600.0
+2025-06-03T08:43:24.183+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-5] c.h.r.service.ReportServiceImp           : Generating total revenue
+2025-06-03T08:43:24.186+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-5] c.h.r.service.ReportServiceImp           : Total Revenue: 9600.0
+2025-06-03T08:43:35.264+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-6] c.h.r.service.ReportServiceImp           : Generating total revenue
+2025-06-03T08:43:35.268+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-6] c.h.r.service.ReportServiceImp           : Total Revenue: 9600.0
+2025-06-03T08:44:06.152+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-7] c.h.r.service.ReportServiceImp           : Generating total revenue
+2025-06-03T08:44:06.155+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-7] c.h.r.service.ReportServiceImp           : Total Revenue: 9600.0
+2025-06-03T08:44:15.524+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-4] c.h.r.service.ReportServiceImp           : Generating total revenue
+2025-06-03T08:44:15.529+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-4] c.h.r.service.ReportServiceImp           : Total Revenue: 9600.0
+2025-06-03T08:45:45.779+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-9] c.h.r.service.PaymentServiceImp          : Fetching all payments
+2025-06-03T08:45:45.789+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-9] c.h.r.service.PaymentServiceImp          : Total payments fetched: 7
+2025-06-03T08:46:16.627+05:30  INFO 16280 --- [Rental-Service] [http-nio-8282-exec-10] c.h.r.service.PaymentServiceImp          : Fetching payments for reservationId=15
+2025-06-03T08:46:16.636+05:30 DEBUG 16280 --- [Rental-Service] [http-nio-8282-exec-10] c.h.r.service.PaymentServiceImp          : Found 1 payments for reservationId=15
+2025-06-03T08:57:10.492+05:30  INFO 16280 --- [Rental-Service] [RMI TCP Connection(63)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-03T08:57:10.506+05:30  INFO 16280 --- [Rental-Service] [RMI TCP Connection(63)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-03T08:57:10.514+05:30  INFO 16280 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-03T08:57:10.525+05:30  INFO 16280 --- [Rental-Service] [RMI TCP Connection(63)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03T08:57:10.542+05:30  INFO 16280 --- [Rental-Service] [RMI TCP Connection(63)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-03T08:57:10.548+05:30  INFO 16280 --- [Rental-Service] [RMI TCP Connection(63)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-03T08:57:13.155+05:30  INFO 18812 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 18812 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
+2025-06-03T08:57:13.157+05:30 DEBUG 18812 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-03T08:57:13.158+05:30  INFO 18812 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T08:57:14.070+05:30  INFO 18812 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-03T08:57:14.146+05:30  INFO 18812 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2025-06-03T08:57:14.587+05:30  INFO 18812 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
+2025-06-03T08:57:14.602+05:30  INFO 18812 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-03T08:57:14.604+05:30  INFO 18812 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-03T08:57:14.660+05:30  INFO 18812 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-03T08:57:14.660+05:30  INFO 18812 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1446 ms
+2025-06-03T08:57:14.822+05:30  INFO 18812 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-03T08:57:14.880+05:30  INFO 18812 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-03T08:57:14.907+05:30  INFO 18812 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-03T08:57:15.151+05:30  INFO 18812 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-03T08:57:15.182+05:30  INFO 18812 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-03T08:57:15.509+05:30  INFO 18812 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5788722f
+2025-06-03T08:57:15.513+05:30  INFO 18812 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-03T08:57:15.597+05:30  WARN 18812 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-03T08:57:15.622+05:30  INFO 18812 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -105,354 +141,9 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-02T10:38:58.501+05:30  INFO 20548 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T10:38:58.560+05:30  INFO 20548 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T10:38:58.870+05:30  INFO 20548 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T10:38:59.553+05:30  WARN 20548 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T10:39:00.961+05:30  WARN 20548 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T10:39:01.535+05:30  INFO 20548 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T10:39:01.547+05:30  INFO 20548 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 6.924 seconds (process running for 7.553)
-2025-06-02T10:41:11.087+05:30  INFO 20548 --- [Rental-Service] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T10:41:11.091+05:30  INFO 20548 --- [Rental-Service] [RMI TCP Connection(7)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T10:41:11.095+05:30  INFO 20548 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T10:41:11.101+05:30  INFO 20548 --- [Rental-Service] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T10:41:11.102+05:30  INFO 20548 --- [Rental-Service] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T10:41:11.111+05:30  INFO 20548 --- [Rental-Service] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T10:41:13.700+05:30  INFO 15204 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 15204 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T10:41:13.702+05:30 DEBUG 15204 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T10:41:13.703+05:30  INFO 15204 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T10:41:14.550+05:30  INFO 15204 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T10:41:14.607+05:30  INFO 15204 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
-2025-06-02T10:41:15.112+05:30  INFO 15204 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T10:41:15.126+05:30  INFO 15204 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T10:41:15.128+05:30  INFO 15204 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T10:41:15.197+05:30  INFO 15204 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T10:41:15.199+05:30  INFO 15204 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1437 ms
-2025-06-02T10:41:15.273+05:30 DEBUG 15204 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T10:41:15.419+05:30  INFO 15204 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T10:41:15.484+05:30  INFO 15204 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T10:41:15.514+05:30  INFO 15204 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T10:41:15.753+05:30  INFO 15204 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T10:41:15.785+05:30  INFO 15204 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T10:41:16.112+05:30  INFO 15204 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5724c7da
-2025-06-02T10:41:16.116+05:30  INFO 15204 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T10:41:16.179+05:30  WARN 15204 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T10:41:16.204+05:30  INFO 15204 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-02T10:41:17.083+05:30  INFO 15204 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T10:41:17.143+05:30  INFO 15204 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T10:41:17.474+05:30  INFO 15204 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T10:41:18.204+05:30  WARN 15204 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T10:41:19.019+05:30  WARN 15204 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T10:41:19.480+05:30  INFO 15204 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T10:41:19.489+05:30  INFO 15204 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 6.207 seconds (process running for 6.864)
-2025-06-02T10:48:15.130+05:30  INFO 15204 --- [Rental-Service] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T10:48:15.323+05:30  INFO 15204 --- [Rental-Service] [RMI TCP Connection(10)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T10:48:15.361+05:30  INFO 15204 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T10:48:15.408+05:30  INFO 15204 --- [Rental-Service] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T10:48:15.456+05:30  INFO 15204 --- [Rental-Service] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T10:48:15.516+05:30  INFO 15204 --- [Rental-Service] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T10:48:18.268+05:30  INFO 9480 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 9480 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T10:48:18.269+05:30 DEBUG 9480 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T10:48:18.271+05:30  INFO 9480 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T10:48:19.061+05:30  INFO 9480 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T10:48:19.120+05:30  INFO 9480 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
-2025-06-02T10:48:19.601+05:30  INFO 9480 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T10:48:19.615+05:30  INFO 9480 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T10:48:19.616+05:30  INFO 9480 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T10:48:19.667+05:30  INFO 9480 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T10:48:19.668+05:30  INFO 9480 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1345 ms
-2025-06-02T10:48:19.768+05:30 DEBUG 9480 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T10:48:19.949+05:30  INFO 9480 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T10:48:20.021+05:30  INFO 9480 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T10:48:20.063+05:30  INFO 9480 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T10:48:20.293+05:30  INFO 9480 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T10:48:20.321+05:30  INFO 9480 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T10:48:20.634+05:30  INFO 9480 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50fa5938
-2025-06-02T10:48:20.636+05:30  INFO 9480 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T10:48:20.685+05:30  WARN 9480 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T10:48:20.701+05:30  INFO 9480 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-02T10:48:21.595+05:30  INFO 9480 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T10:48:21.668+05:30  INFO 9480 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T10:48:22.039+05:30  INFO 9480 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T10:48:22.714+05:30  WARN 9480 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T10:48:23.661+05:30  WARN 9480 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T10:48:24.309+05:30  INFO 9480 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T10:48:24.323+05:30  INFO 9480 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 6.564 seconds (process running for 7.078)
-2025-06-02T11:29:43.868+05:30  INFO 9480 --- [Rental-Service] [RMI TCP Connection(45)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T11:29:44.331+05:30  INFO 9480 --- [Rental-Service] [RMI TCP Connection(45)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T11:29:44.417+05:30  INFO 9480 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T11:29:44.559+05:30  INFO 9480 --- [Rental-Service] [RMI TCP Connection(45)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T11:29:44.678+05:30  INFO 9480 --- [Rental-Service] [RMI TCP Connection(45)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T11:29:44.716+05:30  INFO 9480 --- [Rental-Service] [RMI TCP Connection(45)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T11:29:47.135+05:30  INFO 18716 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 18716 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T11:29:47.136+05:30 DEBUG 18716 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T11:29:47.137+05:30  INFO 18716 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T11:29:47.987+05:30  INFO 18716 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T11:29:48.044+05:30  INFO 18716 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
-2025-06-02T11:29:48.539+05:30  INFO 18716 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T11:29:48.552+05:30  INFO 18716 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T11:29:48.553+05:30  INFO 18716 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T11:29:48.605+05:30  INFO 18716 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T11:29:48.606+05:30  INFO 18716 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1420 ms
-2025-06-02T11:29:48.680+05:30 DEBUG 18716 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T11:29:48.840+05:30  INFO 18716 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T11:29:48.892+05:30  INFO 18716 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T11:29:48.921+05:30  INFO 18716 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T11:29:49.148+05:30  INFO 18716 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T11:29:49.180+05:30  INFO 18716 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T11:29:49.511+05:30  INFO 18716 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e4e60f5
-2025-06-02T11:29:49.515+05:30  INFO 18716 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T11:29:49.589+05:30  WARN 18716 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T11:29:49.619+05:30  INFO 18716 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-02T11:29:50.667+05:30  INFO 18716 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T11:29:50.721+05:30  INFO 18716 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T11:29:51.021+05:30  INFO 18716 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T11:29:51.641+05:30  WARN 18716 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T11:29:52.457+05:30  WARN 18716 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T11:29:52.951+05:30  INFO 18716 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T11:29:52.960+05:30  INFO 18716 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 6.235 seconds (process running for 6.761)
-2025-06-02T11:32:25.418+05:30  INFO 18716 --- [Rental-Service] [http-nio-8282-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-02T11:32:25.418+05:30  INFO 18716 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-02T11:32:25.425+05:30  INFO 18716 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2025-06-02T11:33:50.432+05:30  INFO 18716 --- [Rental-Service] [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T11:33:50.458+05:30  INFO 18716 --- [Rental-Service] [RMI TCP Connection(6)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T11:33:50.556+05:30  INFO 18716 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T11:33:50.618+05:30  INFO 18716 --- [Rental-Service] [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T11:33:50.627+05:30  INFO 18716 --- [Rental-Service] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T11:33:50.662+05:30  INFO 18716 --- [Rental-Service] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T11:33:53.338+05:30  INFO 11888 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 11888 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T11:33:53.340+05:30 DEBUG 11888 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T11:33:53.341+05:30  INFO 11888 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T11:33:54.239+05:30  INFO 11888 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T11:33:54.303+05:30  INFO 11888 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
-2025-06-02T11:33:55.014+05:30  INFO 11888 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T11:33:55.036+05:30  INFO 11888 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T11:33:55.037+05:30  INFO 11888 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T11:33:55.135+05:30  INFO 11888 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T11:33:55.136+05:30  INFO 11888 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1722 ms
-2025-06-02T11:33:55.208+05:30 DEBUG 11888 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T11:33:55.340+05:30  INFO 11888 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T11:33:55.406+05:30  INFO 11888 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T11:33:55.499+05:30  INFO 11888 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T11:33:55.776+05:30  INFO 11888 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T11:33:55.806+05:30  INFO 11888 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T11:33:56.130+05:30  INFO 11888 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18d22ecf
-2025-06-02T11:33:56.134+05:30  INFO 11888 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T11:33:56.187+05:30  WARN 11888 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T11:33:56.209+05:30  INFO 11888 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-02T11:33:57.144+05:30  INFO 11888 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T11:33:57.209+05:30  INFO 11888 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T11:33:57.511+05:30  INFO 11888 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T11:33:58.345+05:30  WARN 11888 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T11:33:59.343+05:30  WARN 11888 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars, /api/reservation/create] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T11:33:59.776+05:30  INFO 11888 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T11:33:59.785+05:30  INFO 11888 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 6.94 seconds (process running for 7.561)
-2025-06-02T11:34:15.386+05:30  INFO 11888 --- [Rental-Service] [http-nio-8282-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-02T11:34:15.387+05:30  INFO 11888 --- [Rental-Service] [http-nio-8282-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-02T11:34:15.390+05:30  INFO 11888 --- [Rental-Service] [http-nio-8282-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-06-02T11:34:15.448+05:30  WARN 11888 --- [Rental-Service] [http-nio-8282-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
-2025-06-02T11:36:52.980+05:30  INFO 11888 --- [Rental-Service] [http-nio-8282-exec-2] c.h.r.service.ReservationServiceImp      : Creating reservation for customerId=1, carId=1 from 2025-06-02 to 2025-06-05
-2025-06-02T11:36:53.423+05:30 DEBUG 11888 --- [Rental-Service] [http-nio-8282-exec-2] c.h.r.service.ReservationServiceImp      : Reservation saved successfully: Reservation [reservationId=102, reservationStatus=Reserved, customerId=1, carId=1]
-2025-06-02T11:49:31.924+05:30  INFO 11888 --- [Rental-Service] [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T11:49:32.149+05:30  INFO 11888 --- [Rental-Service] [RMI TCP Connection(19)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T11:49:32.198+05:30  INFO 11888 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T11:49:32.280+05:30  INFO 11888 --- [Rental-Service] [RMI TCP Connection(19)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T11:49:32.368+05:30  INFO 11888 --- [Rental-Service] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T11:49:32.455+05:30  INFO 11888 --- [Rental-Service] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T11:49:34.774+05:30  INFO 21784 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 21784 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T11:49:34.776+05:30 DEBUG 21784 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T11:49:34.777+05:30  INFO 21784 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T11:49:35.711+05:30  INFO 21784 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T11:49:35.771+05:30  INFO 21784 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
-2025-06-02T11:49:36.350+05:30  INFO 21784 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T11:49:36.365+05:30  INFO 21784 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T11:49:36.365+05:30  INFO 21784 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T11:49:36.416+05:30  INFO 21784 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T11:49:36.416+05:30  INFO 21784 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1587 ms
-2025-06-02T11:49:36.490+05:30 DEBUG 21784 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T11:49:36.721+05:30  INFO 21784 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T11:49:36.778+05:30  INFO 21784 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T11:49:36.807+05:30  INFO 21784 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T11:49:37.033+05:30  INFO 21784 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T11:49:37.076+05:30  INFO 21784 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T11:49:37.506+05:30  INFO 21784 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@651cedfb
-2025-06-02T11:49:37.509+05:30  INFO 21784 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T11:49:37.560+05:30  WARN 21784 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T11:49:37.577+05:30  INFO 21784 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-02T11:49:38.449+05:30  INFO 21784 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T11:49:38.508+05:30  INFO 21784 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T11:49:38.815+05:30  INFO 21784 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T11:49:39.468+05:30  WARN 21784 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T11:49:40.457+05:30  WARN 21784 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars, /api/reservation/create] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T11:49:40.874+05:30  INFO 21784 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T11:49:40.883+05:30  INFO 21784 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 6.543 seconds (process running for 7.108)
-2025-06-02T11:53:19.912+05:30  INFO 21784 --- [Rental-Service] [http-nio-8282-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-02T11:53:19.914+05:30  INFO 21784 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-02T11:53:19.915+05:30  INFO 21784 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-06-02T11:56:05.616+05:30  INFO 21784 --- [Rental-Service] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T11:56:05.646+05:30  INFO 21784 --- [Rental-Service] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T11:56:05.659+05:30  INFO 21784 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T11:56:05.688+05:30  INFO 21784 --- [Rental-Service] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T11:56:05.715+05:30  INFO 21784 --- [Rental-Service] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T11:56:06.101+05:30  INFO 21784 --- [Rental-Service] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T11:56:08.892+05:30  INFO 8804 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 8804 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T11:56:08.894+05:30 DEBUG 8804 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T11:56:08.895+05:30  INFO 8804 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T11:56:10.193+05:30  INFO 8804 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T11:56:10.254+05:30  INFO 8804 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
-2025-06-02T11:56:10.769+05:30  INFO 8804 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T11:56:10.783+05:30  INFO 8804 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T11:56:10.783+05:30  INFO 8804 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T11:56:10.835+05:30  INFO 8804 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T11:56:10.836+05:30  INFO 8804 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1880 ms
-2025-06-02T11:56:10.899+05:30 DEBUG 8804 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T11:56:11.038+05:30  INFO 8804 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T11:56:11.112+05:30  INFO 8804 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T11:56:11.154+05:30  INFO 8804 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T11:56:11.412+05:30  INFO 8804 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T11:56:11.449+05:30  INFO 8804 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T11:56:11.792+05:30  INFO 8804 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c87787d
-2025-06-02T11:56:11.795+05:30  INFO 8804 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T11:56:11.853+05:30  WARN 8804 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T11:56:11.871+05:30  INFO 8804 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-02T11:56:12.873+05:30  INFO 8804 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T11:56:12.973+05:30  INFO 8804 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T11:56:13.352+05:30  INFO 8804 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T11:56:13.998+05:30  WARN 8804 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T11:56:14.984+05:30  WARN 8804 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars, /api/reservation/create, api/payment/make] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T11:56:15.550+05:30  INFO 8804 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T11:56:15.559+05:30  INFO 8804 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 7.121 seconds (process running for 7.712)
-2025-06-02T11:56:23.152+05:30  INFO 8804 --- [Rental-Service] [http-nio-8282-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-02T11:56:23.153+05:30  INFO 8804 --- [Rental-Service] [http-nio-8282-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-02T11:56:23.155+05:30  INFO 8804 --- [Rental-Service] [http-nio-8282-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-06-02T11:56:23.351+05:30  INFO 8804 --- [Rental-Service] [http-nio-8282-exec-2] c.h.r.service.PaymentServiceImp          : Creating payment for reservationId=11, amount=1400.0 on 2025-06-02
-2025-06-02T11:56:23.524+05:30 DEBUG 8804 --- [Rental-Service] [http-nio-8282-exec-2] c.h.r.service.PaymentServiceImp          : Payment saved successfully: Payment [paymentId=102, paymentType=UPI, paymentDate=2025-06-02, amount=1400.0, reservationId=11]
-2025-06-02T11:56:58.045+05:30  INFO 8804 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.PaymentServiceImp          : Creating payment for reservationId=15, amount=1500.0 on 2025-06-02
-2025-06-02T11:56:58.058+05:30 DEBUG 8804 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.PaymentServiceImp          : Payment saved successfully: Payment [paymentId=103, paymentType=Credit Card, paymentDate=2025-06-02, amount=1500.0, reservationId=15]
-2025-06-02T12:54:13.997+05:30  INFO 8804 --- [Rental-Service] [RMI TCP Connection(61)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T12:54:14.301+05:30  INFO 8804 --- [Rental-Service] [RMI TCP Connection(61)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T12:54:14.370+05:30  INFO 8804 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T12:54:14.481+05:30  INFO 8804 --- [Rental-Service] [RMI TCP Connection(61)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T12:54:14.596+05:30  INFO 8804 --- [Rental-Service] [RMI TCP Connection(61)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T12:54:14.635+05:30  INFO 8804 --- [Rental-Service] [RMI TCP Connection(61)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T12:54:17.288+05:30  INFO 23524 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 23524 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T12:54:17.290+05:30 DEBUG 23524 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T12:54:17.291+05:30  INFO 23524 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T12:54:18.233+05:30  INFO 23524 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T12:54:18.291+05:30  INFO 23524 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
-2025-06-02T12:54:18.814+05:30  INFO 23524 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T12:54:18.835+05:30  INFO 23524 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T12:54:18.835+05:30  INFO 23524 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T12:54:18.972+05:30  INFO 23524 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T12:54:18.974+05:30  INFO 23524 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1623 ms
-2025-06-02T12:54:19.053+05:30 DEBUG 23524 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T12:54:19.211+05:30  INFO 23524 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T12:54:19.266+05:30  INFO 23524 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T12:54:19.297+05:30  INFO 23524 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T12:54:19.681+05:30  INFO 23524 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T12:54:19.717+05:30  INFO 23524 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T12:54:20.226+05:30  INFO 23524 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@308c65e0
-2025-06-02T12:54:20.229+05:30  INFO 23524 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T12:54:20.303+05:30  WARN 23524 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T12:54:20.332+05:30  INFO 23524 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-02T12:54:21.319+05:30  INFO 23524 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T12:54:21.385+05:30  INFO 23524 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T12:54:21.775+05:30  INFO 23524 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T12:54:22.670+05:30  WARN 23524 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T12:54:23.985+05:30  WARN 23524 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars, /api/reservation/create, api/payment/make] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T12:54:24.604+05:30  INFO 23524 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T12:54:24.614+05:30  INFO 23524 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 7.924 seconds (process running for 8.447)
-2025-06-02T13:02:15.943+05:30  INFO 23524 --- [Rental-Service] [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-06-02T13:02:16.012+05:30  INFO 23524 --- [Rental-Service] [RMI TCP Connection(12)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-02T13:02:16.023+05:30  INFO 23524 --- [Rental-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-02T13:02:16.043+05:30  INFO 23524 --- [Rental-Service] [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T13:02:16.064+05:30  INFO 23524 --- [Rental-Service] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-02T13:02:16.081+05:30  INFO 23524 --- [Rental-Service] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-02T13:02:18.245+05:30  INFO 10496 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Starting RentalServiceApplication using Java 21.0.6 with PID 10496 (C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service\target\classes started by Tharun in C:\Users\Tharun\Desktop\Hexaware\Java_Angular_Hexaware\CaseStudy\Rental-Service)
-2025-06-02T13:02:18.246+05:30 DEBUG 10496 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-02T13:02:18.248+05:30  INFO 10496 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T13:02:19.099+05:30  INFO 10496 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-02T13:02:19.159+05:30  INFO 10496 --- [Rental-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
-2025-06-02T13:02:19.653+05:30  INFO 10496 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8282 (http)
-2025-06-02T13:02:19.668+05:30  INFO 10496 --- [Rental-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-02T13:02:19.670+05:30  INFO 10496 --- [Rental-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-02T13:02:19.721+05:30  INFO 10496 --- [Rental-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-02T13:02:19.722+05:30  INFO 10496 --- [Rental-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1414 ms
-2025-06-02T13:02:19.788+05:30 DEBUG 10496 --- [Rental-Service] [main] c.h.rentalservice.filter.JwtAuthFilter   : Filter 'jwtAuthFilter' configured for use
-2025-06-02T13:02:19.915+05:30  INFO 10496 --- [Rental-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-02T13:02:19.979+05:30  INFO 10496 --- [Rental-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-02T13:02:20.007+05:30  INFO 10496 --- [Rental-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-02T13:02:20.235+05:30  INFO 10496 --- [Rental-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-02T13:02:20.264+05:30  INFO 10496 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-02T13:02:20.572+05:30  INFO 10496 --- [Rental-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74b7497b
-2025-06-02T13:02:20.574+05:30  INFO 10496 --- [Rental-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-02T13:02:20.619+05:30  WARN 10496 --- [Rental-Service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-02T13:02:20.636+05:30  INFO 10496 --- [Rental-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-02T13:02:21.435+05:30  INFO 10496 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-02T13:02:21.493+05:30  INFO 10496 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-02T13:02:21.865+05:30  INFO 10496 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-02T13:02:22.503+05:30  WARN 10496 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-02T13:02:23.323+05:30  WARN 10496 --- [Rental-Service] [main] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/feedback/get, api/reservation/getbookedcars, /api/reservation/create, api/payment/make] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
-2025-06-02T13:02:23.778+05:30  INFO 10496 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
-2025-06-02T13:02:23.789+05:30  INFO 10496 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 5.941 seconds (process running for 6.494)
-2025-06-02T13:09:30.958+05:30  INFO 10496 --- [Rental-Service] [http-nio-8282-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-02T13:09:30.962+05:30  INFO 10496 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-02T13:09:30.997+05:30  INFO 10496 --- [Rental-Service] [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 35 ms
-2025-06-02T13:09:31.349+05:30  INFO 10496 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.ReservationServiceImp      : Creating reservation for customerId=1, carId=452 from 2025-06-02 to 2025-06-05
-2025-06-02T13:09:31.590+05:30 DEBUG 10496 --- [Rental-Service] [http-nio-8282-exec-1] c.h.r.service.ReservationServiceImp      : Reservation saved successfully: Reservation [reservationId=152, reservationStatus=Pending, customerId=1, carId=452]
+2025-06-03T08:57:16.704+05:30  INFO 18812 --- [Rental-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-03T08:57:16.795+05:30  INFO 18812 --- [Rental-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03T08:57:17.182+05:30  INFO 18812 --- [Rental-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-03T08:57:18.101+05:30  WARN 18812 --- [Rental-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-03T08:57:18.645+05:30  INFO 18812 --- [Rental-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8282 (http) with context path '/'
+2025-06-03T08:57:18.655+05:30  INFO 18812 --- [Rental-Service] [main] c.h.r.RentalServiceApplication           : Started RentalServiceApplication in 5.942 seconds (process running for 6.702)

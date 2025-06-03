@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.hexaware.rentalservice.dto.PaymentDTO;
 import com.hexaware.rentalservice.entity.Payment;
 import com.hexaware.rentalservice.entity.Reservation;
+import com.hexaware.rentalservice.exception.PaymentNotFoundException;
 import com.hexaware.rentalservice.repository.PaymentRepository;
 import com.hexaware.rentalservice.repository.ReservationRepository;
 
@@ -33,7 +34,7 @@ public class PaymentServiceImp implements IPaymentService{
 	ReservationRepository reservationRepository;
 
 	@Override
-	public Payment makePayment(PaymentDTO paymentDTO) {
+	public PaymentDTO makePayment(PaymentDTO paymentDTO) {
 		log.info("Creating payment for reservationId={}, amount={} on {}", 
                 paymentDTO.getReservationId(), paymentDTO.getAmount(), LocalDate.now());
 		Payment payment = new Payment();
@@ -50,44 +51,55 @@ public class PaymentServiceImp implements IPaymentService{
         payment.setPaymentDate(LocalDate.now());
         Payment savedPayment = paymentRepository.save(payment);
         log.debug("Payment saved successfully: {}", savedPayment);
-        return savedPayment;
+        return mapToDTO(savedPayment);
 	}
 
 	@Override
-	public PaymentDTO getPaymentById(Long paymentId) {
+	public PaymentDTO getPaymentById(Long paymentId) throws PaymentNotFoundException {
 		log.info("Fetching payment with paymentId={}", paymentId);
 		Payment payment = paymentRepository.findById(paymentId).orElse(null);
         if (payment != null) {
             return mapToDTO(payment);
         }
         log.warn("Payment with paymentId={} not found",paymentId);
-        return null;
+        throw new PaymentNotFoundException();
 	}
 
 	@Override
-	public List<Payment> getAllPayments() {
+	public List<PaymentDTO> getAllPayments() {
 		log.info("Fetching all payments");
         List<Payment> payments = paymentRepository.findAll();
         log.debug("Total payments fetched: {}", payments.size());
-        return payments;
+        
+        List<PaymentDTO>paymentDTOs=new ArrayList<>();
+        for(Payment payment:payments)
+        {
+        	paymentDTOs.add(mapToDTO(payment));
+        }
+        return paymentDTOs;
 	}
 
 	@Override
-	public List<Payment> getPaymentsByReservationId(Long reservationId) {
+	public List<PaymentDTO> getPaymentsByReservationId(Long reservationId) {
 		log.info("Fetching payments for reservationId={}", reservationId);
         List<Payment> payments = paymentRepository.findByReservationId(reservationId);
         log.debug("Found {} payments for reservationId={}", payments.size(), reservationId);
-        return payments;
+        List<PaymentDTO>paymentDTOs=new ArrayList<>();
+        for(Payment payment:payments)
+        {
+        	paymentDTOs.add(mapToDTO(payment));
+        }
+        return paymentDTOs;
 	}
 
 	@Override
-	public List<Payment> getPaymentsByCustomerId(Long customerId) {
+	public List<PaymentDTO> getPaymentsByCustomerId(Long customerId) {
 		log.info("Fetching payments for customerId={}", customerId);
 		List<Reservation> reservations = reservationRepository.findByCustomerId(customerId);
-	    List<Payment> customerPayments = new ArrayList<>();
+	    List<PaymentDTO> customerPayments = new ArrayList<>();
 
 	    for (Reservation reservation : reservations) {
-	        List<Payment> payments = getPaymentsByReservationId(reservation.getReservationId());
+	        List<PaymentDTO> payments = getPaymentsByReservationId(reservation.getReservationId());
 	        customerPayments.addAll(payments);
 	    }
 	    log.debug("Found {} payments for customerId={}", customerPayments.size(), customerId);

@@ -19,6 +19,7 @@ public class Feedback {
 	 private Long customerId;
 	 private String comment;
 	 private int rating; 
+	 private String adminResponse;
 	 private String status; 
 
 	 public Feedback() {
@@ -81,6 +82,16 @@ public class Feedback {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	
+
+	public String getAdminResponse() {
+		return adminResponse;
+	}
+
+	public void setAdminResponse(String adminResponse) {
+		this.adminResponse = adminResponse;
 	}
 
 	@Override

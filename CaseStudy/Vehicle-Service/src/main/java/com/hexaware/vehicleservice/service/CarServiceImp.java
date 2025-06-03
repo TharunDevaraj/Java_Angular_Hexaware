@@ -1,6 +1,7 @@
 package com.hexaware.vehicleservice.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class CarServiceImp implements ICarService{
 	RestTemplate restTemplate;
 	
 	@Override
-	public Car addCar(CarDTO carDTO) {
+	public CarDTO addCar(CarDTO carDTO) {
 		log.info("Adding a new car: {}", carDTO);
 		
 		Car car=new Car();
@@ -46,7 +47,7 @@ public class CarServiceImp implements ICarService{
 		car.setPricePerDay(carDTO.getPricePerDay());
 		Car savedCar = carRepository.save(car);
         log.debug("Car saved successfully: {}", savedCar);
-        return savedCar;
+        return mapToDTO(savedCar);
 	}
 
 	@Override
@@ -65,13 +66,21 @@ public class CarServiceImp implements ICarService{
 	}
 
 	@Override
-	public List<Car> getAllCars() {
+	public List<CarDTO> getAllCars() {
 		
-		return carRepository.findAll();
+		List<Car> cars = carRepository.findAll();
+		
+		List<CarDTO> carDTOs=new ArrayList<>();
+		
+		for(Car car:cars)
+		{
+			carDTOs.add(mapToDTO(car));
+		}
+		return carDTOs;
 	}
 
 	@Override
-	public Car updateCar(Long carId,CarDTO updatedCarDTO) throws CarNotFoundException {
+	public CarDTO updateCar(Long carId,CarDTO updatedCarDTO) throws CarNotFoundException {
 	
 		log.info("Updating car: {}", updatedCarDTO);
 		Car existingCar = carRepository.findById(carId).orElse(null);
@@ -88,8 +97,7 @@ public class CarServiceImp implements ICarService{
         existingCar.setPassengerCapacity(updatedCarDTO.getPassengerCapacity());
         existingCar.setPricePerDay(updatedCarDTO.getPricePerDay());
         log.debug("Car updated successfully: {}", existingCar);
-        return carRepository.save(existingCar);
-  
+        return mapToDTO(carRepository.save(existingCar));
 	}
 
 	@Override
@@ -107,23 +115,45 @@ public class CarServiceImp implements ICarService{
 	}
 
 	@Override
-	public List<Car> getAvailableCars() {
+	public List<CarDTO> getAvailableCars() {
 		log.info("Fetching all available cars");
 		List<Car> cars= carRepository.findByCarStatus("Available");
 		log.debug("Found {} available cars",cars.size());
-		return cars;
+		List<CarDTO> carDTOs=new ArrayList<>();
+		
+		for(Car car:cars)
+		{
+			carDTOs.add(mapToDTO(car));
+		}
+		return carDTOs;
 	}
 	
 	@Override
-	public List<Car> findAvailableCarsByFilter(String location, int passengerCapacity, LocalDate startDate, LocalDate endDate) {
+	public List<CarDTO> findAvailableCarsByFilter(String location, int passengerCapacity, LocalDate startDate, LocalDate endDate) {
 	    List<Long> bookedCarIds = restTemplate.getForObject("http://localhost:8282/api/reservation/getbookedcars?startDate="+startDate+"&endDate="+endDate, List.class);
-	    return carRepository.findAvailableCars(location, passengerCapacity, bookedCarIds);
+	    List<Car> cars=  carRepository.findAvailableCars(location, passengerCapacity, bookedCarIds);
+	    
+	    List<CarDTO> carDTOs=new ArrayList<>();
+		
+		for(Car car:cars)
+		{
+			carDTOs.add(mapToDTO(car));
+		}
+		return carDTOs;
 	}
 
 	@Override
-	public List<Car> searchVehicles(String location, int passengerCapacity) {
+	public List<CarDTO> searchVehicles(String location, int passengerCapacity) {
 		
-		return carRepository.findByLocationAndPassengerCapacityGreaterThanEqualAndCarStatus(location, passengerCapacity, "available");
+		List<Car> cars=carRepository.findByLocationAndPassengerCapacityGreaterThanEqualAndCarStatus(location, passengerCapacity, "available");
+		
+		List<CarDTO> carDTOs=new ArrayList<>();
+		
+		for(Car car:cars)
+		{
+			carDTOs.add(mapToDTO(car));
+		}
+		return carDTOs;
 	}
 
 	@Override
@@ -137,7 +167,7 @@ public class CarServiceImp implements ICarService{
 	}
 	
 	@Override
-	public Car updateCarPricing(Long carId, double newPricePerDay) throws CarNotFoundException {
+	public CarDTO updateCarPricing(Long carId, double newPricePerDay) throws CarNotFoundException {
 		log.info("Updating price of car with cardId {}",carId);
 	    Car car = carRepository.findById(carId).orElse(null);
 	    
@@ -148,7 +178,7 @@ public class CarServiceImp implements ICarService{
 	    }
 	    log.debug("Updated price of car with cardId {}",carId);          
 	    car.setPricePerDay(newPricePerDay);
-	    return carRepository.save(car);
+	    return mapToDTO(carRepository.save(car));
 	}
 	
 	private CarDTO mapToDTO(Car car) {
@@ -165,14 +195,14 @@ public class CarServiceImp implements ICarService{
     }
 
 	@Override
-	public Car updateVehicleStatus(Long carId, String newStatus) throws CarNotFoundException {
+	public CarDTO updateVehicleStatus(Long carId, String newStatus) throws CarNotFoundException {
 		log.info("Updating status of car with cardId {}",carId);
 		Car car = carRepository.findById(carId)
                 .orElseThrow(() -> new CarNotFoundException());
 
         car.setCarStatus(newStatus);
         log.debug("Updated status of car with cardId {}",carId);
-        return carRepository.save(car);
+        return mapToDTO(carRepository.save(car));
 	}
 
 }

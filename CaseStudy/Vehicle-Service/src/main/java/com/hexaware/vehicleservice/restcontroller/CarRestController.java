@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,16 +38,14 @@ public class CarRestController {
     ICarService carService;
 
     @PostMapping("/add")
-    @PreAuthorize("hasRole('admin')")
-    public ResponseEntity<Car> addCar(@RequestBody @Valid CarDTO carDTO) {
-        Car savedCar = carService.addCar(carDTO);
+    public ResponseEntity<CarDTO> addCar(@RequestBody @Valid CarDTO carDTO) {
+        CarDTO savedCar = carService.addCar(carDTO);
         return new ResponseEntity<>(savedCar, HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{carId}")
-    @PreAuthorize("hasRole('admin')")
-    public ResponseEntity<Car> updateCar(@PathVariable Long carId, @RequestBody @Valid CarDTO carDTO) throws CarNotFoundException {
-        Car updatedCar = carService.updateCar(carId,carDTO);
+    public ResponseEntity<CarDTO> updateCar(@PathVariable Long carId, @RequestBody @Valid CarDTO carDTO) throws CarNotFoundException {
+        CarDTO updatedCar = carService.updateCar(carId,carDTO);
         return new ResponseEntity<>(updatedCar, HttpStatus.OK);
     }
 
@@ -59,42 +56,38 @@ public class CarRestController {
     }
 
     @GetMapping("/get")
-    public ResponseEntity<List<Car>> getAllCars() {
+    public ResponseEntity<List<CarDTO>> getAllCars() {
         return new ResponseEntity<>(carService.getAllCars(), HttpStatus.OK);
     }
 
     @GetMapping("/available")
-    public ResponseEntity<List<Car>> getAvailableCars() {
+    public ResponseEntity<List<CarDTO>> getAvailableCars() {
         return new ResponseEntity<>(carService.getAvailableCars(), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{carId}")
-    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<String> deleteCar(@PathVariable Long carId) throws CarNotFoundException {
         carService.deleteCarById(carId);
         return new ResponseEntity<>("Car deleted successfully!", HttpStatus.OK);
     }
     
     @PutMapping("/updateprice/{id}/{price}")
-    @PreAuthorize("hasRole('admin')")
-    public ResponseEntity<Car> updateCarPrice(@PathVariable Long id, @PathVariable double price) throws CarNotFoundException
+    public ResponseEntity<CarDTO> updateCarPrice(@PathVariable Long id, @PathVariable double price) throws CarNotFoundException
     {
-    	Car updatedCar = carService.updateCarPricing(id,price);
+    	CarDTO updatedCar = carService.updateCarPricing(id,price);
         return new ResponseEntity<>(updatedCar, HttpStatus.OK);
     }
     
     @GetMapping("/availablecarsbyfilter")
-    @PreAuthorize("hasAnyRole('admin','customer','agent')")
-    public ResponseEntity<List<Car>> getAvailableCarsByFilter(@RequestParam String location,@RequestParam int passengerCapacity,@RequestParam LocalDate startDate,@RequestParam LocalDate endDate)
+    public ResponseEntity<List<CarDTO>> getAvailableCarsByFilter(@RequestParam String location,@RequestParam int passengerCapacity,@RequestParam LocalDate startDate,@RequestParam LocalDate endDate)
     {
-    	return new ResponseEntity<List<Car>>(carService.findAvailableCarsByFilter(location, passengerCapacity, startDate, endDate), HttpStatus.OK);
+    	return new ResponseEntity<List<CarDTO>>(carService.findAvailableCarsByFilter(location, passengerCapacity, startDate, endDate), HttpStatus.OK);
     }
   
-    @PutMapping("updateStatus/{carId}/{status}")
-    @PreAuthorize("hasAnyRole('admin','agent')")
-    public ResponseEntity<Car> updateVehicleStatus(@PathVariable Long carId,@PathVariable String status) throws CarNotFoundException
+    @PutMapping("/updateStatus/{carId}/{status}")
+    public ResponseEntity<CarDTO> updateVehicleStatus(@PathVariable Long carId,@PathVariable String status) throws CarNotFoundException
     {
-    	return new ResponseEntity<Car>(carService.updateVehicleStatus(carId, status), HttpStatus.OK);
+    	return new ResponseEntity<CarDTO>(carService.updateVehicleStatus(carId, status), HttpStatus.OK);
     }
     
 }

@@ -50,7 +50,7 @@ class CarServiceImpTest {
         sampleCarDTO.setPassengerCapacity(5);
         sampleCarDTO.setPricePerDay(49.99);
         
-        Car result = carService.addCar(sampleCarDTO);
+        CarDTO result = carService.addCar(sampleCarDTO);
         assertNotNull(result);
         assertEquals("Toyota Corolla", result.getCarName());
 	}
@@ -68,7 +68,7 @@ class CarServiceImpTest {
 	@Disabled
 	void testGetAllCars() {
 		
-		 List<Car> cars = carService.getAllCars();
+		 List<CarDTO> cars = carService.getAllCars();
 	        assertEquals(6, cars.size());
 	}
 
@@ -79,7 +79,7 @@ class CarServiceImpTest {
 		CarDTO sampleCarDTO=new CarDTO();
 		sampleCarDTO.setLocation("Hyderabad");
 		
-		Car updatedCar = carService.updateCar(202L, sampleCarDTO);
+		CarDTO updatedCar = carService.updateCar(202L, sampleCarDTO);
         assertEquals("Hyderabad", updatedCar.getLocation());
         
         assertThrows(CarNotFoundException.class, () -> carService.updateCar(99L, sampleCarDTO));
@@ -99,7 +99,7 @@ class CarServiceImpTest {
 	@Disabled
 	void testGetAvailableCars() {
 		
-		List<Car> availableCars = carService.getAvailableCars();
+		List<CarDTO> availableCars = carService.getAvailableCars();
         assertEquals(4, availableCars.size());
 		
 	}
@@ -108,7 +108,7 @@ class CarServiceImpTest {
 	@Disabled
 	void testFindAvailableCarsByFilter() {
 		
-		List<Car> result = carService.findAvailableCarsByFilter("New York", 5, LocalDate.now(), LocalDate.now().plusDays(2));
+		List<CarDTO> result = carService.findAvailableCarsByFilter("New York", 5, LocalDate.now(), LocalDate.now().plusDays(2));
         assertEquals(1, result.size());
 		
 	}
@@ -117,7 +117,7 @@ class CarServiceImpTest {
 	@Disabled
 	void testSearchVehicles() {
 		
-		List<Car> result = carService.searchVehicles("New York", 5);
+		List<CarDTO> result = carService.searchVehicles("New York", 5);
         assertEquals(1, result.size());
 		
 	}
@@ -136,7 +136,7 @@ class CarServiceImpTest {
 	@Disabled
 	void testUpdateCarPricing() throws CarNotFoundException {
 		
-		Car updatedCar = carService.updateCarPricing(352L, 59.99);
+		CarDTO updatedCar = carService.updateCarPricing(352L, 59.99);
         assertEquals(59.99, updatedCar.getPricePerDay());
         
         assertThrows(CarNotFoundException.class, () -> carService.updateCarPricing(400L, 59.99));
@@ -146,7 +146,7 @@ class CarServiceImpTest {
 	@Test
 	@Disabled
 	void testUpdateVehicleStatus() throws CarNotFoundException {
-		Car updated = carService.updateVehicleStatus(352L, "rented");
+		CarDTO updated = carService.updateVehicleStatus(352L, "rented");
         assertEquals("rented", updated.getCarStatus());
         
         assertThrows(CarNotFoundException.class, () -> carService.updateVehicleStatus(400L, "maintenance"));

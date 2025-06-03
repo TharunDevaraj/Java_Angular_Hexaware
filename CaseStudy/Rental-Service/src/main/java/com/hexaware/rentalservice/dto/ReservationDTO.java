@@ -1,6 +1,7 @@
 package com.hexaware.rentalservice.dto;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
@@ -30,6 +31,8 @@ public class ReservationDTO {
 	 private Long carId;
 	 
 	 private String reservationStatus;
+	 private LocalDateTime checkInTime;
+	 private LocalDateTime checkOutTime;
 	 
 	public ReservationDTO()
 	 {
@@ -41,7 +44,8 @@ public class ReservationDTO {
 			@NotNull(message = "Start date is required") @FutureOrPresent(message = "Start date must be today or in the future") LocalDate startDate,
 			@NotNull(message = "End date is required") @FutureOrPresent(message = "End date must be today or in the future") LocalDate endDate,
 			@NotNull(message = "Customer ID is required") Long customerId,
-			@NotNull(message = "Car ID is required") Long carId, String reservationStatus) {
+			@NotNull(message = "Car ID is required") Long carId, String reservationStatus, LocalDateTime checkInTime,
+			LocalDateTime checkOutTime) {
 		super();
 		this.reservationId = reservationId;
 		this.startDate = startDate;
@@ -49,7 +53,12 @@ public class ReservationDTO {
 		this.customerId = customerId;
 		this.carId = carId;
 		this.reservationStatus = reservationStatus;
+		this.checkInTime = checkInTime;
+		this.checkOutTime = checkOutTime;
 	}
+
+
+
 
 
 	public ReservationDTO(Long reservationId, LocalDate startDate, LocalDate endDate,
@@ -90,9 +99,27 @@ public class ReservationDTO {
 		return reservationStatus;
 	}
 
-
 	public void setReservationStatus(String reservationStatus) {
 		this.reservationStatus = reservationStatus;
+	}
+	
+
+	public LocalDateTime getCheckInTime() {
+		return checkInTime;
+	}
+
+
+	public void setCheckInTime(LocalDateTime checkInTime) {
+		this.checkInTime = checkInTime;
+	}
+
+	public LocalDateTime getCheckOutTime() {
+		return checkOutTime;
+	}
+
+
+	public void setCheckOutTime(LocalDateTime checkOutTime) {
+		this.checkOutTime = checkOutTime;
 	}
 
 

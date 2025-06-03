@@ -20,4 +20,10 @@ public class GlobalExceptionHandler {
 	{
 		return new ResponseEntity<String>("User ID not found, enter a valid User ID", HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler({UserNameAlreadyExistsException.class})
+	public ResponseEntity<String> userNameExceptionHandler()
+	{
+		return new ResponseEntity<String>("User name already exists, try registering using different username", HttpStatus.NOT_IMPLEMENTED);
+	}
 }

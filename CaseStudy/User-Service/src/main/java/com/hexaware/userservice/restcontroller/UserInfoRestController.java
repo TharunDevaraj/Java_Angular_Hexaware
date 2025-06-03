@@ -8,30 +8,26 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.hexaware.userservice.dto.AuthRequest;
 import com.hexaware.userservice.dto.CarDTO;
+import com.hexaware.userservice.dto.FeedbackDTO;
 import com.hexaware.userservice.dto.PaymentDTO;
 import com.hexaware.userservice.dto.ReservationDTO;
 import com.hexaware.userservice.dto.UserInfoDTO;
 import com.hexaware.userservice.entity.UserInfo;
 import com.hexaware.userservice.exception.UserNotFoundException;
-import com.hexaware.userservice.service.CarServiceClient;
+import com.hexaware.userservice.service.IUserInfoService;
 import com.hexaware.userservice.service.JwtService;
-import com.hexaware.userservice.service.UserInfoServiceImp;
 
 import jakarta.validation.Valid;
 
@@ -53,135 +49,325 @@ public class UserInfoRestController {
 	JwtService jwtService;
 	
 	@Autowired
-	UserInfoServiceImp userService;
-	
-	@Autowired
-	CarServiceClient carServiceClient;
+	IUserInfoService userService;
 	
 	@Autowired
     private RestTemplate restTemplate;
 	
-	@PostMapping("/register")
-	public ResponseEntity<String> addUser(@RequestBody @Valid UserInfo userInfo)
-	{
-		return new ResponseEntity<String>(userService.registerUser(userInfo), HttpStatus.CREATED);
-	}
+		// User-Based Operations
 	
-	@PostMapping("/login")
-	public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
-
-		Authentication authentication = authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
-		
-		
-
-		String token = null;
-
-		if (authentication.isAuthenticated()) {
-
-			// call generate token method from jwtService class
-
-			token = jwtService.generateToken(authRequest.getUsername());
-
-			//logger.info("Token : " + token);
-
-		} else {
-
-			//logger.info("invalid");
-
-			throw new UsernameNotFoundException("UserName or Password in Invalid / Invalid Request");
-
-		}
-			return token;
-
-	}
-	
-	 	@GetMapping("/get")
-	    @PreAuthorize("hasRole('admin')")
+	 	@GetMapping("/getAllUsers")
+	    @PreAuthorize("hasAnyAuthority('admin')")
 	    public ResponseEntity<List<UserInfoDTO>> getAllUsers() {
 	        return new ResponseEntity<List<UserInfoDTO>>(userService.getAllUsers(), HttpStatus.FOUND);
 	    }
 
-	    @GetMapping("get/{id}")
-	    @PreAuthorize("hasRole('admin')")
+	    @GetMapping("getUser/{id}")
+	    @PreAuthorize("hasAnyAuthority('admin','customer')")
 	    public ResponseEntity<UserInfoDTO> getUserById(@PathVariable Long id) throws UserNotFoundException {
 	        return  new ResponseEntity<UserInfoDTO>(userService.getUserById(id), HttpStatus.FOUND);
 	    }
 
-	    @PutMapping("update/{id}")
-	    @PreAuthorize("hasRole('admin')")
+	    @PutMapping("updateUser/{id}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
 	    public ResponseEntity<UserInfoDTO> updateUser(@PathVariable Long id, @RequestBody @Valid UserInfo user) throws UserNotFoundException {
 	        return new ResponseEntity<UserInfoDTO>(userService.updateUser(id, user), HttpStatus.OK);
 	    }
 
-	    @DeleteMapping("deactivate/{id}")
-	    @PreAuthorize("hasRole('admin')")
+	    @DeleteMapping("deactivateUser/{id}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
 	    public ResponseEntity<String> deactivateUser(@PathVariable Long id) throws UserNotFoundException {
 	        userService.deactivateUser(id);
 	        return new ResponseEntity<String>("User deactivated successfully",HttpStatus.OK);
 	    }
 	   
-        // Public level operations
+        // Car-Based Operations
 	    
 	    private final String CAR_SERVICE_BASE_URL = "http://localhost:8181/api/cars";
 
-	    @GetMapping("/getcarbyid/{carId}")
-	    public CarDTO getCarById(@PathVariable Long carId) {
-	        return restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/get/" + carId, CarDTO.class);
-	    }
-
-	    @GetMapping("/getallcars")
-	    public List<CarDTO> getAllCars() {
-	        CarDTO dtos[]= restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/get", CarDTO[] .class);
-	        List<CarDTO> cars = Arrays.asList(dtos);
-	        return cars;
-	        
-	    }
-
-	    @GetMapping("/getavailable")
-	    public List<CarDTO> getAvailableCars() {
-	    	CarDTO dtos[]=restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/available", CarDTO[].class);
-	        List<CarDTO> cars = Arrays.asList(dtos);
-	        return cars;
+	    @GetMapping("/getCar/{carId}")
+	    @PreAuthorize("hasAnyAuthority('admin','customer','agent','user')")
+	    public ResponseEntity<CarDTO> getCarById(@PathVariable Long carId) {
+	        return new ResponseEntity<CarDTO>(restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/get/" + carId, CarDTO.class), HttpStatus.FOUND);
 	    }
 	    
-	    //CUSTOMER level operations
+	    @PostMapping("/addCar")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<CarDTO> addCar(@RequestBody CarDTO carDTO) {
+	        CarDTO createdCar = restTemplate.postForObject(CAR_SERVICE_BASE_URL + "/add", carDTO, CarDTO.class);
+	        return new ResponseEntity<>(createdCar, HttpStatus.CREATED);
+	    }
+
+	    @GetMapping("/getAllCars")
+	    @PreAuthorize("hasAnyAuthority('admin','agent')")
+	    public ResponseEntity< List<CarDTO>> getAllCars() {
+	        CarDTO dtos[]= restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/get", CarDTO[] .class);
+	        List<CarDTO> cars = Arrays.asList(dtos);
+	        return new ResponseEntity<>(cars, HttpStatus.OK);   
+	    }
+	    
+	    @PutMapping("/updateCar/{carId}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<String> updateCar(@PathVariable Long carId, @RequestBody CarDTO carDTO) {
+	        restTemplate.put(CAR_SERVICE_BASE_URL + "/update/" + carId, carDTO);
+	        return new ResponseEntity<>("Car updated successfully", HttpStatus.OK);
+	    }
+
+	    @GetMapping("/getAvailableCars")
+	    @PreAuthorize("hasAnyAuthority('admin','customer','agent','user')")
+	    public ResponseEntity<List<CarDTO>> getAvailableCars() {
+	        CarDTO[] cars = restTemplate.getForObject(CAR_SERVICE_BASE_URL + "/available", CarDTO[].class);
+	        return new ResponseEntity<>(Arrays.asList(cars), HttpStatus.OK);
+	    }
+	    
+	    @DeleteMapping("/deleteCar/{carId}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<String> deleteCar(@PathVariable Long carId) {
+	        restTemplate.delete(CAR_SERVICE_BASE_URL + "/delete/" + carId);
+	        return new ResponseEntity<>("Car deleted successfully", HttpStatus.OK);
+	    }
+	    
+	    @PutMapping("/updateCarPrice/{carId}/{price}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<String> updateCarPrice(@PathVariable Long carId, @PathVariable double price) {
+	        restTemplate.put(CAR_SERVICE_BASE_URL + "/updateprice/" + carId + "/" + price, null);
+	        return new ResponseEntity<>("Car price updated successfully", HttpStatus.OK);
+	    }
+	    
+	    @GetMapping("/getCarsByFilter")
+	    @PreAuthorize("hasAnyAuthority('admin','customer','agent','user')")
+	    public ResponseEntity<List<CarDTO>> getAvailableCarsByFilter(
+	            @RequestParam String location,
+	            @RequestParam int passengerCapacity,
+	            @RequestParam String startDate,  // Format: yyyy-MM-dd
+	            @RequestParam String endDate     // Format: yyyy-MM-dd
+	    ) {
+	        String url = String.format("%s/availablecarsbyfilter?location=%s&passengerCapacity=%d&startDate=%s&endDate=%s",
+	                CAR_SERVICE_BASE_URL, location, passengerCapacity, startDate, endDate);
+	        CarDTO[] cars = restTemplate.getForObject(url, CarDTO[].class);
+	        return new ResponseEntity<>(Arrays.asList(cars), HttpStatus.OK);
+	    }
+	    
+	    @PutMapping("/updateCarStatus/{carId}/{status}")
+	    @PreAuthorize("hasAnyAuthority('admin','agent')")
+	    public ResponseEntity<String> updateVehicleStatus(@PathVariable Long carId, @PathVariable String status) {
+	        restTemplate.put(CAR_SERVICE_BASE_URL + "/updateStatus/" + carId + "/" + status, null);
+	        return new ResponseEntity<>("Vehicle status updated successfully", HttpStatus.OK);
+	    }
+	    
+	    
+	    // Reservation-Based Operations
 	    
 	    private final String RESERVATION_SERVICE_BASE_URL = "http://localhost:8282/api/reservation";
 	    
-	    @PostMapping("/makereservation")
-	    public ResponseEntity<ReservationDTO> makeReservation(@RequestBody ReservationDTO reservationDTO)
-	    {
-	    	ReservationDTO reservation = restTemplate.postForObject(RESERVATION_SERVICE_BASE_URL+"/create ", reservationDTO,ReservationDTO.class);
-	    	return new ResponseEntity<ReservationDTO>(reservation, HttpStatus.CREATED);
+	    @PostMapping("/makeReservation")
+	    @PreAuthorize("hasAnyAuthority('customer')")
+	    public ResponseEntity<ReservationDTO> createReservation(@RequestBody ReservationDTO reservationDTO) {
+	        ReservationDTO created = restTemplate.postForObject(
+	                RESERVATION_SERVICE_BASE_URL + "/create",
+	                reservationDTO,
+	                ReservationDTO.class
+	        );
+	        return new ResponseEntity<>(created, HttpStatus.CREATED);
 	    }
 	    
-	    private final String PAYMENT_SERVICE_BASE_URL = "http://localhost:8282/api/payment";
-	    
-	    @PostMapping("/makepayment")
-	    public ResponseEntity<PaymentDTO> makePayment(@RequestBody PaymentDTO paymentDTO)
-	    {
-	    	PaymentDTO payment = restTemplate.postForObject(PAYMENT_SERVICE_BASE_URL+"/make ", paymentDTO,PaymentDTO.class);
-	    	return new ResponseEntity<PaymentDTO>(payment, HttpStatus.CREATED);
+	    @PutMapping("/updateReservation")
+	    @PreAuthorize("hasAnyAuthority('admin','customer','agent','user')")
+	    public ResponseEntity<String> updateReservation(@RequestBody ReservationDTO reservationDTO) {
+	        restTemplate.put(RESERVATION_SERVICE_BASE_URL + "/update", reservationDTO);
+	        return new ResponseEntity<>("Reservation updated successfully", HttpStatus.OK);
 	    }
 	    
-	    
-	    //ADMIN level operations
-	    @PostMapping("/admin/add-car")
-	    public ResponseEntity<CarDTO> addCar(@RequestBody CarDTO carDTO, @RequestHeader("Authorization") String authHeader) {
-	        String jwtToken = authHeader.replace("Bearer ", "");
-	        return carServiceClient.addCar(carDTO, jwtToken);
+	    @DeleteMapping("/cancelReservation/{reservationId}")
+	    @PreAuthorize("hasAnyAuthority('admin','customer','agent','user')")
+	    public ResponseEntity<String> cancelReservation(@PathVariable Long reservationId) {
+	        restTemplate.delete(RESERVATION_SERVICE_BASE_URL + "/cancel/" + reservationId);
+	        return new ResponseEntity<>("Reservation cancelled successfully", HttpStatus.OK);
 	    }
 	    
-	    @PutMapping("/admin/update-car/{carId}")
-	    public ResponseEntity<CarDTO> updateCar(
-	            @PathVariable Long carId,
-	            @RequestBody @Valid CarDTO carDTO,
-	            @RequestHeader("Authorization") String authHeader) {
+	    @GetMapping("/getReservation/{reservationId}")
+	    @PreAuthorize("hasAnyAuthority('admin','customer','agent','user')")
+	    public ResponseEntity<ReservationDTO> getReservationById(@PathVariable Long reservationId) {
+	        ReservationDTO dto = restTemplate.getForObject(
+	                RESERVATION_SERVICE_BASE_URL + "/get/" + reservationId,
+	                ReservationDTO.class
+	        );
+	        return new ResponseEntity<>(dto, HttpStatus.OK);
+	    }
+	    
+	    @GetMapping("/getReservationByCustomer/{customerId}")
+	    @PreAuthorize("hasAnyAuthority('customer')")
+	    public ResponseEntity<List<ReservationDTO>> getReservationsByCustomerId(@PathVariable Long customerId) {
+	        ReservationDTO[] reservations = restTemplate.getForObject(
+	                RESERVATION_SERVICE_BASE_URL + "/getbycustomer/" + customerId,
+	                ReservationDTO[].class
+	        );
+	        return new ResponseEntity<>(Arrays.asList(reservations), HttpStatus.OK);
+	    }
+	    
+	    @GetMapping("/getReservationByCar/{carId}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<List<ReservationDTO>> getReservationsByCarId(@PathVariable Long carId) {
+	        ReservationDTO[] reservations = restTemplate.getForObject(
+	                RESERVATION_SERVICE_BASE_URL + "/getbycar/" + carId,
+	                ReservationDTO[].class
+	        );
+	        return new ResponseEntity<>(Arrays.asList(reservations), HttpStatus.OK);
+	    }
+	    
+	    @GetMapping("/getAllReservations")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<List<ReservationDTO>> getAllReservations() {
+	        ReservationDTO[] reservations = restTemplate.getForObject(
+	                RESERVATION_SERVICE_BASE_URL + "/get",
+	                ReservationDTO[].class
+	        );
+	        return new ResponseEntity<>(Arrays.asList(reservations), HttpStatus.OK);
+	    }
+	    
+	    @GetMapping("/getBookedCars")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<List<Long>> getBookedCars(
+	            @RequestParam String startDate,  // ISO format: yyyy-MM-dd
+	            @RequestParam String endDate
+	    ) {
+	        String url = String.format("%s/getbookedcars?startDate=%s&endDate=%s",
+	                RESERVATION_SERVICE_BASE_URL, startDate, endDate);
+	        Long[] carIds = restTemplate.getForObject(url, Long[].class);
+	        return new ResponseEntity<>(Arrays.asList(carIds), HttpStatus.OK);
+	    }
 
-	        String jwtToken = authHeader.replace("Bearer ", "");
-	        return carServiceClient.updateCar(carId, carDTO, jwtToken);
+	    @PutMapping("/checkin/{id}")
+	    @PreAuthorize("hasAnyAuthority('admin','agent')")
+	    public ResponseEntity<String> checkIn(@PathVariable Long id) {
+	        restTemplate.put(RESERVATION_SERVICE_BASE_URL + "/checkin/" + id, null);
+	        return new ResponseEntity<>("Check-in completed successfully", HttpStatus.OK);
+	    }
+
+	    @PutMapping("/checkout/{id}")
+	    @PreAuthorize("hasAnyAuthority('admin','agent')")
+	    public ResponseEntity<String> checkOut(@PathVariable Long id) {
+	        restTemplate.put(RESERVATION_SERVICE_BASE_URL + "/checkout/" + id, null);
+	        return new ResponseEntity<>("Check-out completed successfully", HttpStatus.OK);
 	    }
 	    
+	    // Report-Related Operations
+	    
+	    private final String REPORT_SERVICE_BASE_URL = "http://localhost:8282/api/report";
+	    
+	    @GetMapping("/total-revenue")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<Double> getTotalRevenue() {
+	        Double revenue = restTemplate.getForObject(REPORT_SERVICE_BASE_URL + "/total-revenue", Double.class);
+	        return new ResponseEntity<>(revenue, HttpStatus.OK);
+	    }
+
+	    @GetMapping("/total-reservations")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<Double> getTotalReservations() {
+	        Double count = restTemplate.getForObject(REPORT_SERVICE_BASE_URL + "/total-reservations", Double.class);
+	        return new ResponseEntity<>(count, HttpStatus.OK);
+	    }
+	        
+	     // Payment-Related Operations 
+	        
+	        private final String PAYMENT_SERVICE_BASE_URL = "http://localhost:8282/api/payment";
+	        
+	        @PostMapping("/makePayment")
+	        @PreAuthorize("hasAnyAuthority('customer')")
+	        public ResponseEntity<PaymentDTO> makePayment(@RequestBody PaymentDTO paymentDTO) {
+	            PaymentDTO response = restTemplate.postForObject(
+	                PAYMENT_SERVICE_BASE_URL + "/make", paymentDTO, PaymentDTO.class);
+	            return new ResponseEntity<>(response, HttpStatus.CREATED);
+	        }
+
+	        @GetMapping("/getPayment/{paymentId}")
+	        @PreAuthorize("hasAnyAuthority('admin','customer')")
+	        public ResponseEntity<PaymentDTO> getPaymentById(@PathVariable Long paymentId) {
+	            PaymentDTO response = restTemplate.getForObject(
+	                PAYMENT_SERVICE_BASE_URL + "/get/" + paymentId, PaymentDTO.class);
+	            return new ResponseEntity<>(response, HttpStatus.OK);
+	        }
+
+	        @GetMapping("/getAllPayments")
+	        @PreAuthorize("hasAnyAuthority('admin')")
+	        public ResponseEntity<List<PaymentDTO>> getAllPayments() {
+	            PaymentDTO[] payments = restTemplate.getForObject(
+	                PAYMENT_SERVICE_BASE_URL + "/get", PaymentDTO[].class);
+	            return new ResponseEntity<>(Arrays.asList(payments), HttpStatus.OK);
+	        }
+
+	        @GetMapping("/getPaymentByReservation/{reservationId}")
+	        @PreAuthorize("hasAnyAuthority('admin','customer')")
+	        public ResponseEntity<List<PaymentDTO>> getPaymentsByReservationId(@PathVariable Long reservationId) {
+	            PaymentDTO[] payments = restTemplate.getForObject(
+	                PAYMENT_SERVICE_BASE_URL + "/reservation/" + reservationId, PaymentDTO[].class);
+	            return new ResponseEntity<>(Arrays.asList(payments), HttpStatus.OK);
+	        }
+
+	        @GetMapping("/getPaymentByCustomer/{customerId}")
+	        @PreAuthorize("hasAnyAuthority('admin','customer')")
+	        public ResponseEntity<List<PaymentDTO>> getPaymentsByCustomerId(@PathVariable Long customerId) {
+	            PaymentDTO[] payments = restTemplate.getForObject(
+	                PAYMENT_SERVICE_BASE_URL + "/customer/" + customerId, PaymentDTO[].class);
+	            return new ResponseEntity<>(Arrays.asList(payments), HttpStatus.OK);
+	        }  
+	        
+	    // Feedback-Related Operations  
+	        
+	    private final String FEEDBACK_BASE_URL = "http://localhost:8282/api/feedback";  
+	    
+	    @PostMapping("/submitFeedback")
+	    @PreAuthorize("hasAnyAuthority('customer')")
+	    public ResponseEntity<FeedbackDTO> submitFeedback(@RequestBody FeedbackDTO feedbackDTO) {
+	        FeedbackDTO submitted = restTemplate.postForObject(
+	            FEEDBACK_BASE_URL + "/submit", feedbackDTO, FeedbackDTO.class);
+	        return new ResponseEntity<>(submitted, HttpStatus.CREATED);
+	    }
+
+	    @GetMapping("/getAllFeedbacks")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<List<FeedbackDTO>> getAllFeedback() {
+	        FeedbackDTO[] feedbacks = restTemplate.getForObject(
+	            FEEDBACK_BASE_URL + "/get", FeedbackDTO[].class);
+	        return new ResponseEntity<>(Arrays.asList(feedbacks), HttpStatus.OK);
+	    }
+
+	    @GetMapping("/getFeedback/{feedbackId}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<FeedbackDTO> getFeedbackById(@PathVariable Long feedbackId) {
+	        FeedbackDTO feedback = restTemplate.getForObject(
+	            FEEDBACK_BASE_URL + "/get/" + feedbackId, FeedbackDTO.class);
+	        return new ResponseEntity<>(feedback, HttpStatus.OK);
+	    }
+
+	    @GetMapping("/getFeedbackByCustomer/{customerId}")
+	    @PreAuthorize("hasAnyAuthority('admin','customer')")
+	    public ResponseEntity<List<FeedbackDTO>> getFeedbackByCustomerId(@PathVariable Long customerId) {
+	        FeedbackDTO[] feedbacks = restTemplate.getForObject(
+	            FEEDBACK_BASE_URL + "/getbycustomerid/" + customerId, FeedbackDTO[].class);
+	        return new ResponseEntity<>(Arrays.asList(feedbacks), HttpStatus.OK);
+	    }
+
+	    @DeleteMapping("/removeFeedback/{feedbackId}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<String> deleteFeedback(@PathVariable Long feedbackId) {
+	        restTemplate.delete(FEEDBACK_BASE_URL + "/remove/" + feedbackId);
+	        return new ResponseEntity<>("Feedback deleted successfully", HttpStatus.OK);
+	    }
+
+	    @PutMapping("/setFeedbackStatus/{id}")
+	    @PreAuthorize("hasAnyAuthority('admin')")
+	    public ResponseEntity<FeedbackDTO> setFeedbackStatus(
+	            @PathVariable Long id,
+	            @RequestParam String adminResponse) {
+
+	        String url = FEEDBACK_BASE_URL + "/setstatus/" + id + "?adminResponse=" + adminResponse;
+	        restTemplate.put(url, null);
+	        FeedbackDTO updated = restTemplate.getForObject(FEEDBACK_BASE_URL + "/get/" + id, FeedbackDTO.class);
+	        return new ResponseEntity<>(updated, HttpStatus.OK);
+	    }
+	    
+	   
 	    
 }

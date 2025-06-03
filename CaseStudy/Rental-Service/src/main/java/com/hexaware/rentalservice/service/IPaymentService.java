@@ -4,18 +4,19 @@ import java.util.List;
 
 import com.hexaware.rentalservice.dto.PaymentDTO;
 import com.hexaware.rentalservice.entity.Payment;
+import com.hexaware.rentalservice.exception.PaymentNotFoundException;
 
 public interface IPaymentService {
 	
-	public Payment makePayment(PaymentDTO paymentDTO);
+	public PaymentDTO makePayment(PaymentDTO paymentDTO);
 	
-	public PaymentDTO getPaymentById(Long paymentId);
+	public PaymentDTO getPaymentById(Long paymentId) throws PaymentNotFoundException;
 	
-	public List<Payment> getAllPayments();
+	public List<PaymentDTO> getAllPayments();
 	
-	public List<Payment> getPaymentsByReservationId(Long reservationId);
+	public List<PaymentDTO> getPaymentsByReservationId(Long reservationId);
 	
-	public List<Payment> getPaymentsByCustomerId(Long customerId); 
+	public List<PaymentDTO> getPaymentsByCustomerId(Long customerId); 
 
 
 }

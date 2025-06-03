@@ -8,15 +8,15 @@ import com.hexaware.rentalservice.exception.FeedbackNotFoundException;
 
 public interface IFeedbackService {
 	
-	public Feedback submitFeedback(FeedbackDTO feedbackDTO);
+	public FeedbackDTO submitFeedback(FeedbackDTO feedbackDTO);
 	
-	public Feedback getFeedbackById(Long id) throws FeedbackNotFoundException;
+	public FeedbackDTO getFeedbackById(Long id) throws FeedbackNotFoundException;
 	
-    public List<Feedback> getAllFeedback();
+    public List<FeedbackDTO> getAllFeedback();
     
-    public List<Feedback> getFeedbackByCustomerId(Long customerId);
+    public List<FeedbackDTO> getFeedbackByCustomerId(Long customerId);
     
     public void deleteFeedback(Long feedbackId);
     
-    public Feedback setFeedbackStatus(Long id) throws FeedbackNotFoundException;
+    public FeedbackDTO setFeedbackStatus(Long id,String adminResponse) throws FeedbackNotFoundException;
 }

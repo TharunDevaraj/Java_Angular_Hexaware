@@ -46,7 +46,7 @@ class ReservationServiceImpTest {
         dto.setCustomerId(100L);
         dto.setCarId(200L);
         
-        Reservation result = reservationService.createReservation(dto);
+        ReservationDTO result = reservationService.createReservation(dto);
 
         assertNotNull(result);
         assertEquals("Reserved", result.getReservationStatus());
@@ -57,7 +57,7 @@ class ReservationServiceImpTest {
 	@Disabled
 	void testGetAllReservations() {
 		
-		 List<Reservation> result = reservationService.getAllReservations();
+		 List<ReservationDTO> result = reservationService.getAllReservations();
 
 	        assertEquals(4, result.size());
 		
@@ -82,7 +82,7 @@ class ReservationServiceImpTest {
 		LocalDate originalEndDate = dto.getEndDate();
 		dto.setEndDate(dto.getEndDate().plusDays(1));
 		
-		Reservation updated = reservationService.updateReservation(dto);
+		ReservationDTO updated = reservationService.updateReservation(dto);
 		
 		assertEquals(originalEndDate.plusDays(1), updated.getEndDate());
 		
@@ -115,7 +115,7 @@ class ReservationServiceImpTest {
 	@Test
 	@Disabled
 	void testCheckIn() {
-		Reservation result = reservationService.checkIn(52L);
+		ReservationDTO result = reservationService.checkIn(52L);
 
         assertEquals("Reserved", result.getReservationStatus());
         assertNotNull(result.getCheckInTime());
@@ -124,7 +124,7 @@ class ReservationServiceImpTest {
 	@Test
 	@Disabled
 	void testCheckOut() {
-		 Reservation result = reservationService.checkOut(1L);
+		 ReservationDTO result = reservationService.checkOut(1L);
 
 	     assertEquals("Completed", result.getReservationStatus());
 	     assertNotNull(result.getCheckOutTime());

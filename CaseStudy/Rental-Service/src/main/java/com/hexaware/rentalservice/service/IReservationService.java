@@ -9,23 +9,23 @@ import com.hexaware.rentalservice.exception.GlobalExceptionHandler;
 
 public interface IReservationService {
 	
-	public Reservation createReservation(ReservationDTO reservationDTO);
+	public ReservationDTO createReservation(ReservationDTO reservationDTO);
 	
-	public List<Reservation> getAllReservations();
+	public List<ReservationDTO> getAllReservations();
 	
 	public ReservationDTO getReservationById(Long reservationId);
 	
-	public List<Reservation> getReservationsByCustomerId(Long customerId);
+	public List<ReservationDTO> getReservationsByCustomerId(Long customerId);
 	
-	public List<Reservation> getReservationsByCarId(Long carId);
+	public List<ReservationDTO> getReservationsByCarId(Long carId);
 	
-	public Reservation updateReservation(ReservationDTO updatedReservationDTO);
+	public ReservationDTO updateReservation(ReservationDTO updatedReservationDTO);
 	
 	public void cancelReservationById(Long id);
 	
 	public List<Long> findBookedCars(LocalDate startDate,LocalDate endDate);
 	
-	public Reservation checkIn(Long reservationId);
+	public ReservationDTO checkIn(Long reservationId);
 
-    public Reservation checkOut(Long reservationId);
+    public ReservationDTO checkOut(Long reservationId);
 }

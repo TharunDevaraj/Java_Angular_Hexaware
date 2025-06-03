@@ -1,6 +1,7 @@
 package com.hexaware.userservice.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.hexaware.userservice.dto.UserInfoDTO;
 import com.hexaware.userservice.entity.UserInfo;
+import com.hexaware.userservice.exception.UserNameAlreadyExistsException;
 import com.hexaware.userservice.exception.UserNotFoundException;
 
 @SpringBootTest
@@ -36,7 +38,7 @@ class UserInfoServiceImpTest {
 
 	@Test
 	@Disabled
-	void testRegisterUser() {
+	void testRegisterUser() throws UserNameAlreadyExistsException {
 		
 		UserInfo user1 = new UserInfo();
         user1.setUserName("john");
@@ -44,13 +46,12 @@ class UserInfoServiceImpTest {
         user1.setPassword(passwordEncoder.encode("password"));
         user1.setRoles("user");
         
-        String result = userService.registerUser(user1);
+        UserInfoDTO result = userService.registerUser(user1);
 
-        assertEquals("User Registered!", result);
+        assertNotNull(result);
+    
         
-        String result2 = userService.registerUser(user1);
-        
-        assertEquals("Username already exists!", result2);
+        assertThrows(UserNameAlreadyExistsException.class, ()-> userService.registerUser(user1));
 	}
 
 	@Test

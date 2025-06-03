@@ -37,7 +37,7 @@ public class SecurityConfig {
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
-	    return new UserInfoUserDetailsService();
+		return new UserInfoUserDetailsService();
 	}
 	
 	@Bean
@@ -52,8 +52,8 @@ public class SecurityConfig {
 	            	    "/v3/api-docs/**",
 	            	    "/swagger-resources/**",
 	            	    "/webjars/**",
-	            	    "/api/users/register",
-	            	    "/api/users/login"
+	            	    "/api/authenticate/register",
+	            	    "/api/authenticate/login"
 	            ).permitAll()
 	            .anyRequest().authenticated()
 	        )

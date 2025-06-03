@@ -1,5 +1,6 @@
 package com.hexaware.rentalservice.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,22 +24,42 @@ public class FeedbackServiceImp implements IFeedbackService {
 	@Autowired
 	FeedbackRepository feedbackRepository;
 
-	public Feedback submitFeedback(FeedbackDTO feedbackDTO) {
+	public FeedbackDTO submitFeedback(FeedbackDTO feedbackDTO) {
 
 		Feedback feedback = new Feedback();
 		feedback.setReservationId(feedbackDTO.getReservationId());
 		feedback.setCustomerId(feedbackDTO.getCustomerId());
 		feedback.setComment(feedbackDTO.getComment());
 		feedback.setRating(feedbackDTO.getRating());
-		return feedbackRepository.save(feedback);
+		feedback.setAdminResponse("No Response");
+		feedback.setStatus("Pending");
+		return mapToDTO( feedbackRepository.save(feedback));
 	}
 
-	public List<Feedback> getFeedbackByCustomerId(Long customerId) {
-		return feedbackRepository.findByCustomerId(customerId);
+	public List<FeedbackDTO> getFeedbackByCustomerId(Long customerId) {
+		List<Feedback> feedbacks= feedbackRepository.findByCustomerId(customerId);
+		
+		List<FeedbackDTO> feedbackDTOs=new ArrayList<>();
+		
+		for(Feedback feedback:feedbacks)
+		{
+			feedbackDTOs.add(mapToDTO(feedback));
+		}
+		
+		return feedbackDTOs;
 	}
 
-	public List<Feedback> getAllFeedback() {
-		return feedbackRepository.findAll();
+	public List<FeedbackDTO> getAllFeedback() {
+		List<Feedback> feedbacks= feedbackRepository.findAll();
+		
+List<FeedbackDTO> feedbackDTOs=new ArrayList<>();
+		
+		for(Feedback feedback:feedbacks)
+		{
+			feedbackDTOs.add(mapToDTO(feedback));
+		}
+		
+		return feedbackDTOs;
 	}
 
 	public void deleteFeedback(Long feedbackId) {
@@ -46,23 +67,38 @@ public class FeedbackServiceImp implements IFeedbackService {
 		feedbackRepository.deleteById(feedbackId);
 	}
 
-	public Feedback getFeedbackById(Long id) throws FeedbackNotFoundException {
+	public FeedbackDTO getFeedbackById(Long id) throws FeedbackNotFoundException {
 		Feedback feedback= feedbackRepository.findById(id).orElse(null);
 		
 		if(feedback==null)
 		{
 			throw new FeedbackNotFoundException();
 		}
-		return feedback;
+		return mapToDTO(feedback);
 	}
 
-	public Feedback setFeedbackStatus(Long id) throws FeedbackNotFoundException {
-		Feedback feedback = getFeedbackById(id);
+	public FeedbackDTO setFeedbackStatus(Long id, String adminResponse) throws FeedbackNotFoundException {
+		Feedback feedback = feedbackRepository.findById(id).orElse(null);
 		if (feedback == null) {
 			throw new FeedbackNotFoundException();
 		}
 		feedback.setStatus("Resolved");
-		return feedbackRepository.save(feedback);
+		feedback.setAdminResponse(adminResponse);
+		return mapToDTO(feedbackRepository.save(feedback));
+	}
+	
+	private FeedbackDTO mapToDTO(Feedback feedback)
+	{
+		FeedbackDTO dto=new FeedbackDTO();
+		
+		dto.setFeedbackId(feedback.getFeedbackId());
+		dto.setReservationId(feedback.getReservationId());
+		dto.setCustomerId(feedback.getCustomerId());
+		dto.setComment(feedback.getComment());
+		dto.setRating(feedback.getRating());
+		dto.setAdminResponse(feedback.getAdminResponse());
+		dto.setStatus(feedback.getStatus());
+		return dto;
 	}
 
 }

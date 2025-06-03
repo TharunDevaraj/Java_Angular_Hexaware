@@ -41,7 +41,7 @@ class FeedbackServiceImpTest {
         dto.setComment("Excellent service");
         dto.setRating(5);
         
-        Feedback result = feedbackService.submitFeedback(dto);
+        FeedbackDTO result = feedbackService.submitFeedback(dto);
 
         assertNotNull(result);
         assertEquals(5, result.getRating());
@@ -51,7 +51,7 @@ class FeedbackServiceImpTest {
 	@Test
 	@Disabled
 	void testGetFeedbackByCustomerId() {
-		 List<Feedback> result = feedbackService.getFeedbackByCustomerId(201L);
+		 List<FeedbackDTO> result = feedbackService.getFeedbackByCustomerId(201L);
 
 	     assertEquals(1, result.size());
 	     assertEquals(201L, result.get(0).getCustomerId());
@@ -60,7 +60,7 @@ class FeedbackServiceImpTest {
 	@Test
 	@Disabled
 	void testGetAllFeedback() {
-		 List<Feedback> result = feedbackService.getAllFeedback();
+		 List<FeedbackDTO> result = feedbackService.getAllFeedback();
 
 	        assertEquals(1, result.size());
 	}
@@ -78,7 +78,7 @@ class FeedbackServiceImpTest {
 	@Test
 	@Disabled
 	void testGetFeedbackById() throws FeedbackNotFoundException {
-		Feedback result = feedbackService.getFeedbackById(52L);
+		FeedbackDTO result = feedbackService.getFeedbackById(52L);
 
         assertNotNull(result);
 	}
@@ -87,7 +87,7 @@ class FeedbackServiceImpTest {
 	@Disabled
 	void testSetFeedbackStatus() throws FeedbackNotFoundException {
 		
-		Feedback updated = feedbackService.setFeedbackStatus(52L);
+		FeedbackDTO updated = feedbackService.setFeedbackStatus(52L,"Thank you for submitting your feedback, will ensure you have smooth experience");
 
         assertEquals("Resolved", updated.getStatus());
 		

@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.rentalservice.dto.ReservationDTO;
-import com.hexaware.rentalservice.entity.Reservation;
 import com.hexaware.rentalservice.service.IReservationService;
 
 import jakarta.validation.Valid;
@@ -38,15 +36,14 @@ public class ReservationRestController {
     IReservationService reservationService;
 
     @PostMapping("/create")
-    public ResponseEntity<Reservation> createReservation(@RequestBody @Valid ReservationDTO reservationDTO) {
-        Reservation reservation = reservationService.createReservation(reservationDTO);
+    public ResponseEntity<ReservationDTO> createReservation(@RequestBody @Valid ReservationDTO reservationDTO) {
+        ReservationDTO reservation = reservationService.createReservation(reservationDTO);
         return new ResponseEntity<>(reservation, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    @PreAuthorize("hasRole('user','customer')")
-    public ResponseEntity<Reservation> updateReservation(@RequestBody @Valid ReservationDTO reservationDTO) {
-        Reservation updated = reservationService.updateReservation(reservationDTO);
+    public ResponseEntity<ReservationDTO> updateReservation(@RequestBody @Valid ReservationDTO reservationDTO) {
+        ReservationDTO updated = reservationService.updateReservation(reservationDTO);
         if (updated != null) {
             return new ResponseEntity<>(updated, HttpStatus.OK);
         }
@@ -54,14 +51,12 @@ public class ReservationRestController {
     }
 
     @DeleteMapping("/cancel/{reservationId}")
-    @PreAuthorize("hasRole('user','customer')")
     public ResponseEntity<String> cancelReservation(@PathVariable Long reservationId) {
         reservationService.cancelReservationById(reservationId);
         return new ResponseEntity<>("Reservation cancelled successfully", HttpStatus.OK);
     }
 
     @GetMapping("/get/{reservationId}")
-    @PreAuthorize("hasRole('user','customer')")
     public ResponseEntity<ReservationDTO> getReservationById(@PathVariable Long reservationId) {
         ReservationDTO dto = reservationService.getReservationById(reservationId);
         if (dto != null) {
@@ -71,22 +66,19 @@ public class ReservationRestController {
     }
 
     @GetMapping("/getbycustomer/{customerId}")
-    @PreAuthorize("hasRole('user','customer')")
-    public ResponseEntity<List<Reservation>> getReservationsByCustomerId(@PathVariable Long customerId) {
-        List<Reservation> reservations = reservationService.getReservationsByCustomerId(customerId);
+    public ResponseEntity<List<ReservationDTO>> getReservationsByCustomerId(@PathVariable Long customerId) {
+        List<ReservationDTO> reservations = reservationService.getReservationsByCustomerId(customerId);
         return new ResponseEntity<>(reservations, HttpStatus.OK);
     }
 
     @GetMapping("/getbycar/{carId}")
-    @PreAuthorize("hasAnyRole('admin','agent')")
-    public ResponseEntity<List<Reservation>> getReservationsByCarId(@PathVariable Long carId) {
-        List<Reservation> reservations = reservationService.getReservationsByCarId(carId);
+    public ResponseEntity<List<ReservationDTO>> getReservationsByCarId(@PathVariable Long carId) {
+        List<ReservationDTO> reservations = reservationService.getReservationsByCarId(carId);
         return new ResponseEntity<>(reservations, HttpStatus.OK);
     }
 
     @GetMapping("/get")
-    @PreAuthorize("hasAnyRole('admin','agent')")
-    public ResponseEntity<List<Reservation>> getAllReservations() {
+    public ResponseEntity<List<ReservationDTO>> getAllReservations() {
         return new ResponseEntity<>(reservationService.getAllReservations(), HttpStatus.OK);
     }
     
@@ -97,16 +89,14 @@ public class ReservationRestController {
     }
     
     @PutMapping("/checkin/{id}")
-    @PreAuthorize("hasAnyRole('admin','agent')")
-    public ResponseEntity< Reservation> checkIn(@PathVariable Long id)
+    public ResponseEntity< ReservationDTO> checkIn(@PathVariable Long id)
     {
-    	return new ResponseEntity<Reservation>( reservationService.checkIn(id), HttpStatus.OK);
+    	return new ResponseEntity<ReservationDTO>( reservationService.checkIn(id), HttpStatus.OK);
     }
     
     @PutMapping("/checkout/{id}")
-    @PreAuthorize("hasAnyRole('admin','agent')")
-    public ResponseEntity< Reservation> checkOut(@PathVariable Long id)
+    public ResponseEntity< ReservationDTO> checkOut(@PathVariable Long id)
     {
-    	return new ResponseEntity<Reservation>( reservationService.checkOut(id), HttpStatus.OK);
+    	return new ResponseEntity<ReservationDTO>( reservationService.checkOut(id), HttpStatus.OK);
     }
 }

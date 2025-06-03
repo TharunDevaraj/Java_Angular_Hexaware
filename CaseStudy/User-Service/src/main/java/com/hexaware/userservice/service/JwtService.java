@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -55,10 +56,6 @@ public class JwtService {
 		}
 
 		Map<String, Object> claims = new HashMap<>();
-		
-		List<String> roles =Arrays.asList( userDetails.getRoles().split(","));
-
-		    claims.put("roles", roles);
 
 		return createToken(claims, username);
 
@@ -95,9 +92,9 @@ public class JwtService {
 			        return extractExpiration(token).before(new Date());
 			    }
 
-			    public Boolean validateToken(String token) {
-			        //final String username = extractUsername(token);
-			        return !isTokenExpired(token);
+			    public Boolean validateToken(String token, UserDetails userDetails) {
+			        final String username = extractUsername(token);
+			    	return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
 			    } 
 			
 

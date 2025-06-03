@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.hexaware.rentalservice.dto.PaymentDTO;
 import com.hexaware.rentalservice.entity.Payment;
+import com.hexaware.rentalservice.exception.PaymentNotFoundException;
 @SpringBootTest
 class PaymentServiceImpTest {
 
@@ -38,7 +39,7 @@ class PaymentServiceImpTest {
         payment.setAmount(500.0);
         payment.setReservationId(1001L);
         
-        Payment result = paymentService.makePayment(payment);
+        PaymentDTO result = paymentService.makePayment(payment);
 
         assertNotNull(result);
         assertEquals(payment.getAmount(), result.getAmount());
@@ -48,7 +49,7 @@ class PaymentServiceImpTest {
 
 	@Test
 	@Disabled
-	void testGetPaymentById() {
+	void testGetPaymentById() throws PaymentNotFoundException {
 		
 		PaymentDTO result = paymentService.getPaymentById(52L);
 
@@ -60,7 +61,7 @@ class PaymentServiceImpTest {
 	@Disabled
 	void testGetAllPayments() {
 		
-		List<Payment> result = paymentService.getAllPayments();
+		List<PaymentDTO> result = paymentService.getAllPayments();
 
         assertEquals(4, result.size());
 		
@@ -70,7 +71,7 @@ class PaymentServiceImpTest {
 	@Disabled
 	void testGetPaymentsByReservationId() {
 		
-		List<Payment> result = paymentService.getPaymentsByReservationId(1001L);
+		List<PaymentDTO> result = paymentService.getPaymentsByReservationId(1001L);
 
         assertEquals(1, result.size());
 		
@@ -79,7 +80,7 @@ class PaymentServiceImpTest {
 	@Test
 	@Disabled
 	void testGetPaymentsByCustomerId() {
-		List<Payment> result = paymentService.getPaymentsByCustomerId(1L);
+		List<PaymentDTO> result = paymentService.getPaymentsByCustomerId(1L);
 
         assertEquals(2, result.size());
 	}

@@ -31,7 +31,7 @@ public class UserInfo {
     private String email;
     
     @NotBlank(message = "Password is required")
-    @Size(min = 4, message = "Password must be at least 6 characters")
+    @Size(min = 4, message = "Password must be at least 4 characters")
     private String password;
     
     @NotBlank(message = "Role is required")
